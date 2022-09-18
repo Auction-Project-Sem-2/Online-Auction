@@ -16,12 +16,11 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('brand_id')->unsigned();
             $table->integer('product_category_id')->unsigned();
             $table->string('name');
 
-            $table->date('start_time')->unsigned();
-            $table->date('end_time')->unsigned();
+            $table->string('start_time');
+            $table->string('end_time');
 
             $table->text('description')->nullable();
             $table->text('content')->nullable();
