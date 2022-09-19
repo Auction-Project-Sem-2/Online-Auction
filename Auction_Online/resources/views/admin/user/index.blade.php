@@ -71,169 +71,53 @@
                                         </tr>
                                         </thead>
                                         <tbody style="align-items: center">
-                                        <tr>
-                                            <th scope="row"  class="text-center">1</th>
-                                            <td style="display: flex;align-items: center;">
-                                                <img src="./admin/assets/img/profile-img.jpg" width="40" alt="Profile" class="rounded-circle">
-                                                <span style="padding-left: 10px">Brandon Jacob</span>
-                                            </td>
-                                            <td><span>Designer</span></td>
-                                            <td  class="text-center">28</td>
-                                            <td  class="text-center">
-                                                <a href="./admin/user/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/user/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/user/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"  class="text-center">2</th>
-                                            <td>Bridie Kessler</td>
-                                            <td>Developerrrrrrrrrr rrrrrrrrrrrrrrrr rrrrrrrrrrrrr</td>
-                                            <td  class="text-center"><span>35</span></td>
-                                            <td  class="text-center">
-                                                <a href="./admin/user/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/user/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/user/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                            @foreach($users as $user)
+                                                <tr>
+                                                    <th scope="row"  class="text-center">{{ $user->id }}</th>
+                                                    <td>
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="mr-2">
+                                                                    <img src="./admin/assets/img/avatar/{{ $user->avatar ?? 'default-avatar.jpg'}}" width="40" height="40" alt="Profile" class="rounded-circle">
+                                                                </div>
+                                                                <div class="m-lg-1">
+                                                                    <div class="widget-heading">{{ $user->name }}</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span>{{ $user->email }}</span></td>
+                                                    <td  class="text-center">{{ \App\Utilities\Constant::$user_level[$user->level] }}</td>
+                                                    <td  class="text-center">
+                                                        <a href="./admin/user/{{ $user->id }}"
+                                                           class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
+                                                            Details
+                                                        </a>
+                                                        <a href="./admin/user/{{ $user->id }}/edit" data-toggle="tooltip" title="Edit"
+                                                           data-placement="bottom"
+                                                           class="btn btn-outline-warning border-0 btn-sm">
+                                                                            <span class="btn-icon-wrapper opacity-8">
+                                                                                <i class="bi bi-pencil-square"></i>
+                                                                            </span>
+                                                        </a>
+                                                        <form class="d-inline" action="./admin/user/{{ $user->id }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"  class="text-center">3</th>
-                                            <td>Ashleigh Langosh</td>
-                                            <td>Finance</td>
-                                            <td  class="text-center">45</td>
-                                            <td  class="text-center">
-                                                <a href="./admin/user/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/user/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/user/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                            <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
+                                                                    type="submit" data-toggle="tooltip" title="Delete"
+                                                                    data-placement="bottom"
+                                                                    onclick="return confirm('Do you really want to delete this item?')">
+                                                                                <span class="btn-icon-wrapper opacity-8">
+                                                                                    <i class="bi bi-trash3"></i>
+                                                                                </span>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"  class="text-center">4</th>
-                                            <td>Angus Grady</td>
-                                            <td>HR</td>
-                                            <td  class="text-center">34</td>
-                                            <td  class="text-center">
-                                                <a href="./admin/user/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/user/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/user/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"  class="text-center">5</th>
-                                            <td>Raheem Lehner</td>
-                                            <td>Dynamic Division Officer</td>
-                                            <td  class="text-center">47</td>
-                                            <td  class="text-center">
-                                                <a href="./admin/user/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/user/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/user/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
