@@ -66,9 +66,9 @@
         <div class="row">
 
           @foreach($categories as $category)
-                <div class="col-lg-1 cateInde-item">
+                <div class="col-lg-2 cateInde-item">
                     <a href="">
-                        <img src="./front/img/{{$category->path}}" alt="cate" >
+                        <img src="./front/img/products/{{$category->products[0]->productImages[0]->path}}" alt="cate" >
                         <span>{{$category->name}}</span>
                     </a>
                 </div>
@@ -219,9 +219,9 @@
             @foreach($blogs as $blog)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <img src="./front/img/products/{{$blog->image}}" alt="blog">
+                        <img src="./front/img/blogs/{{$blog->image}}" alt="blog">
                         <div class="blog__item__text">
-                            <span><i class="fa-regular fa-calendar"></i> 16 February 2020</span>
+                            <span><i class="fa-regular fa-calendar"></i> {{  date('M d, Y',strtotime($blog->created_at)) }}</span>
                             <h5>{{$blog->title}}</h5>
                             <a href=""><span></span>Read More</a>
                         </div>
