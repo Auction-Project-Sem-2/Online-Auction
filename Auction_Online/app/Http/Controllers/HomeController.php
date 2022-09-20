@@ -12,7 +12,7 @@ class HomeController extends Controller
     function index() {
         $categories = ProductCategory::all();
         $featuredProduct = Product::where('featured',true)->limit(9)->get();
-        $products  = Product::limit(20)->get();
+        $products  = Product::where('featured',true)->limit(20)->get();
         $blogs = Blog::limit(3)->get();
         return view('front.index',compact('categories','featuredProduct','products','blogs'));
     }

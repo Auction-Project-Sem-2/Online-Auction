@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,15 @@ Route::get('/', [HomeController::class,'index']);
 
 Route::prefix('shop')->group(function () {
     Route::get('',[ShopController::class,'index']);
+    Route::get('product/{id}',[ShopController::class,'show']);
 });
+
+Route::prefix('cart')->group(function () {
+    Route::get('',[CartController::class,'index']);
+});
+
+
+
 
 
 

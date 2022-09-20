@@ -53,7 +53,7 @@
             <!-- Navbar menu left-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
                 <li class="nav-item me-3">
-                    <a class="nav-link text-uppercase position-relative icon-nav" href="">
+                    <a class="nav-link text-uppercase position-relative icon-nav" href="./cart">
                         <i class="fa-regular fa-cart-shopping"></i>
                         <span class="badge rounded-pill bg-primary">2</span>
                     </a>
@@ -103,7 +103,7 @@
 <footer class="bg-dark">
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-4 col-sm-12 mb-3 mb-md-0"><img class="img-fluid mb-3" src="./img/Logo-white.png" alt="Patrol" width="120">
+            <div class="col-md-4 col-sm-12 mb-3 mb-md-0"><img class="img-fluid mb-3" src="./front/img/Logo-white.png" alt="Patrol" width="120">
                 <p class="text-muted">Auction online</p>
                 <ul class="list-inline">
                     <li class="list-inline-item"><i class="fab fa-cc-visa text-gray"></i></li>
