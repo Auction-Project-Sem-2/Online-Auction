@@ -19,18 +19,15 @@ return new class extends Migration
             $table->integer('product_category_id')->unsigned();
             $table->string('name');
 
-            $table->string('start_time');
-            $table->string('end_time');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
 
             $table->text('description')->nullable();
-            $table->text('content')->nullable();
             $table->double('price');
             $table->integer('qty');
-            $table->double('discount')->nullable();
             $table->double('weight')->nullable();
             $table->string('sku')->nullable();
             $table->boolean('featured');
-            $table->string('tag')->nullable();
 
             $table->timestamps();
         });

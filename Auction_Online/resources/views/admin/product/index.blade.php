@@ -13,7 +13,7 @@
                             <li class="breadcrumb-item">
                                 <a href="./admin/home">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Product</li>
+                            <li class="breadcrumb-item active">Products</li>
                         </ol>
                     </nav>
                 </div>
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                                <div class="row col-lg-4 col-md-4 mt-lg-3">
+                                <div class="row col-lg-4 col-md-4 mt-lg-3 mt-md-3">
                                     <form action="">
                                         <div class="input-group">
                                             <input type="search" name="search" id="search" placeholder="Search everything" class="form-control">
@@ -52,276 +52,78 @@
                                     <table class="table datatable dataTable-table table-striped" >
                                         <thead>
                                         <tr>
-                                            <th scope="col" data-sortable="" style="width: 5.62902%;text-align: center;">
+                                            <th scope="col" data-sortable="" style="width: 3.62902%;text-align: center;">
                                                 #
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 36.0558%;">
+                                            <th scope="col" data-sortable="" style="width: 47%;">
                                                 Name / Category
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 13.7949%;text-align: center;">Price</th>
-                                            <th scope="col" data-sortable="" style="width: 10%;text-align: center;">Qty</th>
-                                            <th scope="col" data-sortable="" style="width: 14.203%;text-align: center;">Time Remaining</th>
+                                            <th scope="col" data-sortable="" style="width: 7.7949%;text-align: center;">Price</th>
+                                            <th scope="col" data-sortable="" style="width: 6.0558%;text-align: center;">Qty</th>
+                                            <th scope="col" data-sortable="" style="width: 15.203%;text-align: center;">Start / End Time</th>
                                             <th scope="col" data-sortable="" style="width: 21.2995%;text-align: center;">
                                                 Action
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody style="align-items: center">
-                                        <tr>
-                                            <th scope="row" style="text-align: center">1</th>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading">Sit unde debitis delectus repellendus</div>
-                                                    <div class="widget-subheading opacity-7">
-                                                        Category
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">$108.66</td>
-                                            <td style="text-align: center">3</td>
-                                            <td style="text-align: center">
-                                                <div class="badge badge-success mt-2">
-                                                    <span>10</span>
-                                                    <span>day</span>
-                                                    <span>11</span>
-                                                    <span>:</span>
-                                                    <span>26</span>
-                                                    <span>:</span>
-                                                    <span>36</span>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/product/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/product/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/product/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">2</th>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-1.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading">Ut inventore ipsa voluptas nulla</div>
-                                                    <div class="widget-subheading opacity-7">
-                                                        Category
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">$108.66</td>
-                                            <td style="text-align: center">3</td>
-                                            <td style="text-align: center">
-                                                <div class="badge badge-success mt-2">
-                                                     <span>10</span>
-                                                    <span>day</span>
-                                                    <span>11</span>
-                                                    <span>:</span>
-                                                    <span>26</span>
-                                                    <span>:</span>
-                                                    <span>36</span>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/product/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/product/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/product/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                            @foreach($products as $product)
+                                                <tr>
+                                                    <th scope="row" style="text-align: center">{{ $product->id }}</th>
+                                                    <td>
+                                                        <div>
+                                                            <div style="display: flex; align-items: center;">
+                                                                <img style="height: 60px; max-width: 60px" data-toggle="tooltip" title="" data-placement="bottom" src="front/image/products/{{ $product->productImages[0]->path  ?? '' }}" alt="" data-original-title="Image">
+                                                                <div class="widget-content-left">
+                                                                    <div class="widget-heading">{{ $product->name }}</div>
+                                                                    <div class="widget-subheading opacity-7">
+                                                                        {{ $product->productCategory->name }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="text-align: center">${{ $product->price }}</td>
+                                                    <td style="text-align: center">{{ $product->qty }}</td>
+                                                    <td style="text-align: center">
+                                                        <div class="badge bg-success mt-2">
+                                                            {{ $product->start_time }}
+                                                        </div>
+                                                        <div class="badge bg-danger">
+                                                            {{ $product->end_time }}
+                                                        </div>
+                                                    </td>
+                                                    <td style="text-align: center">
+                                                        <a href="./admin/product/{{ $product->id }}"
+                                                           class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
+                                                            Details
+                                                        </a>
+                                                        <a href="./admin/product/{{ $product->id }}/edit" data-toggle="tooltip" title="Edit"
+                                                           data-placement="bottom"
+                                                           class="btn btn-outline-warning border-0 btn-sm">
+                                                                            <span class="btn-icon-wrapper opacity-8">
+                                                                                <i class="bi bi-pencil-square"></i>
+                                                                            </span>
+                                                        </a>
+                                                        <form class="d-inline" action="./admin/product/{{ $product->id }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">3</th>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-2.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading">Exercitationem similique doloremque</div>
-                                                    <div class="widget-subheading opacity-7">
-                                                        Category
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">$108.66</td>
-                                            <td style="text-align: center">3</td>
-                                            <td style="text-align: center">
-                                                <div class="badge badge-success mt-2">
-                                                     <span>10</span>
-                                                    <span>day</span>
-                                                    <span>11</span>
-                                                    <span>:</span>
-                                                    <span>26</span>
-                                                    <span>:</span>
-                                                    <span>36</span>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/product/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/product/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/product/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                            <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
+                                                                    type="submit" data-toggle="tooltip" title="Delete"
+                                                                    data-placement="bottom"
+                                                                    onclick="return confirm('Do you really want to delete this item?')">
+                                                                                <span class="btn-icon-wrapper opacity-8">
+                                                                                    <i class="bi bi-trash3"></i>
+                                                                                </span>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">4</th>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-3.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading">Doloribus nisi exercitationem</div>
-                                                    <div class="widget-subheading opacity-7">
-                                                        Category
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">$108.66</td>
-                                            <td style="text-align: center">3</td>
-                                            <td style="text-align: center">
-                                                <div class="badge badge-success mt-2">
-                                                     <span>10</span>
-                                                    <span>day</span>
-                                                    <span>11</span>
-                                                    <span>:</span>
-                                                    <span>26</span>
-                                                    <span>:</span>
-                                                    <span>36</span>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/product/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/product/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/product/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">5</th>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-4.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading">Officiis quaerat sint rerum error</div>
-                                                    <div class="widget-subheading opacity-7">
-                                                        Category
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">$108.66</td>
-                                            <td style="text-align: center">3</td>
-                                            <td style="text-align: center">
-                                                <div class="badge badge-success mt-2">
-                                                     <span>10</span>
-                                                    <span>day</span>
-                                                    <span>11</span>
-                                                    <span>:</span>
-                                                    <span>26</span>
-                                                    <span>:</span>
-                                                    <span>36</span>
-                                                </div>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/product/id"
-                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                    Details
-                                                </a>
-                                                <a href="./admin/product/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/product/id" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

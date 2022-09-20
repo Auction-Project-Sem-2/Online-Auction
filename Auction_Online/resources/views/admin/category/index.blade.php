@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                                <div class="row col-lg-4 col-md-4 mt-lg-3">
+                                <div class="row col-lg-4 col-md-6 mt-lg-3 mt-md-3">
                                     <form action="">
                                         <div class="input-group">
                                             <input type="search" name="search" id="search" placeholder="Search everything" class="form-control">
@@ -64,136 +64,36 @@
                                         </tr>
                                         </thead>
                                         <tbody style="align-items: center">
-                                        <tr>
-                                            <th scope="row" style="text-align: center">1</th>
-                                            <td style="font-weight: 700; opacity: 0.8;">Category</td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/category/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/category/id/delete" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">2</th>
-                                            <td style="font-weight: 700; opacity: 0.8;">Category</td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/category/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/category/id/delete" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                            @foreach($categories as $category)
+                                                <tr>
+                                                    <th scope="row" style="text-align: center">{{ $category->id }}</th>
+                                                    <td style="font-weight: 700; opacity: 0.8;">{{ $category->name }}</td>
+                                                    <td style="text-align: center">
+                                                        <a href="./admin/category/{{ $category->id }}/edit" data-toggle="tooltip" title="Edit"
+                                                           data-placement="bottom"
+                                                           class="btn btn-outline-warning border-0 btn-sm">
+                                                                            <span class="btn-icon-wrapper opacity-8">
+                                                                                <i class="bi bi-pencil-square"></i>
+                                                                            </span>
+                                                        </a>
+                                                        <form class="d-inline" action="./admin/category/{{ $category->id }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">3</th>
-                                            <td style="font-weight: 700; opacity: 0.8;">Category</td>
-                                            <td style="text-align: center">
-                                               <a href="./admin/category/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/category/id/delete" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                            <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
+                                                                    type="submit" data-toggle="tooltip" title="Delete"
+                                                                    data-placement="bottom"
+                                                                    onclick="return confirm('Do you really want to delete this item?')">
+                                                                                <span class="btn-icon-wrapper opacity-8">
+                                                                                    <i class="bi bi-trash3"></i>
+                                                                                </span>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">4</th>
-                                            <td style="font-weight: 700; opacity: 0.8;">Category</td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/category/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/category/id/delete" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" style="text-align: center">5</th>
-                                            <td style="font-weight: 700; opacity: 0.8;">Category</td>
-                                            <td style="text-align: center">
-                                                <a href="./admin/category/id/edit" data-toggle="tooltip" title="Edit"
-                                                   data-placement="bottom"
-                                                   class="btn btn-outline-warning border-0 btn-sm">
-                                                                    <span class="btn-icon-wrapper opacity-8">
-                                                                        <i class="bi bi-pencil-square"></i>
-                                                                    </span>
-                                                </a>
-                                                <form class="d-inline" action="./admin/category/id/delete" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                            type="submit" data-toggle="tooltip" title="Delete"
-                                                            data-placement="bottom"
-                                                            onclick="return confirm('Do you really want to delete this item?')">
-                                                                        <span class="btn-icon-wrapper opacity-8">
-                                                                            <i class="bi bi-trash3"></i>
-                                                                        </span>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

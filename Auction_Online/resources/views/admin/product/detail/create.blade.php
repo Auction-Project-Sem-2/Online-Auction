@@ -48,10 +48,13 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form>
+                                    <form  method="post" action="admin/product/{{ $product->id }}/detail" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+
                                         <div class="row mb-3">
                                             <div class="col-lg-3 col-md-4 label">Name Product</div>
-                                            <div class="col-md-8 col-lg-9" >Sit unde debitis delectus repellendus</div>
+                                            <div class="col-md-8 col-lg-9" >{{ $product->name }}</div>
                                         </div>
 
 
@@ -59,8 +62,8 @@
                                             <label for="color"
                                                    class="col-md-4 col-lg-3 col-form-label">Color</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="start_time" type="text" class="form-control" id="color"
-                                                       value="color">
+                                                <input name="color" type="text" class="form-control" id="color"
+                                                       value="" placeholder="color">
                                             </div>
                                         </div>
 
@@ -69,8 +72,8 @@
                                             <label for="size"
                                                    class="col-md-4 col-lg-3 col-form-label">Size</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="end_time" type="text" class="form-control" id="size"
-                                                       value="size">
+                                                <input name="size" type="text" class="form-control" id="size"
+                                                       value="" placeholder="size">
                                             </div>
                                         </div>
 
@@ -78,8 +81,8 @@
                                             <label for="qty"
                                                    class="col-md-4 col-lg-3 col-form-label">Qty</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="price" type="text" class="form-control" id="qty"
-                                                       value="qty">
+                                                <input name="qty" type="text" class="form-control" id="qty"
+                                                       value="" placeholder="qty">
                                             </div>
                                         </div>
 

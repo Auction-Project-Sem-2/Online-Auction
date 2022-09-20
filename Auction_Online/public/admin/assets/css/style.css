@@ -1265,6 +1265,11 @@ h6 {
 
 .widget-content-left .widget-heading {
     font-weight: 700;
+    max-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 
@@ -1275,6 +1280,18 @@ h6 {
 
 .widget-content-left .opacity-7 {
     opacity: 0.7;
+}
+
+.widget-content .widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+}
+
+.widget-content img {
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .badge {

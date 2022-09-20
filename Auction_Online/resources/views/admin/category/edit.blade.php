@@ -47,22 +47,22 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form>
+                                    <form method="post" action="./admin/category/{{ $category->id }}" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
+
                                         <div class="row mb-3">
                                             <label for="name"
                                                    class="col-md-4 col-lg-3 col-form-label">Name</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="name" type="text" class="form-control" id="name"
-                                                       value="Category">
+                                                       value="{{ $category->name }}">
                                             </div>
                                         </div>
 
 
                                         <div class="row mb-3">
-                                            <div class="col-md-4 col-lg-3 text-center">
-
-                                            </div>
-
+                                            <div class="col-md-4 col-lg-3 text-center"></div>
                                             <div class="col-md-8 col-lg-9 text-center">
                                                 <button type="submit" class="btn btn-red btn-primary">Cancel</button>
                                                 <button type="submit" class="btn btn-blue btn-primary">Save Changes</button>

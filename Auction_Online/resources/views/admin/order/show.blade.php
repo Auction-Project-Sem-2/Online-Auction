@@ -42,42 +42,30 @@
                                         </tr>
                                         </thead>
                                         <tbody style="align-items: center">
-                                        <tr>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>
-                                            </td>
-                                            <td style="text-align: center">2</td>
-                                            <td style="text-align: center">$10.66</td>
-                                            <td style="text-align: center">$100.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>
-                                            </td>
-                                            <td style="text-align: center">2</td>
-                                            <td style="text-align: center">$10.66</td>
-                                            <td style="text-align: center">$100.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>
-                                            </td>
-                                            <td style="text-align: center">2</td>
-                                            <td style="text-align: center">$10.66</td>
-                                            <td style="text-align: center">$100.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="display: flex">
-                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">
-                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>
-                                            </td>
-                                            <td style="text-align: center">2</td>
-                                            <td style="text-align: center">$10.66</td>
-                                            <td style="text-align: center">$100.22</td>
-                                        </tr>
+
+                                            @foreach($order->orderDetails as $orderDetail)
+                                                <tr>
+                                                    <td  style="display: flex">
+                                                        <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="front/image/products/{{ $orderDetail->product->productImages[0]->path }}" alt="" data-original-title="Image">
+                                                        <div class="widget-content-left order-name-product">{{ $orderDetail->product->name }}</div>
+                                                    </td>
+                                                    <td style="text-align: center">{{ $orderDetail->qty }}</td>
+                                                    <td style="text-align: center">${{ $orderDetail->amount }}</td>
+                                                    <td style="text-align: center">${{ $orderDetail->total }}</td>
+                                                </tr>
+                                            @endforeach
+
+{{--                                        <tr>--}}
+{{--                                            <td  style="display: flex">--}}
+{{--                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">--}}
+{{--                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>--}}
+{{--                                            </td>--}}
+{{--                                            <td style="text-align: center">2</td>--}}
+{{--                                            <td style="text-align: center">$10.66</td>--}}
+{{--                                            <td style="text-align: center">$100.22</td>--}}
+{{--                                        </tr>--}}
+
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -95,42 +83,42 @@
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                            <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                                            <div class="col-lg-9 col-md-8"><p>{{ $order->first_name . ' ' . $order->last_name }}</p></div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Company</div>
-                                            <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->company_name }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Country</div>
-                                            <div class="col-lg-9 col-md-8">USA</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->country }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Address</div>
-                                            <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->street_address }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Postcode Zip</div>
-                                            <div class="col-lg-9 col-md-8">10000</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->postcode_zip }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Town City</div>
-                                            <div class="col-lg-9 col-md-8">New York</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->town_city }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Phone</div>
-                                            <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->phone }}</div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-lg-3 col-md-4 label">Email</div>
-                                            <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                                            <div class="col-lg-9 col-md-8">{{ $order->email }}</div>
                                         </div>
 
                                     </div>
