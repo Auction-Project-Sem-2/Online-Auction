@@ -758,7 +758,7 @@ class DatabaseSeeder extends Seeder
                 'id' =>43,
                 'product_category_id' => 4,
                 'name' => 'Used Toyota Land Cruiser Double Cab VDJ79 Pickup Diesel 4.5L',
-                'start_time' => '2022--15',
+                'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
                 'description' => '',
                 'price' => 1500.0,
