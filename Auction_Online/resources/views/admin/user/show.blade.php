@@ -52,7 +52,7 @@
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="./admin/assets/img/avatar/{{ $user->avatar  ?? 'default-avatar.jpg'}}" alt="Profile" class="rounded-circle">
+                            <img src="./front/img/user/{{ $user->avatar  ?? 'default-avatar.jpg'}}" alt="Profile" class="rounded-circle">
                             <h2>{{ $user->name }}</h2>
                             <h3>{{ \App\Utilities\Constant::$user_level[$user->level] }}</h3>
                             <div class="social-links mt-2">

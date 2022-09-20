@@ -49,7 +49,7 @@ class UserController extends Controller
 
         // xử lí file
         if ($request->hasFile('image')) {
-            $data['avatar'] = \App\Utilities\Common::uploadFile($request->file('image'), 'admin/assets/img/avatar');
+            $data['avatar'] = \App\Utilities\Common::uploadFile($request->file('image'), './front/img/user');
         }
 
 //        $user = $this->userService->create($data);
@@ -107,12 +107,12 @@ class UserController extends Controller
         // xử lí file ảnh
         if ($request->hasFile('image')) {
             //thêm file mới:
-            $data['avatar'] = Common::uploadFile($request->file('image'), 'admin/assets/img/avatar');
+            $data['avatar'] = Common::uploadFile($request->file('image'), './front/img/user');
 
             //xóa file có:
             $file_name_old = $request->get('image_old');
             if ($file_name_old != '') {
-                unlink('admin/assets/img/avatar/' . $file_name_old);
+                unlink('front/img/user/' . $file_name_old);
             }
         }
 
@@ -137,7 +137,7 @@ class UserController extends Controller
         // xóa file
         $file_name = $user->avatar;
         if ($file_name != '') {
-            unlink('admin/assets/img/avatar/' . $file_name);
+            unlink('front/img/user/' . $file_name);
         }
 
         return redirect('admin/user');

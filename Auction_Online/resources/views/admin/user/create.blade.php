@@ -52,7 +52,7 @@
                                         <div class="row mb-3">
                                             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Avatar</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <img style="cursor: pointer;" class="thumbnail rounded-circle" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/add-image-icon.jpg" alt="Avatar" data-original-title="Click to change the image">
+                                                <img style="cursor: pointer;" class="thumbnail rounded-circle" data-toggle="tooltip" title="" data-placement="bottom" src="./front/img/add-image-icon.jpg" alt="Avatar" data-original-title="Click to change the image">
                                                 <input name="image" type="file" onchange="changeImg(this)" class="image form-control-file" style="display: none;" value="">
                                                 <input type="hidden" name="image_old" value="">
                                                 <small class="form-text text-muted">

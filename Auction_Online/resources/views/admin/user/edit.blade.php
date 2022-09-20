@@ -58,7 +58,7 @@
                                                 <img style="width: 100%; cursor: pointer;"
                                                      class="thumbnail rounded-circle" data-toggle="tooltip"
                                                      title="Click to change the image" data-placement="bottom"
-                                                     src="./admin/assets/img/avatar/{{ $user->avatar ?? 'default-avatar.jpg'}}" alt="Avatar">
+                                                     src="./front/img/user/{{ $user->avatar ?? 'default-avatar.jpg'}}" alt="Avatar">
                                                 <input name="image" type="file" onchange="changeImg(this)"
                                                        class="image form-control-file" style="display: none;" value="">
                                                 <input type="hidden" name="image_old" value="{{ $user->avatar }}">

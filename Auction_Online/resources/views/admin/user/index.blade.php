@@ -79,7 +79,7 @@
                                                         <div class="widget-content">
                                                             <div class="widget-content-wrapper">
                                                                 <div class="mr-2">
-                                                                    <img src="./admin/assets/img/avatar/{{ $user->avatar ?? 'default-avatar.jpg'}}" width="40" height="40" alt="Profile" class="rounded-circle">
+                                                                    <img src="./front/img/user/{{ $user->avatar ?? 'default-avatar.jpg'}}" width="40" height="40" alt="Profile" class="rounded-circle">
                                                                 </div>
                                                                 <div class="m-lg-1">
                                                                     <div class="widget-heading">{{ $user->name }}</div>
