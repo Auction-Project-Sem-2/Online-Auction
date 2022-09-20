@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Fan',
             ],
             [
-                'name' => 'Induction cooker',
+                'name' => 'Induction Cooker',
             ],
             [
                 'name' => 'Hood',
@@ -152,7 +152,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Hairdryer',
             ],
             [
-                'name' => 'Mad',
+                'name' => 'Electric Pot',
             ],
 
 

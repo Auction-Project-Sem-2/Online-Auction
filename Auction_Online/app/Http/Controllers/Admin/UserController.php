@@ -112,7 +112,7 @@ class UserController extends Controller
             //xóa file có:
             $file_name_old = $request->get('image_old');
             if ($file_name_old != '') {
-                unlink('admin/assets/img/avatar/' . $file_name_old);
+                unlink('front/img/user/' . $file_name_old);
             }
         }
 
@@ -137,7 +137,7 @@ class UserController extends Controller
         // xóa file
         $file_name = $user->avatar;
         if ($file_name != '') {
-            unlink('admin/assets/img/avatar/' . $file_name);
+            unlink('front/img/user/' . $file_name);
         }
 
         return redirect('admin/user');
