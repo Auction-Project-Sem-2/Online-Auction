@@ -14,9 +14,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $search = $request->search ?? '';
+        $users = User::where('name','like','%' . $search . '%');
+        $users = $users->paginate(5);
+
         return view('admin.user.index', compact('users'));
     }
 

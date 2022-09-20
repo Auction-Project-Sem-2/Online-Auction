@@ -13,9 +13,11 @@ class ProductCategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = ProductCategory::all();
+        $search = $request->search ?? '';
+        $categories = ProductCategory::where('name','like','%' . $search . '%');
+        $categories = $categories->paginate(5);
 
         return view('admin.category.index', compact('categories'));
 

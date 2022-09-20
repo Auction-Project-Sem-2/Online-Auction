@@ -49,7 +49,7 @@ Route::prefix('admin')
 
     Route::prefix('order')->group(function() {
         Route::get('/', [Admin\OrderController::class, 'index']);
-        Route::get('/id', [Admin\OrderController::class, 'show']);
+        Route::get('/{id}', [Admin\OrderController::class, 'show']);
     });
 
     Route::get('login', [Admin\HomeController::class, 'getLogin']);
