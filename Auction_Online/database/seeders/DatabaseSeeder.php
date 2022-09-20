@@ -121,27 +121,18 @@ class DatabaseSeeder extends Seeder
         DB::table('product_categories')->insert([
             [
                 'name' => 'Hand Bag',
-                'path' => '',
             ],
             [
                 'name' => 'Clock',
-                'path' => '',
             ],
             [
                 'name' => 'Shirt',
-                'path' => '',
             ],
             [
                 'name' => 'Car',
-                'path' => '',
             ],
             [
-<<<<<<< HEAD
-                'name' => 'Houseware',
-                'path' => '',
-=======
-                'name' => 'Fridge',
->>>>>>> 372d48ef1178ff60b1fac19688d5c5049db158a5
+                'name' => 'Fridge' ,
             ],
             [
                 'name' => 'Tivi',
@@ -163,6 +154,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Mad',
+
             ],
 
 
