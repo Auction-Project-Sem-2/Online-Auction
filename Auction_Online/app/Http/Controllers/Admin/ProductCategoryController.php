@@ -3,21 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index() {
-        $products = Product::all();
+    public function index()
+    {
+        $categories = ProductCategory::all();
 
-        return view('admin.product.index', compact('products'));
+        return view('admin.category.index', compact('categories'));
+
     }
 
     /**
@@ -27,25 +28,23 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $productCategories = ProductCategory::all();
-        return view('admin.product.create', compact('productCategories'));
+        return view('admin.category.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['qty'] = 0; //khi tạo mới sản phẩm số lượng = 0
-        $data['featured'] = true; //khi tạo mới sản phẩm số lượng = 0
 
-        $product = Product::create($data);
+        ProductCategory::create($data);
 
-        return redirect('admin/product/' . $product->id);
+        return redirect('admin/category');
     }
 
     /**
@@ -54,10 +53,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
-        $product = Product::find($id);
+    public function show($id)
+    {
 
-        return view('admin.product.show', compact('product'));
     }
 
     /**
@@ -66,11 +64,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($id) {
-        $product = Product::find($id);
-        $productCategories = ProductCategory::all();
+    public function edit($id)
+    {
+        $category = ProductCategory::find($id);
 
-        return view('admin.product.edit', compact('product', 'productCategories'));
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -83,22 +81,22 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-//        $this->productService->update($data, $id);
-        Product::find($id)->update($data);
 
-        return redirect('admin/product/' . $id);
+        ProductCategory::find($id)->update($data);
+
+        return redirect('admin/category');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        ProductCategory::find($id)->delete();
 
-        return redirect('admin/product');
+        return redirect('admin/category');
     }
 }

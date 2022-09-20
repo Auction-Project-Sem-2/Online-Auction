@@ -20,18 +20,26 @@
             </div>
 
             <div class="page-title-actions">
-                <a href="./admin/product/id/edit" class="btn-yellow btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                <a href="./admin/product/{{ $product->id }}/edit" class="btn-yellow btn-shadow btn-hover-shine mr-3 btn btn-primary">
                       <span class=" btn-icon-wrapper pr-2 opacity-7">
                            <i class="bi bi-pencil-square"></i>
                       </span>
                     Edit
                 </a>
-                <a href="./admin/product/id/delete" class="btn-red btn-shadow btn-hover-shine mr-3 btn btn-primary">
-                      <span class="btn-icon-wrapper pr-2 opacity-7">
-                          <i class="bi bi-trash3"></i>
-                      </span>
-                    Delete
-                </a>
+                <form class="d-inline" action="./admin/product/{{ $product->id }}/delete" method="post">
+                    @csrf
+                    @method('DELETE')
+
+                    <button class="btn-red btn-shadow btn-hover-shine mr-3 btn btn-primary"
+                            type="submit" data-toggle="tooltip" title="Delete"
+                            data-placement="bottom"
+                            onclick="return confirm('Do you really want to delete this item?')">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="bi bi-trash3"></i>
+                            </span>
+                        Delete
+                    </button>
+                </form>
             </div>
         </div>
 
@@ -60,16 +68,15 @@
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Images</div>
                                         <div class="col-lg-9 col-md-8">
-                                            <ul class="text-nowrap overflow-auto" id="images">
-                                                <li class="d-inline-block mr-1" style="position: relative;">
-                                                    <img style="height: 150px;" src="./admin/assets/img/product-2.jpg"
-                                                         alt="Image">
-                                                </li>
+                                            <ul class="text-nowrap overflow-auto" id="images" style="padding-left: 0;">
 
-                                                <li class="d-inline-block mr-1" style="position: relative;">
-                                                    <img style="height: 150px;" src="./admin/assets/img/product-2.jpg"
-                                                         alt="Image">
-                                                </li>
+                                                @foreach($product->productImages as $productImage)
+                                                    <li class="d-inline-block mr-1" style="position: relative;">
+                                                        <img style="height: 150px;" src="./front/image/products/{{ $productImage->path }}"
+                                                             alt="Image">
+                                                    </li>
+                                                @endforeach
+
                                             </ul>
                                         </div>
                                     </div>
@@ -80,7 +87,7 @@
                                         <div class="col-lg-9 col-md-8">
                                             <div class="col-md-9 col-xl-8">
                                                 <p><a class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                                                      href="./admin/product/product_id/image">Manage images</a></p>
+                                                      href="./admin/product/{{ $product->id }}/image">Manage images</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -89,54 +96,54 @@
                                         <div class="col-lg-3 col-md-4 label ">Product Details</div>
                                         <div class="col-lg-9 col-md-8">
                                             <p><a class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                                                  href="./admin/product/product_id/detail">Manage details</a></p>
+                                                  href="./admin/product/{{ $product->id }}/detail">Manage details</a></p>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Category</div>
-                                        <div class="col-lg-9 col-md-8">Clock</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->productCategory->name }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Name</div>
-                                        <div class="col-lg-9 col-md-8">Exercitationem similique doloremque</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->name }}</div>
                                     </div>
 
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Start Time</div>
-                                        <div class="col-lg-9 col-md-8">10-9-2022 00:00:00</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->start_time }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">End Time</div>
-                                        <div class="col-lg-9 col-md-8">10-11-2022 00:00:00</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->end_time }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Price</div>
-                                        <div class="col-lg-9 col-md-8">$10.22</div>
+                                        <div class="col-lg-9 col-md-8">${{ $product->price }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Qty</div>
-                                        <div class="col-lg-9 col-md-8">2</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->qty }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Weight</div>
-                                        <div class="col-lg-9 col-md-8">1.0kg</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->weight }}kg</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Sku</div>
-                                        <div class="col-lg-9 col-md-8">076379</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->sku }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Description</div>
-                                        <div class="col-lg-9 col-md-8">Description</div>
+                                        <div class="col-lg-9 col-md-8">{{ $product->description }}</div>
                                     </div>
 
                                 </div>

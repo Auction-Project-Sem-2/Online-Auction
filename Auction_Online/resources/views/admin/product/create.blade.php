@@ -47,24 +47,20 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form>
+                                    <form method="post" action="admin/product" enctype="multipart/form-data">
+                                        @csrf
+
                                         <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Category</label>
+                                            <label for="product_category_id" class="col-md-4 col-lg-3 col-form-label">Category</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <select required name="product_category_id" id="product_category_id" class="form-control">
                                                     <option value="">-- Category --</option>
 
-                                                    <option value=>Hand Bag</option>
-                                                    <option value=>Clock</option>
-                                                    <option value=>Shirt</option>
-                                                    <option value=>Car</option>
-                                                    <option value=>Houseware</option>
-
-{{--                                                    @foreach($productCategories as $productCategory)--}}
-{{--                                                        <option {{ $product->product_category_id == $productCategory->id ? 'selected' : '' }} value={{ $productCategory->id }}>--}}
-{{--                                                            {{ $productCategory->name }}--}}
-{{--                                                        </option>--}}
-{{--                                                    @endforeach--}}
+                                                    @foreach($productCategories as $productCategory)
+                                                        <option value={{ $productCategory->id }}>
+                                                            {{ $productCategory->name }}
+                                                        </option>
+                                                    @endforeach
 
                                                 </select>
                                             </div>
@@ -75,7 +71,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">Name</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="name" type="text" class="form-control" id="name"
-                                                       value="Name">
+                                                       value="" placeholder="Name">
                                             </div>
                                         </div>
 
@@ -85,7 +81,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">Start Time</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="start_time" type="datetime-local" class="form-control" id="start_time"
-                                                       value="Start Time">
+                                                       value="" placeholder="Start Time">
                                             </div>
                                         </div>
 
@@ -95,7 +91,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">End Time</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="end_time" type="datetime-local" class="form-control" id="end_time"
-                                                       value="End Time">
+                                                       value="" placeholder="End Time">
                                             </div>
                                         </div>
 
@@ -104,7 +100,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">Price</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="price" type="text" class="form-control" id="price"
-                                                       value="Price">
+                                                       value="" placeholder="Price">
                                             </div>
                                         </div>
 
@@ -114,7 +110,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">Weight</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="weight" type="text" class="form-control" id="weight"
-                                                       value="Weight">
+                                                       value="" placeholder="Weight">
                                             </div>
                                         </div>
 
@@ -122,7 +118,7 @@
                                             <label for="sku" class="col-md-4 col-lg-3 col-form-label">Sku</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="sku" type="text" class="form-control" id="sku"
-                                                       value="Sku">
+                                                       value="" placeholder="Sku">
                                             </div>
                                         </div>
 
@@ -139,7 +135,7 @@
                                             </div>
 
                                             <div class="col-md-8 col-lg-9 text-center">
-                                                <button type="submit" class="btn btn-red btn-primary">Cancel</button>
+                                                <a href="./admin/product" class="btn btn-red btn-primary">Cancel</a>
                                                 <button type="submit" class="btn btn-blue btn-primary">Save</button>
                                             </div>
                                         </div>

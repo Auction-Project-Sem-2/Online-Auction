@@ -21,18 +21,6 @@ Route::get('/', [HomeController::class,'index']);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Dashboard (Admin)
 Route::prefix('admin')
 //    ->middleware('CheckAdminLogin')
@@ -42,36 +30,24 @@ Route::prefix('admin')
     Route::get('home', [Admin\HomeController::class, 'index']);
 
     Route::resource('user', Admin\UserController::class);
+    Route::resource('product', Admin\ProductController::class);
+    Route::resource('product/{product_id}/image', Admin\ProductImageController::class);
+    Route::resource('product/{product_id}/detail', Admin\ProductDetailController::class);
+    Route::resource('category', Admin\ProductCategoryController::class);
 
 
-    Route::prefix('product')->group(function() {
-        Route::get('/', [Admin\ProductController::class, 'index']);
-        Route::get('create', [Admin\ProductController::class, 'create']);
-        Route::get('id', [Admin\ProductController::class, 'show']);
-        Route::get('id/edit', [Admin\ProductController::class, 'edit']);
 
-
-        Route::get('product_id/detail', [Admin\ProductDetailController::class, 'index']);
-        Route::get('product_id/detail/create', [Admin\ProductDetailController::class, 'create']);
-        Route::get('product_id/detail/edit', [Admin\ProductDetailController::class, 'edit']);
-
-        Route::get('product_id/image', [Admin\ProductImageController::class, 'index']);
-    });
-
-
-    Route::prefix('category')->group(function () {
-        Route::get('/', [Admin\CategoryController::class, 'index']);
-        Route::get('create', [Admin\CategoryController::class, 'create']);
-        Route::get('id/edit', [Admin\CategoryController::class, 'edit']);
-    });
+//
+//    Route::prefix('category')->group(function () {
+//        Route::get('/', [Admin\CategoryController::class, 'index']);
+//        Route::get('create', [Admin\CategoryController::class, 'create']);
+//        Route::get('id/edit', [Admin\CategoryController::class, 'edit']);
+//    });
 
     Route::prefix('order')->group(function() {
         Route::get('/', [Admin\OrderController::class, 'index']);
         Route::get('/id', [Admin\OrderController::class, 'show']);
     });
-
-    Route::get('category', [Admin\CategoryController::class, 'index']);
-    Route::get('order', [Admin\OrderController::class, 'index']);
 
     Route::get('login', [Admin\HomeController::class, 'getLogin']);
 });

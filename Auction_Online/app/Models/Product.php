@@ -13,7 +13,7 @@ class Product extends Model
     protected $table = 'products';
     protected $primaryKey = 'id';
     protected $guarded = [];
-    
+
     public function productCategory() {
         return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
     }

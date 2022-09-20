@@ -13,8 +13,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Favicons -->
-    <link href="./admin/assets/img/favicon.png" rel="icon">
-    <link href="./admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="./front/img/Logo.png" rel="icon">
+    <link href="./front/img/Logo.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -32,14 +32,6 @@
     <!-- Template Main CSS File -->
     <link href="./admin/assets/css/style.css" rel="stylesheet">
 
-
-
-    <!-- =======================================================
-    * Template Name: NiceAdmin - v2.3.1
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
 </head>
 
 <body>
@@ -49,8 +41,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="admin/home" class="logo d-flex align-items-center">
-            <img src="./admin/assets/img/logo.png" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+{{--            <img src="./front/img/Logo.png" alt="">--}}
+            <span class="d-none d-lg-block">Auction Oneline</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -228,6 +220,35 @@
                         <hr class="dropdown-divider">
                     </li>
 
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="#">

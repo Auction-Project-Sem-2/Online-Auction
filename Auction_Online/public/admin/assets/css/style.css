@@ -1265,6 +1265,11 @@ h6 {
 
 .widget-content-left .widget-heading {
     font-weight: 700;
+    max-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 

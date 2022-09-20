@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
-                                <div class="row col-lg-4 col-md-4 mt-lg-3">
+                                <div class="row col-lg-4 col-md-4 mt-lg-3 mt-md-3">
                                     <form action="">
                                         <div class="input-group">
                                             <input type="search" name="search" id="search" placeholder="Search everything" class="form-control">

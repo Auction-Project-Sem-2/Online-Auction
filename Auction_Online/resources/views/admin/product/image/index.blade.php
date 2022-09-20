@@ -47,38 +47,41 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form>
                                         <div class="row mb-3">
                                             <div class="col-lg-3 col-md-4 label">Name Product</div>
-                                            <div class="col-md-8 col-lg-9" >Sit unde debitis delectus repellendus</div>
+                                            <div class="col-md-8 col-lg-9" >{{ $product->name }}</div>
                                         </div>
 
                                         <div class="row mb-3">
                                             <div class="col-lg-3 col-md-4 label ">Images</div>
                                             <div class="col-lg-9 col-md-8">
                                                 <ul style="padding-left: 0" class="text-nowrap overflow-auto" id="images">
-                                                    <li class="d-inline-block mr-1" style="position: relative;">
-                                                        <form action="./admin/product/10/image/16" method="post">
-                                                            <input type="hidden" name="_token" value="0M1sY667Tpe748LqpEeXkNr9hbi3Vpy7kuu0gvqD">
-                                                            <input type="hidden" name="_method" value="DELETE">
-                                                            <button type="submit" onclick="return confirm('Do you really want to delete this item?')" class="btn btn-sm btn-outline-danger border-0 position-absolute">
-                                                                <i class="bi bi-scissors"></i>
-                                                            </button>
-                                                            <img style="width: 100%;" src="./admin/assets/img/product-2.jpg"
-                                                                 alt="Image">
-                                                        </form>
 
-                                                    </li>
+                                                    @foreach($productImages as $productImage)
+                                                        <li class="d-inline-block mr-1" style="position: relative;">
+                                                            <form action="./admin/product/{{ $product->id }}/image/{{ $productImage->id }}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+
+                                                                <button type="submit" onclick="return confirm('Do you really want to delete this item?')" class="btn btn-sm btn-outline-danger border-0 position-absolute">
+                                                                    <i class="bi bi-scissors"></i>
+                                                                </button>
+                                                                <img style="width: 100%;" src="./front/image/products/{{ $productImage->path }}"
+                                                                     alt="Image">
+                                                            </form>
+                                                        </li>
+                                                    @endforeach
 
                                                     <li class="d-inline-block mr-1" style="position: relative;">
-                                                        <form method="post" action="admin/product/10/image" enctype="multipart/form-data">
-                                                            <input type="hidden" name="_token" value="0M1sY667Tpe748LqpEeXkNr9hbi3Vpy7kuu0gvqD">
+                                                        <form method="post" action="admin/product/{{ $product->id }}/image" enctype="multipart/form-data">
+                                                            @csrf
+
                                                             <div style="width: 100%; max-height: 220px; overflow: hidden;">
                                                                 <img style="width: 100%; cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/add-image-icon.jpg" alt="Add Image" data-original-title="Click to add image">
 
                                                                 <input name="image" type="file" onchange="changeImg(this); this.form.submit()" accept="image/x-png,image/gif,image/jpeg" class="image form-control-file" style="display: none;">
 
-                                                                <input type="hidden" name="product_id" value="">
+                                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
                                                             </div>
                                                         </form>
                                                     </li>
@@ -91,13 +94,17 @@
                                             <div class="col-md-4 col-lg-3 text-center"></div>
 
                                             <div class="col-md-8 col-lg-9">
-                                                <button type="submit" class="btn btn-red btn-primary">Cancel</button>
-                                                <button type="submit" class="btn btn-blue btn-primary">Save</button>
+                                                <a href="./admin/product" class="btn btn-red btn-primary">Cancel</a>
+                                                <a href="./admin/product/{{ $product->id }}" class="btn btn-blue btn-primary">
+                                                <span class="btn-icon-wrapper pr-2 opacity-8">
+                                                    <i class="fa fa-check fa-w-20"></i>
+                                                </span>
+                                                    <span>OK</span>
+                                                </a>
                                             </div>
                                         </div>
 
 
-                                    </form><!-- End Profile Edit Form -->
 
                                 </div>
 
