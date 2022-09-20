@@ -14,8 +14,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index() {
-        $products = Product::all();
+    public function index(Request $request) {
+//        $products = Product::limit(10)->get();
+
+        $search = $request->search ?? '';
+
+        $products = Product::where('name','like','%' . $search . '%');
+        $products = $products->paginate(10);
+
 
         return view('admin.product.index', compact('products'));
     }
