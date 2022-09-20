@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.6,
                 'sku' => '002654',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -185,7 +185,7 @@ class DatabaseSeeder extends Seeder
             'qty' => 4,
             'weight' => 0.9,
             'sku' => '002664',
-            'featured' => true,
+            'featured' => false,
             ],
 
             [
@@ -213,7 +213,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.8,
                 'sku' => '002675',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -227,7 +227,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.850,
                 'sku' => '002675',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -255,7 +255,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.850,
                 'sku' => '002688',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -283,7 +283,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 2,
                 'weight' => 0.98,
                 'sku' => '003699',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -311,7 +311,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.3,
                 'sku' => '004699',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -325,7 +325,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.3,
                 'sku' => '007699',
-                'featured' => true,
+                'featured' => false,
             ],
 
 
@@ -368,7 +368,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.9,
                 'sku' => '004879',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -382,7 +382,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.9,
                 'sku' => '001279',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -410,7 +410,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.79,
                 'sku' => '068479',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -424,7 +424,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1.2,
                 'sku' => '066379',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -466,7 +466,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1.0,
                 'sku' => '006379',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -494,7 +494,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1.0,
                 'sku' => '056429',
-                'featured' => true,
+                'featured' => false,
             ],
 
             //Shirt
@@ -510,7 +510,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.5,
                 'sku' => '056439',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -538,7 +538,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.7,
                 'sku' => '056119',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -566,7 +566,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1.5,
                 'sku' => '056119',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -580,7 +580,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.89,
                 'sku' => '055119',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -608,7 +608,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.80,
                 'sku' => '066619',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -622,7 +622,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.80,
                 'sku' => '057329',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -636,7 +636,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.80,
                 'sku' => '056529',
-                'featured' => true,
+                'featured' => false,
             ],
 
 
@@ -651,7 +651,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 0.80,
                 'sku' => '651329',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -681,7 +681,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1490.0,
                 'sku' => '654649',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -709,7 +709,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1490.0,
                 'sku' => '664649',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -723,7 +723,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1290.0,
                 'sku' => '764649',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -751,21 +751,21 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1490.0,
                 'sku' => '636649',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
                 'id' =>43,
                 'product_category_id' => 4,
                 'name' => 'Used Toyota Land Cruiser Double Cab VDJ79 Pickup Diesel 4.5L',
-                'start_time' => '2022--15',
+                'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
                 'description' => '',
                 'price' => 1500.0,
                 'qty' => 1,
                 'weight' => 1490.0,
                 'sku' => '633649',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -793,7 +793,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1480.0,
                 'sku' => '636549',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -807,7 +807,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 3650.0,
                 'sku' => '633549',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -821,7 +821,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1650.0,
                 'sku' => '636349',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -835,7 +835,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1650.0,
                 'sku' => '636419',
-                'featured' => true,
+                'featured' => false,
             ],
 
             //Houseware
@@ -851,7 +851,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 15.0,
                 'sku' => '636499',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -879,7 +879,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 7.037,
                 'sku' => '637229',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -893,7 +893,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 115.037,
                 'sku' => '633529',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -907,7 +907,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 23.037,
                 'sku' => '636379',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -935,7 +935,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 12.037,
                 'sku' => '751579',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -949,7 +949,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 22.037,
                 'sku' => '776579',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -977,7 +977,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 5.27,
                 'sku' => '064134',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [
@@ -991,7 +991,7 @@ class DatabaseSeeder extends Seeder
                 'qty' => 1,
                 'weight' => 1.037,
                 'sku' => '761279',
-                'featured' => true,
+                'featured' => false,
             ],
 
             [

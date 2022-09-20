@@ -23,36 +23,53 @@
                 <div class="col-xl-2 col-lg-3 order-2 order-lg-1">
                     <h5 class="mb-4">Shop by Category</h5>
                     <ul class="list-unstyled text-muted mb-5">
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Clothes</a><span class="badge bg-light text-dark">240</span></li>
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Electronics</a><span class="badge bg-light text-dark">120</span></li>
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Health &amp; Beauty</a><span class="badge bg-light text-dark">70</span></li>
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Shoes</a><span class="badge bg-light text-dark">324</span></li>
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Watches</a><span class="badge bg-light text-dark">180</span></li>
-                        <li class="mb-2 d-flex align-items-center justify-content-between"><a class="reset-anchor" href="https://demo.bootstrapious.com/shopio/shop.html#">Accessories</a><span class="badge bg-light text-dark">77</span></li>
+                        <form action="">
+                            @foreach($categories as $category)
+                                <li class="mb-2 d-flex align-items-center justify-content-between">
+                                    <label for="cate-{{$category->id}}" class="reset-anchor cate-shop">{{$category->name}}</label>
+                                    <span class="badge bg-light text-dark">{{count($category->products)}}</span>
+                                    <input type="checkbox" name="cate[{{$category->id}}]" id="cate-{{$category->id}}" style="display: none" onchange="this.form.submit();">
+                                </li>
+                            @endforeach
+                        </form>
                     </ul>
                     <h5 class="mb-4">Price range</h5>
-                    <div class="price-range pt-4 mb-5">
-                        <div id="priceRange" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.3, 1);"></div></div><div class="noUi-origin" style="transform: translate(-1000%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="30.0" aria-valuenow="0.0" aria-valuetext="0.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">0.00</div></div></div><div class="noUi-origin" style="transform: translate(-700%, 0px); z-index: 6;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="30.0" aria-valuetext="30.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">30.00</div></div></div></div></div>
+                    <div class="price-range mb-3">
                         <div class="row pt-2">
-                            <div class="col-6"><strong class="small font-weight-bold">From</strong></div>
-                            <div class="col-6 text-end"><strong class="small font-weight-bold">To</strong></div>
+                            <form action="" class="row">
+                                <div class="col-6">
+                                    <strong class="small font-weight-bold">From</strong>
+                                    <input class="form-control" type="text" placeholder="$0.00" name="minPrice" value="{{request('minPrice') ?? ''}}">
+                                </div>
+                                <div class="col-6 text-end">
+                                    <strong class="small font-weight-bold">To</strong>
+                                    <input class="form-control" type="text" placeholder="$0.00" name="maxPrice"  value="{{request('maxPrice') ?? ''}}">
+                                </div>
+                                <div class="col-12 pt-2">
+                                    <button type="submit" class="btn-search btn btn-primary">Search</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <h5 class="mb-3">Show by brand</h5>
                     <div class="mb-2 form-check">
-                        <input class="form-check-input" id="exampleCheck1" type="checkbox" checked="">
+                        <input class="form-check-input" id="All" type="checkbox" checked>
+                        <label class="form-check-label" for="All">All</label>
+                    </div>
+                    <div class="mb-2 form-check">
+                        <input class="form-check-input" id="exampleCheck1" type="checkbox">
                         <label class="form-check-label" for="exampleCheck1">Zara</label>
                     </div>
                     <div class="mb-2 form-check">
-                        <input class="form-check-input" id="exampleCheck2" type="checkbox" checked="">
+                        <input class="form-check-input" id="exampleCheck2" type="checkbox">
                         <label class="form-check-label" for="exampleCheck2">Cucci</label>
                     </div>
                     <div class="mb-2 form-check">
-                        <input class="form-check-input" id="exampleCheck3" type="checkbox" checked="">
+                        <input class="form-check-input" id="exampleCheck3" type="checkbox">
                         <label class="form-check-label" for="exampleCheck3">Rayban</label>
                     </div>
                     <div class="mb-2 form-check">
-                        <input class="form-check-input" id="exampleCheck4" type="checkbox" checked="">
+                        <input class="form-check-input" id="exampleCheck4" type="checkbox">
                         <label class="form-check-label" for="exampleCheck4">Defactu</label>
                     </div>
                     <div class="mb-2 form-check">
@@ -103,9 +120,7 @@
                 <div class="col-xl-10 col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
                     <!-- Listing filter-->
                     <div class="row mb-4 pb-3 align-items-center">
-                        <div class="col-md-6 text-center text-md-start">
-                            <p class="small text-muted">Showing <strong class="text-dark">12 </strong>of <strong class="text-dark">265 </strong>items</p>
-                        </div>
+                        <div class="col-md-6 text-center text-md-start"></div>
                         <div class="col-md-6 text-lg-end">
                             <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                                 <ul class="list-inline mb-0">
@@ -135,11 +150,11 @@
                         @foreach($products as $product)
 
                             <div class="col-xl-3 col-lg-4 col-6">
-                                <div class="product mb-4"><a href=""><img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product"></a>
+                                <div class="product mb-4"><a href="./shop/product/{{$product->id}}"><img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product"></a>
                                     <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
                                 </div>
                                 <div class="pro-text">
-                                    <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
+                                    <h6 class="pro-title"><a class="reset-anchor" href="./shop/product/{{$product->id}}">{{$product->name}}</a></h6>
                                     <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
                                     <div>
                                         <div class="CountDown-box">

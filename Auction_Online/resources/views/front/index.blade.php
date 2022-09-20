@@ -121,10 +121,10 @@
                     @foreach($featuredProduct as $product)
                         <div class="swiper-slide pb-5" data-swiper-slide-index="0" style="width: 237.6px; margin-right: 25px;" role="group">
                             <div class="product mb-4">
-                                <a href="">
+                                <a href="./shop/product/{{$product->id}}">
                                     <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
                                 </a>
-                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                                <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
                             </div>
                             <div class="pro-text">
                                 <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
@@ -180,10 +180,10 @@
             @foreach($products as $product)
                 <div class="col-lg-2dot4">
                     <div class="product mb-4">
-                        <a href="">
+                        <a href="./shop/product/{{$product->id}}">
                             <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
                         </a>
-                        <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                        <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
                     </div>
                     <div class="pro-text">
                         <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
@@ -219,7 +219,7 @@
             @foreach($blogs as $blog)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <img src="./front/img/blogs/{{$blog->image}}" alt="blog">
+                        <img src="./front/img/blog/{{$blog->image}}" alt="blog">
                         <div class="blog__item__text">
                             <span><i class="fa-regular fa-calendar"></i> {{  date('M d, Y',strtotime($blog->created_at)) }}</span>
                             <h5>{{$blog->title}}</h5>
