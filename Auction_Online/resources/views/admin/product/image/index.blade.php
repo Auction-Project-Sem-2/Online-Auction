@@ -66,7 +66,7 @@
                                                                 <button type="submit" onclick="return confirm('Do you really want to delete this item?')" class="btn btn-sm btn-outline-danger border-0 position-absolute">
                                                                     <i class="bi bi-scissors"></i>
                                                                 </button>
-                                                                <img style="width: 100%;" src="./front/image/products/{{ $productImage->path }}"
+                                                                <img style="width: 100%;" src="./front/img/products/{{ $productImage->path }}"
                                                                      alt="Image">
                                                             </form>
                                                         </li>
@@ -96,10 +96,7 @@
                                             <div class="col-md-8 col-lg-9">
                                                 <a href="./admin/product" class="btn btn-red btn-primary">Cancel</a>
                                                 <a href="./admin/product/{{ $product->id }}" class="btn btn-blue btn-primary">
-                                                <span class="btn-icon-wrapper pr-2 opacity-8">
-                                                    <i class="fa fa-check fa-w-20"></i>
-                                                </span>
-                                                    <span>OK</span>
+                                                    <span>Save</span>
                                                 </a>
                                             </div>
                                         </div>
