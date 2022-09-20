@@ -74,7 +74,7 @@
                                                     <td>
                                                         <div>
                                                             <div style="display: flex; align-items: center;">
-                                                                <img style="height: 60px; max-width: 60px" data-toggle="tooltip" title="" data-placement="bottom" src="front/image/products/{{ $product->productImages[0]->path  ?? '' }}" alt="" data-original-title="Image">
+                                                                <img style="height: 60px; max-width: 60px" data-toggle="tooltip" title="" data-placement="bottom" src="front/img/products/{{ $product->productImages[0]->path  ?? '' }}" alt="" data-original-title="Image">
                                                                 <div class="widget-content-left">
                                                                     <div class="widget-heading">{{ $product->name }}</div>
                                                                     <div class="widget-subheading opacity-7">

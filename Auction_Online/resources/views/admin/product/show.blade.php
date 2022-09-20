@@ -72,7 +72,7 @@
 
                                                 @foreach($product->productImages as $productImage)
                                                     <li class="d-inline-block mr-1" style="position: relative;">
-                                                        <img style="height: 150px;" src="./front/image/products/{{ $productImage->path }}"
+                                                        <img style="height: 150px;" src="./front/img/products/{{ $productImage->path }}"
                                                              alt="Image">
                                                     </li>
                                                 @endforeach
