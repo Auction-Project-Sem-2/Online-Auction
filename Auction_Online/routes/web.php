@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,9 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class,'index']);
 
 
-
+Route::prefix('shop')->group(function () {
+    Route::get('',[ShopController::class,'index']);
+});
 
 
 

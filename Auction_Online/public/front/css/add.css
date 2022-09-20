@@ -337,3 +337,13 @@ body::-webkit-scrollbar-track {
     padding: 5px;
     background-color: #f50622;
 }
+
+.product .img-fluid {
+    width: 100%;
+    min-height: 275px;
+    max-height: 275px;
+    object-fit: cover;
+}
+.btn-search {
+    background-color: rgba(11, 94, 215, 0.9) !important;
+}

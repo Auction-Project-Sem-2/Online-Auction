@@ -79,168 +79,83 @@
     </section>
     <!-- Featured products-->
     <section class="py-5">
-      <div class="container">
-        <header class="mb-3 text-center">
-          <h2 class="mb-0">Featured products</h2>
-          <p class="text-muted">Browse the Newest Products</p>
-        </header>
-        <div class="swiper-container pt-5 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" id="featuredProducts">
-          <div class="swiper-wrapper" id="swiper-wrapper-6ae7d2b19321ec75" aria-live="polite" style=" transition-duration: 0ms;"><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="1 / 19">
-            <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-12.c4210d28.jpg" alt="Nike air max 95"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Nike air max 95</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="2 / 19">
-            <div class="product mb-4"><span class="badge rounded-0 bg-danger">Soldout</span><a href=""><img class="img-fluid" src="./img/product-13.aff049a7.jpg" alt="Red digital smartwatch"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Red digital smartwatch</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="6" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="3 / 19">
-            <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-14.1adefbd6.jpg" alt="Air Jordan 12 gym red"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Air Jordan 12 gym red</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="4 / 19">
-            <div class="product mb-4"><span class="badge rounded-0 bg-warning">Hot</span><a href=""><img class="img-fluid" src="./img/product-15.37a0a89c.jpg" alt="Kui Ye Chen’s AirPods"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Kui Ye Chen’s AirPods</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div><div class="swiper-slide pb-5 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="8" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="5 / 19">
-            <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple watch"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Apple watch</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5 swiper-slide-active" data-swiper-slide-index="0" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="6 / 19">
-                <div class="product mb-4"><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-                    <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
-                </div>
-                <div class="pro-text">
-                    <h6 class="pro-title"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-                    <p class="pro-price">Highest price <span>$22.00</span></p>
-                    <div>
-                        <div class="CountDown-box">
-                            <input class="timeData" type="hidden" value="2022-11-05 21:49:09">
-                            <div class="CountDown"></div>
-                            <span class="pro-user">53 <span><i class="fa-solid fa-user"></i></span></span>
+        <div class="container">
+            <header class="mb-3 text-center">
+                <h2 class="mb-0">Featured products</h2>
+                <p class="text-muted">Browse the Newest Products</p>
+            </header>
+            <div class="swiper-container pt-5 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" id="featuredProducts">
+                <div class="swiper-wrapper" id="swiper-wrapper-6ae7d2b19321ec75" aria-live="polite" style=" transition-duration: 0ms;"><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="1 / 19">
+                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-12.c4210d28.jpg" alt="Nike air max 95"></a>
+                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
                         </div>
+                        <h6 class="text-center"><a class="reset-anchor" href="">Nike air max 95</a></h6>
+                        <p class="text-center text-muted font-weight-bold">$22.00</p>
+                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="2 / 19">
+                        <div class="product mb-4"><span class="badge rounded-0 bg-danger">Soldout</span><a href=""><img class="img-fluid" src="./img/product-13.aff049a7.jpg" alt="Red digital smartwatch"></a>
+                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
+                        </div>
+                        <h6 class="text-center"><a class="reset-anchor" href="">Red digital smartwatch</a></h6>
+                        <p class="text-center text-muted font-weight-bold">$22.00</p>
+                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="6" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="3 / 19">
+                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-14.1adefbd6.jpg" alt="Air Jordan 12 gym red"></a>
+                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
+                        </div>
+                        <h6 class="text-center"><a class="reset-anchor" href="">Air Jordan 12 gym red</a></h6>
+                        <p class="text-center text-muted font-weight-bold">$22.00</p>
+                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="4 / 19">
+                        <div class="product mb-4"><span class="badge rounded-0 bg-warning">Hot</span><a href=""><img class="img-fluid" src="./img/product-15.37a0a89c.jpg" alt="Kui Ye Chen’s AirPods"></a>
+                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
+                        </div>
+                        <h6 class="text-center"><a class="reset-anchor" href="">Kui Ye Chen’s AirPods</a></h6>
+                        <p class="text-center text-muted font-weight-bold">$22.00</p>
+                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="8" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="5 / 19">
+                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple watch"></a>
+                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
+                        </div>
+                        <h6 class="text-center"><a class="reset-anchor" href="">Apple watch</a></h6>
+                        <p class="text-center text-muted font-weight-bold">$22.00</p>
                     </div>
+                    <!-- Product-->
+
+                    @foreach($featuredProduct as $product)
+                        <div class="swiper-slide pb-5" data-swiper-slide-index="0" style="width: 237.6px; margin-right: 25px;" role="group">
+                            <div class="product mb-4">
+                                <a href="">
+                                    <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
+                                </a>
+                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                            </div>
+                            <div class="pro-text">
+                                <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
+                                <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                                <div>
+                                    <div class="CountDown-box">
+                                        <input class="timeData" type="hidden" value="{{$product->end_time}}">
+                                        <div class="CountDown"></div>
+                                        <span class="pro-user">53 <span><i class="fa-solid fa-user"></i></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5 swiper-slide-next" data-swiper-slide-index="1" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="7 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-primary">New Arrival</span><a href=""><img class="img-fluid" src="./img/product-9.7bc0d11d.jpg" alt="Silver round analog watch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Silver round analog watch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="2" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="8 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple Watch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Apple Watch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="3" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="9 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="10 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-12.c4210d28.jpg" alt="Nike air max 95"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Nike air max 95</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="5" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="11 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-danger">Soldout</span><a href=""><img class="img-fluid" src="./img/product-13.aff049a7.jpg" alt="Red digital smartwatch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Red digital smartwatch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="6" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="12 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-14.1adefbd6.jpg" alt="Air Jordan 12 gym red"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Air Jordan 12 gym red</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5" data-swiper-slide-index="7" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="13 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-warning">Hot</span><a href=""><img class="img-fluid" src="./img/product-15.37a0a89c.jpg" alt="Kui Ye Chen’s AirPods"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Kui Ye Chen’s AirPods</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <!-- Product-->
-            <div class="swiper-slide pb-5 swiper-slide-duplicate-prev" data-swiper-slide-index="8" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="14 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple watch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Apple watch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div>
-            <div class="swiper-slide pb-5 swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="15 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-danger">Soldout</span><a href=""><img class="img-fluid" src="./img/product-8.88684cc3.jpg" alt="Black Canon EOS camera"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Black Canon EOS camera</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div><div class="swiper-slide pb-5 swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="16 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-primary">New Arrival</span><a href=""><img class="img-fluid" src="./img/product-9.7bc0d11d.jpg" alt="Silver round analog watch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Silver round analog watch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="17 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple Watch"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Apple Watch</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="3" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="18 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="19 / 19">
-              <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-12.c4210d28.jpg" alt="Nike air max 95"></a>
-                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-              </div>
-              <h6 class="text-center"><a class="reset-anchor" href="">Nike air max 95</a></h6>
-              <p class="text-center text-muted font-weight-bold">$22.00</p>
-            </div></div>
-          <div class="swiper-button-prev px-3 py-2" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-6ae7d2b19321ec75">
-            <svg class="svg-icon svg-icon-md">
-              <use xlink:href="#arrow-left-1"> </use>
-            </svg>Prev
-          </div>
-          <div class="swiper-button-next px-3 py-2" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-6ae7d2b19321ec75">
-            Next
-            <svg class="svg-icon svg-icon-md">
-              <use xlink:href="#arrow-right-1"> </use>
-            </svg>
-          </div>
-          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-      </div>
+
+                <div class="swiper-button-prev px-3 py-2" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-6ae7d2b19321ec75">
+                    <svg class="svg-icon svg-icon-md">
+                        <use xlink:href="#arrow-left-1"> </use>
+                    </svg>Prev
+                </div>
+                <div class="swiper-button-next px-3 py-2" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-6ae7d2b19321ec75">
+                    Next
+                    <svg class="svg-icon svg-icon-md">
+                        <use xlink:href="#arrow-right-1"> </use>
+                    </svg>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+        </div>
     </section>
     <!-- Divider section-->
     <section class="py-5 bg-center bg-cover" style="background: url(front/img/bg-index-3.jpg)">
@@ -261,155 +176,31 @@
           <p class="text-muted">Recommended products for today</p>
         </header>
         <div class="row py-3">
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <div class="pro-text">
-              <h6 class="pro-title"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-              <p class="pro-price">Highest price <span>$22.00</span></p>
-              <div>
-                <div class="CountDown-box">
-                  <input class="timeData" type="hidden" value="2022-11-05 21:49:09">
-                  <div class="CountDown"></div>
-                  <span class="pro-user">53 <span><i class="fa-solid fa-user"></i></span></span>
+
+            @foreach($products as $product)
+                <div class="col-lg-2dot4">
+                    <div class="product mb-4">
+                        <a href="">
+                            <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
+                        </a>
+                        <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                    </div>
+                    <div class="pro-text">
+                        <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
+                        <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                        <div>
+                            <div class="CountDown-box">
+                                <input class="timeData" type="hidden" value="{{$product->end_time}}">
+                                <div class="CountDown"></div>
+                                <span class="pro-user">53 <span><i class="fa-solid fa-user"></i></span></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
-          <div class="col-lg-2dot4">
-            <div class="product mb-4"><span class="badge rounded-0 bg-info">Trending</span><a href=""><img class="img-fluid" src="./img/product-11.1f4b5e9b.jpg" alt="Joemalone Women prefume"></a>
-              <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-            </div>
-            <h6 class="text-center"><a class="reset-anchor" href="">Joemalone Women prefume</a></h6>
-            <p class="text-center text-muted font-weight-bold">$22.00</p>
-          </div>
+            @endforeach
+
+
+
         </div>
         <div class="btn-pr-index">
           <a href="" class="btn btn-primary">View more</a>
@@ -424,36 +215,20 @@
           <p class="text-muted">Browse the Newest Blogs</p>
         </header>
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="blog__item">
-              <img src="./img/product-1.ea13b77a.jpg" alt="blog">
-              <div class="blog__item__text">
-                <span><i class="fa-regular fa-calendar"></i> 16 February 2020</span>
-                <h5>What Curling Irons Are The Best Ones</h5>
-                <a href=""><span></span>Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="blog__item">
-              <img src="./img/product-2.207aaf3b.jpg" alt="blog">
-              <div class="blog__item__text">
-                <span><i class="fa-regular fa-calendar"></i> 21 February 2020</span>
-                <h5>Eternity Bands Do Last Forever</h5>
-                <a href=""><span></span>Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="blog__item">
-              <img src="./img/product-3.fc009d76.jpg" alt="blog">
-              <div class="blog__item__text">
-                <span><i class="fa-regular fa-calendar"></i> 28 February 2020</span>
-                <h5>The Health Benefits Of Sunglasses</h5>
-                <a href="https://preview.colorlib.com/theme/malefashion/#"><span></span>Read More</a>
-              </div>
-            </div>
-          </div>
+
+            @foreach($blogs as $blog)
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <img src="./front/img/products/{{$blog->image}}" alt="blog">
+                        <div class="blog__item__text">
+                            <span><i class="fa-regular fa-calendar"></i> 16 February 2020</span>
+                            <h5>{{$blog->title}}</h5>
+                            <a href=""><span></span>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <base href="{{asset('/')}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>@yield('title') | Auction</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,13 +40,13 @@
         <div class="collapse navbar-collapse d-lg-flex align-items-lg-center justify-content-lg-between" id="navbarSupportedContent">
             <!-- Navbar menu right-->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item me-lg-3"><a class="nav-link text-uppercase active" aria-current="page" href="">Home</a></li>
-                <li class="nav-item me-lg-3"><a class="nav-link text-uppercase" href="">Shop</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase" href="">About</a></li>
-                <li class="nav-item dropdown me-lg-3"><a class="nav-link text-uppercase dropdown-toggle" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == '') ? 'active' : '' }}" aria-current="page" href="./">Home</a></li>
+                <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == 'shop') ? 'active' : '' }}" href="./shop">Shop</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase {{ (request()->segment(1)== 'about') ? 'active' : '' }}" href="./about">About</a></li>
+                <li class="nav-item dropdown me-lg-3"><a class="nav-link text-uppercase dropdown-toggle {{ (request()->segment(1)== 'blog' ) || (request()->segment(1) == 'help_center' ) ? 'active' : '' }}" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <ul class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="">Blog</a></li>
-                        <li><a class="dropdown-item" href="">Help Center</a></li>
+                        <li><a class="dropdown-item" href="./blog">Blog</a></li>
+                        <li><a class="dropdown-item" href="./help_center">Help Center</a></li>
                     </ul>
                 </li>
             </ul>
@@ -86,9 +88,9 @@
     <div id="close-nav-search">
         <button class="btn btn-close"></button>
     </div>
-    <form action="" class="col-lg-12">
-        <input class="form-control" type="search" placeholder="Search here">
-        <button type="submit" class="btn btn-primary"><i class="fa-regular fa-magnifying-glass"></i></button>
+    <form action="./shop" class="col-lg-12">
+        <input name="search" class="form-control" type="search" placeholder="Search here">
+        <button type="submit" class="btn-search btn btn-primary"><i class="fa-regular fa-magnifying-glass"></i></button>
     </form>
 </div>
 
