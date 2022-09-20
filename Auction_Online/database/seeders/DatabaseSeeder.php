@@ -156,7 +156,6 @@ class DatabaseSeeder extends Seeder
             ],
 
 
-
         ]);
 
         DB::table('products')->insert([
@@ -175,17 +174,17 @@ class DatabaseSeeder extends Seeder
             ],
 
             [
-            'id' => 2,
-            'product_category_id' => 1,
-            'name' => 'leather ladies shoulder bags vintage PU purse vegan handbag women hand bag',
-            'start_time' => '2022-09-15',
-            'end_time' => '2022-12-15',
-            'description' => '',
-            'price' => 25.0,
-            'qty' => 4,
-            'weight' => 0.9,
-            'sku' => '002664',
-            'featured' => false,
+                'id' => 2,
+                'product_category_id' => 1,
+                'name' => 'leather ladies shoulder bags vintage PU purse vegan handbag women hand bag',
+                'start_time' => '2022-09-15',
+                'end_time' => '2022-12-15',
+                'description' => '',
+                'price' => 25.0,
+                'qty' => 4,
+                'weight' => 0.9,
+                'sku' => '002664',
+                'featured' => false,
             ],
 
             [
@@ -755,7 +754,7 @@ class DatabaseSeeder extends Seeder
             ],
 
             [
-                'id' =>43,
+                'id' => 43,
                 'product_category_id' => 4,
                 'name' => 'Used Toyota Land Cruiser Double Cab VDJ79 Pickup Diesel 4.5L',
                 'start_time' => '2022-09-15',
@@ -1009,14 +1008,6 @@ class DatabaseSeeder extends Seeder
             ],
 
 
-
-
-
-
-
-
-
-
         ]);
 
         DB::table('product_images')->insert([
@@ -1071,7 +1062,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'product_id' => 3,
-               'path' => 'Tote_Bags_4.jpg',
+                'path' => 'Tote_Bags_4.jpg',
             ],
 
             [
@@ -1083,7 +1074,7 @@ class DatabaseSeeder extends Seeder
                 'path' => 'Oxford_Backpack2.jpg',
             ],
             [
-               'product_id' => 4,
+                'product_id' => 4,
                 'path' => 'Oxford_Backpack3.jpg',
             ],
             [
@@ -2052,12 +2043,6 @@ class DatabaseSeeder extends Seeder
             ],
 
 
-
-
-
-
-
-
         ]);
 
 
@@ -2079,7 +2064,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 3,
-               'color' => '3Colors',
+                'color' => '3Colors',
                 'size' => '33*15*26',
                 'qty' => 0,
             ],
