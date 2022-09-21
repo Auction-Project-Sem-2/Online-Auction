@@ -23,7 +23,7 @@
             <div class="page-title-actions">
                 <a href="./admin/product/{{ $product->id }}/detail/create" class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary">
                       <span class="btn-icon-wrapper pr-2 opacity-7">
-                            <i class="bi bi-plus"></i>
+                            <i class="bi bi-plus-lg"></i>
                       </span>
                     Create
                 </a>
@@ -101,10 +101,6 @@
                                     </table>
                                 </div>
 
-
-                                <div class="row col-lg-12 col-md-12">
-                                    {{$products->links()}}
-                                </div>
                             </div>
                         </div>
                     </div>

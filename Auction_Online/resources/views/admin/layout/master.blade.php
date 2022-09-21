@@ -322,7 +322,6 @@
     </div>
 </footer><!-- End Footer -->
 
-<a href="./admin/home/#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
 <script type="text/javascript" src="./admin/assets/js/jquery-3.2.1.min.js"></script>

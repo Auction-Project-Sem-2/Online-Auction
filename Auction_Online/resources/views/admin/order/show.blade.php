@@ -38,7 +38,7 @@
                                             <th scope="col" data-sortable="" style="width: 45%;">Product</th>
                                             <th scope="col" data-sortable="" style="width: 15%;text-align: center;">Qty</th>
                                             <th scope="col" data-sortable="" style="width: 20%;text-align: center;">Starting Price</th>
-                                            <th scope="col" data-sortable="" style="width: 20%;text-align: center;">Last Price</th>
+                                            <th scope="col" data-sortable="" style="width: 20%;text-align: center;">Final  Price</th>
                                         </tr>
                                         </thead>
                                         <tbody style="align-items: center">
@@ -50,8 +50,8 @@
                                                         <div class="widget-content-left order-name-product">{{ $orderDetail->product->name }}</div>
                                                     </td>
                                                     <td style="text-align: center">{{ $orderDetail->qty }}</td>
-                                                    <td style="text-align: center">${{ $orderDetail->amount }}</td>
-                                                    <td style="text-align: center">${{ $orderDetail->total }}</td>
+                                                    <td style="text-align: center">${{ $orderDetail->product->price }}</td>
+                                                    <td style="text-align: center">${{ $orderDetail->price }}</td>
                                                 </tr>
                                             @endforeach
 

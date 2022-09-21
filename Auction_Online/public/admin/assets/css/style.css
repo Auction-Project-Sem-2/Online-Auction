@@ -1379,6 +1379,26 @@ tbody, td, tfoot, th, thead, tr {
     border-bottom-left-radius: 0 !important;
 }
 
+.d-block.card-footer .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+.d-block.card-footer span.font-medium {
+    font-weight: 700;
+}
+
+.d-block.card-footer a:hover {
+    background-color: #eae9e9 !important;
+    opacity: 1 !important;
+}
+
+.d-block.card-footer  span[aria-current=page] > span {
+    background-color: #4154f1 !important;
+    border: 1px solid #4154f1 !important;
+    opacity: 0.9;
+    color: #fff;
+}
+
 @media (max-width: 739px) {
     .card-body {
         padding: 10px 8px;
