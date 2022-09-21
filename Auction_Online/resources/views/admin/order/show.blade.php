@@ -46,7 +46,7 @@
                                             @foreach($order->orderDetails as $orderDetail)
                                                 <tr>
                                                     <td  style="display: flex">
-                                                        <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="front/image/products/{{ $orderDetail->product->productImages[0]->path }}" alt="" data-original-title="Image">
+                                                        <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="front/img/products/{{ $orderDetail->product->productImages[0]->path }}" alt="" data-original-title="Image">
                                                         <div class="widget-content-left order-name-product">{{ $orderDetail->product->name }}</div>
                                                     </td>
                                                     <td style="text-align: center">{{ $orderDetail->qty }}</td>
@@ -54,16 +54,6 @@
                                                     <td style="text-align: center">${{ $orderDetail->price }}</td>
                                                 </tr>
                                             @endforeach
-
-{{--                                        <tr>--}}
-{{--                                            <td  style="display: flex">--}}
-{{--                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-5.jpg" alt="" data-original-title="Image">--}}
-{{--                                                <div class="widget-content-left order-name-product">Sit unde debitis delectus repellendus</div>--}}
-{{--                                            </td>--}}
-{{--                                            <td style="text-align: center">2</td>--}}
-{{--                                            <td style="text-align: center">$10.66</td>--}}
-{{--                                            <td style="text-align: center">$100.22</td>--}}
-{{--                                        </tr>--}}
 
 
                                         </tbody>

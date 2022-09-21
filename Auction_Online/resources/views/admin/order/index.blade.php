@@ -65,19 +65,21 @@
                                                     <td >
                                                         <div>
                                                             <div style="display: flex; align-items: center;">
-                                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src=".front/image/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="" data-original-title="Image">
-                                                                <div class="widget-heading">{{ $order->first_name . ' ' . $order->last_name }}</div>
-                                                                <div class="widget-subheading opacity-7">
-                                                                    @if(count($order->orderDetails) > 1)
-                                                                        (and {{ count($order->orderDetails) }} other products)
-                                                                    @endif
+                                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="front/img/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="" data-original-title="Image">
+                                                                <div class="widget-content-left">
+                                                                    <div class="widget-heading">{{ $order->first_name . ' ' . $order->last_name }}</div>
+                                                                    <div class="widget-subheading opacity-7">
+                                                                        @if(count($order->orderDetails) > 1)
+                                                                            (and {{ count($order->orderDetails) }} other products)
+                                                                        @endif
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                     </td>
                                                     <td style="text-align: center">{{ $order->street_address . ' - ' . $order->town_city }}</td>
-                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }}</td>
+                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'price')) }}</td>
                                                     <td style="text-align: center">
                                                         <div class="badge badge-dark">
                                                             {{ \App\Utilities\Constant::$order_status[$order->status] }}
