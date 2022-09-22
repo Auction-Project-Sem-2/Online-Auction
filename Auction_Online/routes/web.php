@@ -36,10 +36,8 @@ Route::prefix('cart')->group(function () {
 
 
 // Dashboard (Admin)
-Route::prefix('admin')
-//    ->middleware('CheckAdminLogin')
-    ->group(function () {
-//    Route::redirect('', 'admin/user');
+Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
+    Route::redirect('', 'admin/user');
 
     Route::get('home', [Admin\HomeController::class, 'index']);
 
@@ -49,19 +47,16 @@ Route::prefix('admin')
     Route::resource('product/{product_id}/detail', Admin\ProductDetailController::class);
     Route::resource('category', Admin\ProductCategoryController::class);
 
-
-
-//
-//    Route::prefix('category')->group(function () {
-//        Route::get('/', [Admin\CategoryController::class, 'index']);
-//        Route::get('create', [Admin\CategoryController::class, 'create']);
-//        Route::get('id/edit', [Admin\CategoryController::class, 'edit']);
-//    });
-
     Route::prefix('order')->group(function() {
         Route::get('/', [Admin\OrderController::class, 'index']);
-        Route::get('/id', [Admin\OrderController::class, 'show']);
+        Route::get('/{id}', [Admin\OrderController::class, 'show']);
     });
 
-    Route::get('login', [Admin\HomeController::class, 'getLogin']);
+    Route::prefix('login')->group(function () {
+        Route::get('', [Admin\HomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
+        Route::post('', [Admin\HomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');
+    });
+
+    Route::get('logout', [Admin\HomeController::class, 'logout']);
+
 });

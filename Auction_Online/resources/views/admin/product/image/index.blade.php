@@ -64,7 +64,7 @@
                                                                 @method('DELETE')
 
                                                                 <button type="submit" onclick="return confirm('Do you really want to delete this item?')" class="btn btn-sm btn-outline-danger border-0 position-absolute">
-                                                                    <i class="bi bi-scissors"></i>
+                                                                    <i class="bi bi-x-lg"></i>
                                                                 </button>
                                                                 <img style="width: 100%;" src="./front/img/products/{{ $productImage->path }}"
                                                                      alt="Image">
@@ -77,7 +77,7 @@
                                                             @csrf
 
                                                             <div style="width: 100%; max-height: 220px; overflow: hidden;">
-                                                                <img style="width: 100%; cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/add-image-icon.jpg" alt="Add Image" data-original-title="Click to add image">
+                                                                <img style="width: 100%; cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="" data-placement="bottom" src="./front/img/add-image-icon.jpg" alt="Add Image" data-original-title="Click to add image">
 
                                                                 <input name="image" type="file" onchange="changeImg(this); this.form.submit()" accept="image/x-png,image/gif,image/jpeg" class="image form-control-file" style="display: none;">
 

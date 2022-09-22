@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'password' => Hash::make('123456'),
                 'avatar' => 'avatar-0.jpg',
-                'level' => 1,
+                'level' => 2,
                 'description' => 'Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum bore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud amodo'
             ],
             [
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'password' => Hash::make('123456'),
                 'avatar' => 'avatar-1.jpg',
-                'level' => 1,
+                'level' => 2,
                 'description' => null,
             ],
             [
@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'password' => Hash::make('123456'),
                 'avatar' => 'avatar-2.jpg',
-                'level' => 1,
+                'level' => 2,
                 'description' => null,
             ],
         ]);
@@ -156,13 +156,13 @@ class DatabaseSeeder extends Seeder
             ],
 
 
-
         ]);
 
         DB::table('products')->insert([
             [
                 'id' => 1,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'New men postman bag large capacity one shoulder portable casual notebook computer men logo bag can be customized LOGO for men',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -175,22 +175,24 @@ class DatabaseSeeder extends Seeder
             ],
 
             [
-            'id' => 2,
-            'product_category_id' => 1,
-            'name' => 'leather ladies shoulder bags vintage PU purse vegan handbag women hand bag',
-            'start_time' => '2022-09-15',
-            'end_time' => '2022-12-15',
-            'description' => '',
-            'price' => 25.0,
-            'qty' => 4,
-            'weight' => 0.9,
-            'sku' => '002664',
-            'featured' => false,
+                'id' => 2,
+                'product_category_id' => 1,
+                'user_id' => 1,
+                'name' => 'leather ladies shoulder bags vintage PU purse vegan handbag women hand bag',
+                'start_time' => '2022-09-15',
+                'end_time' => '2022-12-15',
+                'description' => '',
+                'price' => 25.0,
+                'qty' => 4,
+                'weight' => 0.9,
+                'sku' => '002664',
+                'featured' => false,
             ],
 
             [
                 'id' => 3,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => '4 In 1 Set Crossbody Bag Popular Pu Leather Ladies Tote Bags 2021 Women Shoulder Handbag Set',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -205,6 +207,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 4,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Oxford Backpack For Women 2019 Hot Style Korean Joker Fashion Travel Backpack Casual School Bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -219,6 +222,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 5,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Marrant 7601 men genuine leather large capacity chest bag durable leather crossbody sling bag for men sling bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -233,6 +237,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 6,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Factory price bags women handbags bucket card holder crossbody for women custom purses fashion designer leather handbag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -247,6 +252,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 7,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Custom Logo Travel Accessoires Unisex Multifunction Water Resistant OEM Gym Bag Duffle Bag Sport Pink Overnight Bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -261,6 +267,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 8,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Multifunctional family travel first aid kit doctor outdoor medical bags emergency medicine storage bags',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -275,6 +282,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 9,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'New style mens handbag PU leather multi-pocket business casual tide bag Messenger bag to work mens bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -289,6 +297,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 10,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Customized wholesale womens fashion shoulder messenger bag handbag Candy colored leather crossbody bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -303,6 +312,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 11,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => '2020 Stylish handbag PU leather bag beautiful bag handbag oblique cross bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -317,6 +327,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 12,
                 'product_category_id' => 1,
+                'user_id' => 1,
                 'name' => 'Girls shoulder bags Vendor Supply Lightweight fashion Shiny messenger shoulder bag',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -332,6 +343,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 13,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'SINOBI Simple Women Wrist Watches Gold Watchband Top Luxury Brand Girl Look Crystal Quartz Clock Ladies Wristwatch Reloj Mujer',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -346,6 +358,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 14,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'INFINITY TIME Oversized Large Industrial Loft Metal Moving Gear Wall Clock for Modern Living Room Decor',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -360,6 +373,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 15,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'WOZOOM Custom Luxury Metal Decoration Home Wall Decor Fancy Design Large Iron Wall Clocks Elegant Clock With Walnut Wood Gold',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -374,6 +388,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 16,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'SKMEI 9260 quartz wristwatch men watch luxury watches mens branded waterproof',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -388,6 +403,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 17,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'Top sale 2019 SKMEI 9196 montre homme luxury leather band quartz men wrist watch clocks hand watches men',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -402,6 +418,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 18,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'SKMEI 1854 bling small face diamond watch strap stainless steel luxury womens watch with bracelets',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -416,6 +433,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 19,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => '2022 SKMEI 1904 luxury custom logo stainless steel strap with date 3bar water proof watches men wrist',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -430,6 +448,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 20,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => '020 New SKMEI 9208 custom logo mesh stainless steel waterproof quartz uhren men watch luxury jam tangan pria',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -444,6 +463,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 21,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'Skmei 1870 trendy 30m water resistant calendar luxury watch stainless steel original watches brand men wrist gold',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -458,6 +478,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 22,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'SKMEI 1954 customized business wrist luxury quartz 30m water resistant square case gold casual watch for men',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -472,6 +493,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 23,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'skmei 1335 hot sale stainless steel 5atm Waterproof led multifunction wrist watches men digital watch',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -486,6 +508,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 24,
                 'product_category_id' => 2,
+                'user_id' => 3,
                 'name' => 'colorful twin bell alarm Clock',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -502,6 +525,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 25,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Wholesale high quality outdoor men sublimation print polo shirt custom 100%polyester men short sleeve sports golf polo shirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -516,6 +540,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 26,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Custom Logo wholesale t-shirts plain dyed velvet Men Turtleneck t shirt Velvet Casual Long Sleeve Tshirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -530,6 +555,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 27,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Custom Printing Hooded Short Sleeve T Shirt 100% Polyester Solid Color Men GYM Slim Fit Face Masked T-shirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -544,6 +570,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 28,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'KLBG outdoor winter mens jackets for man custom down jacket',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -558,6 +585,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 29,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'JC thick high quality winter outdoor jacket oversized detachable hoodie bomber jacket mens',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -572,6 +600,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 30,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'The Cloudy Crane Ao Dai with your baby',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -586,6 +615,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 31,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Baby boy Gile striped outfit made in Vietnam',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -600,6 +630,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 32,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Wholesale 2022 New Collection US Army Huey Helicopter Hawaiian Shirt Made in Vietnam Contact us for Best Price',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -614,6 +645,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 33,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Basic Men Polo Shirts Striped Loose Fit Long Sleeve Polo Shirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -628,6 +660,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 34,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => '100% Cotton polo shirts Custom logo soft comfortable bulk quantity polo t-shirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -643,6 +676,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 35,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Professional Manufacturer custom mens shirt AOSHI plus size shirts men shirts for men',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -657,6 +691,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 36,
                 'product_category_id' => 3,
+                'user_id' => 4,
                 'name' => 'Baju koszulka bluz poloshirt polotroja kemeja ao thun co camisa magliette da chemise hemd shirts t mens custom men polo shirt',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -673,6 +708,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 37,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Electric car high speed chinese vehicles 4x4 chavy menlo ev electric car chassis',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -687,6 +723,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 38,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'New and Second Hand used car High Speed 150km/h Electric Car Vehicles Made In China New Electric Car automotives',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -701,6 +738,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 39,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'car vinfat',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -715,6 +753,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 40,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => '2022 NEW Tourism 8 seater classic electric vintage car',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -729,6 +768,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 41,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Mercede Benz licesed 12v ride on car children electric toy cars to drive baby toy for wholesale',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -743,6 +783,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 42,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'used TOYOTA RAV 4 HYBRID LHD',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -755,8 +796,9 @@ class DatabaseSeeder extends Seeder
             ],
 
             [
-                'id' =>43,
+                'id' => 43,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Used Toyota Land Cruiser Double Cab VDJ79 Pickup Diesel 4.5L',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -771,6 +813,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 44,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Price list for BMW 118i in September 2022',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -785,6 +828,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 45,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Mercedes-Benz E200 2018',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -799,6 +843,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 46,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Mercedes-Benz G63 4.0 V8 2022',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -813,6 +858,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 47,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Audi A4 40 TFSI Advanced 2019',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -827,6 +873,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 48,
                 'product_category_id' => 4,
+                'user_id' => 5,
                 'name' => 'Nissan Navara EL Premium R 2017',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -843,6 +890,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 49,
                 'product_category_id' => 6,
+                'user_id' => 5,
                 'name' => 'Xiaomi TV EA43 2022 Series - 100% New - Xiaomi Hanoi TV',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -857,6 +905,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 50,
                 'product_category_id' => 12,
+                'user_id' => 1,
                 'name' => 'Smart rice cooker GAABOR GR-S30A large capacity 3L - 500W - Genuine product',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -871,6 +920,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 51,
                 'product_category_id' => 9,
+                'user_id' => 3,
                 'name' => 'Smart rice cooker Sunhouse SHB9005-EC electric double cooker',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -885,6 +935,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 52,
                 'product_category_id' => 5,
+                'user_id' => 4,
                 'name' => 'Refrigerator Samsung Family Hub 641L RS64T5F01B4',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -899,6 +950,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 53,
                 'product_category_id' => 7,
+                'user_id' => 4,
                 'name' => 'Factory MDF Closets Bedroom Modern Wardrobe Wooden Closet Cabinet Clothes For Sale',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -913,6 +965,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 54,
                 'product_category_id' => 7,
+                'user_id' => 4,
                 'name' => 'Particle Board Material Storage Modern Wardrobe Bedroom Wardrobes Closet',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -927,6 +980,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 55,
                 'product_category_id' => 10,
+                'user_id' => 1,
                 'name' => 'factory 2022 new design modern kitchen appliances wall cabinet design arc glass hidden range hoods in stainless steel',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -941,6 +995,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 56,
                 'product_category_id' => 5,
+                'user_id' => 4,
                 'name' => 'Toshiba Inverter Refrigerator 180 liters GR-B22VU UKG - Genuine Warranty',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -955,6 +1010,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 57,
                 'product_category_id' => 12,
+                'user_id' => 1,
                 'name' => 'Philips HD9270/90 air fryer - 6.2L',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -969,6 +1025,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 58,
                 'product_category_id' => 8,
+                'user_id' => 3,
                 'name' => 'Vie poco bladeless tower fan with integrated negative ion supply mode, air purification',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -983,6 +1040,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 59,
                 'product_category_id' => 11,
+                'user_id' => 1,
                 'name' => '3500W Large Capacity Hot & Cold 2-Way Hair Dryer. Large capacity hair dryer',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -997,6 +1055,7 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 60,
                 'product_category_id' => 6,
+                'user_id' => 5,
                 'name' => '43-inch 43T65 TCL 4K UHD Android 9.0 TV - Genuine - Free installation',
                 'start_time' => '2022-09-15',
                 'end_time' => '2022-12-15',
@@ -1007,14 +1066,6 @@ class DatabaseSeeder extends Seeder
                 'sku' => '003165',
                 'featured' => true,
             ],
-
-
-
-
-
-
-
-
 
 
         ]);
@@ -1071,7 +1122,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'product_id' => 3,
-               'path' => 'Tote_Bags_4.jpg',
+                'path' => 'Tote_Bags_4.jpg',
             ],
 
             [
@@ -1083,7 +1134,7 @@ class DatabaseSeeder extends Seeder
                 'path' => 'Oxford_Backpack2.jpg',
             ],
             [
-               'product_id' => 4,
+                'product_id' => 4,
                 'path' => 'Oxford_Backpack3.jpg',
             ],
             [
@@ -1231,7 +1282,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 13,
-                'path' => 'Watches_Gold_Watchband1.jpg',
+                'path' => 'Watches_Gold_Watchband1.png',
             ],
             [
                 'product_id' => 13,
@@ -1643,7 +1694,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 37,
-                'path' => 'chevrolet_menlo1.jpg',
+                'path' => 'chevrolet_menlo1.png',
             ],
             [
                 'product_id' => 37,
@@ -1849,7 +1900,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 49,
-                'path' => 'tivixiaomi1.jpg',
+                'path' => 'tivixiaomi1.png',
             ],
             [
                 'product_id' => 49,
@@ -2052,12 +2103,6 @@ class DatabaseSeeder extends Seeder
             ],
 
 
-
-
-
-
-
-
         ]);
 
 
@@ -2079,7 +2124,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 3,
-               'color' => '3Colors',
+                'color' => '3Colors',
                 'size' => '33*15*26',
                 'qty' => 0,
             ],

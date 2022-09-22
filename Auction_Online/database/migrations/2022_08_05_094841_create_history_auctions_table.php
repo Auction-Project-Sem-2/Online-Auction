@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->integer('product_id')->unsigned();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned();
 
             $table->string('email');
             $table->string('name');

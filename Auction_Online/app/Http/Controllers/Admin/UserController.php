@@ -14,9 +14,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $search = $request->search ?? '';
+        $users = User::where('name','like','%' . $search . '%');
+        $users = $users->paginate(5);
+
         return view('admin.user.index', compact('users'));
     }
 
@@ -107,7 +110,7 @@ class UserController extends Controller
         // xử lí file ảnh
         if ($request->hasFile('image')) {
             //thêm file mới:
-            $data['avatar'] = Common::uploadFile($request->file('image'), './front/img/user');
+            $data['avatar'] = Common::uploadFile($request->file('image'), './front/img/user/');
 
             //xóa file có:
             $file_name_old = $request->get('image_old');

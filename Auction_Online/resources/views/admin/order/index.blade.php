@@ -62,19 +62,24 @@
                                             @foreach($orders as $order)
                                                 <tr>
                                                     <th scope="row" style="text-align: center">{{ $order->id }}</th>
-                                                    <td  style="display: flex">
-                                                        <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src=".front/image/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="" data-original-title="Image">
-                                                        <div class="widget-content-left">
-                                                            <div class="widget-heading">{{ $order->first_name . ' ' . $order->last_name }}</div>
-                                                            <div class="widget-subheading opacity-7">
-                                                                @if(count($order->orderDetails) > 1)
-                                                                    (and {{ count($order->orderDetails) }} other products)
-                                                                @endif
+                                                    <td >
+                                                        <div>
+                                                            <div style="display: flex; align-items: center;">
+                                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="front/img/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="" data-original-title="Image">
+                                                                <div class="widget-content-left">
+                                                                    <div class="widget-heading">{{ $order->first_name . ' ' . $order->last_name }}</div>
+                                                                    <div class="widget-subheading opacity-7">
+                                                                        @if(count($order->orderDetails) > 1)
+                                                                            (and {{ count($order->orderDetails) }} other products)
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+
                                                     </td>
                                                     <td style="text-align: center">{{ $order->street_address . ' - ' . $order->town_city }}</td>
-                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }}</td>
+                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'price')) }}</td>
                                                     <td style="text-align: center">
                                                         <div class="badge badge-dark">
                                                             {{ \App\Utilities\Constant::$order_status[$order->status] }}
@@ -89,32 +94,6 @@
                                                 </tr>
 
                                             @endforeach
-{{--                                        <tr>--}}
-{{--                                            <th scope="row" style="text-align: center">2</th>--}}
-{{--                                            <td  style="display: flex">--}}
-{{--                                                <img style="height: 60px;" data-toggle="tooltip" title="" data-placement="bottom" src="./admin/assets/img/product-1.jpg" alt="" data-original-title="Image">--}}
-{{--                                                <div class="widget-content-left">--}}
-{{--                                                    <div class="widget-heading">Ut inventore ipsa voluptas nulla</div>--}}
-{{--                                                    <div class="widget-subheading opacity-7">--}}
-{{--                                                        Pure Pineapple (and 2 other products)--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </td>--}}
-{{--                                            <td style="text-align: center">Ha Noi - Viet Nam</td>--}}
-{{--                                            <td style="text-align: center">$108.66</td>--}}
-{{--                                            <td style="text-align: center">--}}
-{{--                                                <div class="badge badge-dark">--}}
-{{--                                                    Receive Orders--}}
-{{--                                                </div>--}}
-{{--                                            </td>--}}
-{{--                                            <td style="text-align: center">--}}
-{{--                                                <a href="./admin/order/id"--}}
-{{--                                                   class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">--}}
-{{--                                                    Details--}}
-{{--                                                </a>--}}
-{{--                                            </td>--}}
-{{--                                        </tr>--}}
-{{--                                        --}}
 
                                         </tbody>
                                     </table>
@@ -122,7 +101,9 @@
 
 
                                 <div class="d-block card-footer">
-{{--                                    {{ $orders->links() }}--}}
+                                    <div class="d-block card-footer">
+                                        {{ $orders->links() }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
