@@ -1222,7 +1222,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 13,
-                'path' => 'Watches_Gold_Watchband1.jpg',
+                'path' => 'Watches_Gold_Watchband1.png',
             ],
             [
                 'product_id' => 13,
@@ -1634,7 +1634,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 37,
-                'path' => 'chevrolet_menlo1.jpg',
+                'path' => 'chevrolet_menlo1.png',
             ],
             [
                 'product_id' => 37,
@@ -1840,7 +1840,7 @@ class DatabaseSeeder extends Seeder
 
             [
                 'product_id' => 49,
-                'path' => 'tivixiaomi1.jpg',
+                'path' => 'tivixiaomi1.png',
             ],
             [
                 'product_id' => 49,
