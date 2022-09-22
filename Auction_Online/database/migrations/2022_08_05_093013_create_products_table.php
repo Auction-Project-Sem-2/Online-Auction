@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->integer('product_category_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('name');
 
             $table->dateTime('start_time');
