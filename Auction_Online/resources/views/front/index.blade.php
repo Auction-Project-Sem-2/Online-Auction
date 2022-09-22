@@ -85,37 +85,31 @@
                 <p class="text-muted">Browse the Newest Products</p>
             </header>
             <div class="swiper-container pt-5 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" id="featuredProducts">
-                <div class="swiper-wrapper" id="swiper-wrapper-6ae7d2b19321ec75" aria-live="polite" style=" transition-duration: 0ms;"><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="1 / 19">
-                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-12.c4210d28.jpg" alt="Nike air max 95"></a>
-                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-                        </div>
-                        <h6 class="text-center"><a class="reset-anchor" href="">Nike air max 95</a></h6>
-                        <p class="text-center text-muted font-weight-bold">$22.00</p>
-                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="2 / 19">
-                        <div class="product mb-4"><span class="badge rounded-0 bg-danger">Soldout</span><a href=""><img class="img-fluid" src="./img/product-13.aff049a7.jpg" alt="Red digital smartwatch"></a>
-                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-                        </div>
-                        <h6 class="text-center"><a class="reset-anchor" href="">Red digital smartwatch</a></h6>
-                        <p class="text-center text-muted font-weight-bold">$22.00</p>
-                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="6" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="3 / 19">
-                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-14.1adefbd6.jpg" alt="Air Jordan 12 gym red"></a>
-                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-                        </div>
-                        <h6 class="text-center"><a class="reset-anchor" href="">Air Jordan 12 gym red</a></h6>
-                        <p class="text-center text-muted font-weight-bold">$22.00</p>
-                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="4 / 19">
-                        <div class="product mb-4"><span class="badge rounded-0 bg-warning">Hot</span><a href=""><img class="img-fluid" src="./img/product-15.37a0a89c.jpg" alt="Kui Ye Chen’s AirPods"></a>
-                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-                        </div>
-                        <h6 class="text-center"><a class="reset-anchor" href="">Kui Ye Chen’s AirPods</a></h6>
-                        <p class="text-center text-muted font-weight-bold">$22.00</p>
-                    </div><div class="swiper-slide pb-5 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="8" style="width: 237.6px; margin-right: 25px;" role="group" aria-label="5 / 19">
-                        <div class="product mb-4"><span class="badge rounded-0 bg-"></span><a href=""><img class="img-fluid" src="./img/product-10.d7432880.jpg" alt="Apple watch"></a>
-                            <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a><a class="product-btn" href="https://demo.bootstrapious.com/shopio/cart.html"><i class="fas fa-dolly-flatbed"></i></a></div>
-                        </div>
-                        <h6 class="text-center"><a class="reset-anchor" href="">Apple watch</a></h6>
-                        <p class="text-center text-muted font-weight-bold">$22.00</p>
-                    </div>
+                <div class="swiper-wrapper" id="swiper-wrapper-6ae7d2b19321ec75" aria-live="polite" style=" transition-duration: 0ms;">
+
+{{--                    @foreach($products as $product)--}}
+
+{{--                        <div class="swiper-slide pb-5 swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 237.6px; margin-right: 25px;" role="group" >--}}
+{{--                            <div class="product mb-4">--}}
+{{--                                <span class="badge rounded-0 bg-"></span>--}}
+{{--                                <a href="">--}}
+{{--                                    <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">--}}
+{{--                                </a>--}}
+{{--                                <div class="cta shadow d-inline-block">--}}
+{{--                                    <a class="product-btn" href="">--}}
+{{--                                        <i class="fas fa-heart"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <a class="product-btn" href="">--}}
+{{--                                        <i class="fas fa-dolly-flatbed"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <h6 class="text-center"><a class="reset-anchor" href="">{{$product->name}}</a></h6>--}}
+{{--                            <p class="text-center text-muted font-weight-bold">${{number_format($product->price,2)}}</p>--}}
+{{--                        </div>--}}
+
+{{--                    @endforeach--}}
+
                     <!-- Product-->
 
                     @foreach($featuredProduct as $product)
@@ -124,11 +118,11 @@
                                 <a href="./shop/product/{{$product->id}}">
                                     <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
                                 </a>
-                                <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                                <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href="./cart/add/{{$product->id}}"><i class="fas fa-dolly-flatbed"></i></a></div>
                             </div>
                             <div class="pro-text">
                                 <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
-                                <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                                <p class="pro-price">Highest price <span>${{number_format($product->price,2)}}</span></p>
                                 <div>
                                     <div class="CountDown-box">
                                         <input class="timeData" type="hidden" value="{{$product->end_time}}">
@@ -183,11 +177,11 @@
                         <a href="./shop/product/{{$product->id}}">
                             <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
                         </a>
-                        <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                        <div class="cta shadow d-inline-block"><a class="product-btn" href="./shop/product/{{$product->id}}"><i class="fas fa-heart"></i></a><a class="product-btn" href="./cart/add/{{$product->id}}"><i class="fas fa-dolly-flatbed"></i></a></div>
                     </div>
                     <div class="pro-text">
                         <h6 class="pro-title"><a class="reset-anchor" href="">{{$product->name}}</a></h6>
-                        <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                        <p class="pro-price">Highest price <span>${{number_format($product->price,2)}}</span></p>
                         <div>
                             <div class="CountDown-box">
                                 <input class="timeData" type="hidden" value="{{$product->end_time}}">
@@ -203,7 +197,7 @@
 
         </div>
         <div class="btn-pr-index">
-          <a href="" class="btn btn-primary">View more</a>
+          <a href="./shop" class="btn btn-primary">View more</a>
         </div>
       </div>
     </section>
