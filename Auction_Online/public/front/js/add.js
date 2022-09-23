@@ -64,6 +64,23 @@ closeIcon.onclick = function () {
 closeBoxSearchIcon.onclick = function () {
     boxSearch.classList.toggle('active');
 }
+/*
+================
+Total cart
+================
+*/
+
+const cartTotal = document.querySelectorAll('.cart-total');
+const priceCart = document.querySelector('#cartPrice');
+let totalPrice = 0;
+cartTotal.forEach(function (cart) {
+    totalPrice += Number(cart.innerText.replace('$',''));
+})
+const formatterPrice = Intl.NumberFormat('en-US',{
+    style: 'currency',
+    currency: 'USD',
+})
+priceCart.innerText = formatterPrice.format(totalPrice);
 
 // = = = = = = = = = = = = = = = = changeImg = = = = = = = = = = = = = = = =
 function changeImg(input) {

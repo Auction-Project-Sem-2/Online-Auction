@@ -151,11 +151,11 @@
 
                             <div class="col-xl-3 col-lg-4 col-6">
                                 <div class="product mb-4"><a href="./shop/product/{{$product->id}}"><img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product"></a>
-                                    <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                                    <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="./cart/add/{{$product->id}}"><i class="fas fa-dolly-flatbed"></i></a></div>
                                 </div>
                                 <div class="pro-text">
                                     <h6 class="pro-title"><a class="reset-anchor" href="./shop/product/{{$product->id}}">{{$product->name}}</a></h6>
-                                    <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                                    <p class="pro-price">Highest price <span>${{number_format($product->price,2)}}</span></p>
                                     <div>
                                         <div class="CountDown-box">
                                             <input class="timeData" type="hidden" value="{{$product->end_time}}">

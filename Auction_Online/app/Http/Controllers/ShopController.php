@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HistoryAuction;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
@@ -49,6 +50,7 @@ class ShopController extends Controller
         $product = Product::findOrFail($id);
 
         $relatedProducts = Product::where('product_category_id',$product->product_category_id)->limit(5)->get();
+
 
         return view('front.shop.show',compact('product','relatedProducts'));
     }

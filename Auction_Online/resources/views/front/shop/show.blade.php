@@ -61,8 +61,10 @@
                         <div class="d-flex align-items-center mb-4 detail-price-time">
                             <form action="">
                                 <div class="py-3 price-detail-box">
-                                    <label for="price-detail">$</label>
-                                    <input class="form-control" id="price-detail" type="text" placeholder="Price">
+                                    <div class="input-group">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control" placeholder="Price">
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-sm py-2 border-bottom-0 px-5 me-3" href="">
                                     <i class="fa-solid fa-gavel"></i>Auction
@@ -113,31 +115,10 @@
                     <!-- Item information-->
                     <div class="col-xl-10 mx-auto">
                         <ul class="nav nav-tabs tabs-fill justify-content-center border-0 flex-column flex-md-row" id="myTab" role="tablist">
-                            <li class="nav-item flex-fill text-center bg-light mx-2" role="presentation"><a class="nav-link text-small fw-bold py-3 border-0 active" id="info-tab" data-bs-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">History Auction</a></li>
-                            <li class="nav-item flex-fill text-center bg-light mx-2" role="presentation"><a class="nav-link text-small fw-bold py-3 border-0 " id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a></li>
+                            <li class="nav-item flex-fill text-center bg-light mx-2" role="presentation"><a class="nav-link text-small fw-bold py-3 border-0 active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a></li>
                             <li class="nav-item flex-fill text-center bg-light mx-2" role="presentation"><a class="nav-link text-small fw-bold py-3 border-0" id="shipping-tab" data-bs-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false">Shipping &amp; Returns</a></li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
-                                <div class="py-3">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <table class="table table-bordered" >
-                                                <thead>
-                                                    <th>User</th>
-                                                    <th>Price</th>
-                                                    <th>Time</th>
-                                                </thead>
-                                                <tbody>
-                                                    <td>Admin</td>
-                                                    <td>$35.00</td>
-                                                    <td>2022-09-09 23:13:47</td>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="tab-pane fade " id="description" role="tabpanel" aria-labelledby="description-tab">
                                 <div class="p-3 p-md-5">
                                     {{$product->description}}
@@ -162,8 +143,8 @@
         <section class="py-5">
             <div class="container">
                 <header class="mb-3 text-center">
-                    <h2 class="mb-0">Related Product</h2>
-                    <p class="text-muted">Recommended products for today</p>
+                    <h2 class="mb-0">You may also like</h2>
+                    <p class="text-muted">Related Product</p>
                 </header>
                 <div class="row py-3">
 
@@ -173,11 +154,11 @@
                                 <a href="./shop/product/{{$product->id}}">
                                     <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
                                 </a>
-                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href=""><i class="fas fa-dolly-flatbed"></i></a></div>
+                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="./cart/add/{{$product->id}}"><i class="fas fa-dolly-flatbed"></i></a></div>
                             </div>
                             <div class="pro-text">
                                 <h6 class="pro-title"><a class="reset-anchor" href="./shop/product/{{$product->id}}">{{$product->name}}</a></h6>
-                                <p class="pro-price">Highest price <span>${{$product->price}}</span></p>
+                                <p class="pro-price">Highest price <span>${{number_format($product->price,2)}}</span></p>
                                 <div>
                                     <div class="CountDown-box">
                                         <input class="timeData" type="hidden" value="{{$product->end_time}}">
@@ -193,7 +174,7 @@
 
                 </div>
                 <div class="btn-pr-index">
-                    <a href="" class="btn btn-primary">View more</a>
+                    <a href="./shop" class="btn btn-primary">View more</a>
                 </div>
             </div>
         </section>

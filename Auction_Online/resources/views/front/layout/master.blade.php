@@ -43,7 +43,8 @@
                 <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == '') ? 'active' : '' }}" aria-current="page" href="./">Home</a></li>
                 <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == 'shop') ? 'active' : '' }}" href="./shop">Shop</a></li>
                 <li class="nav-item"><a class="nav-link text-uppercase {{ (request()->segment(1)== 'about') ? 'active' : '' }}" href="./about">About</a></li>
-                <li class="nav-item dropdown me-lg-3"><a class="nav-link text-uppercase dropdown-toggle {{ (request()->segment(1)== 'blog' ) || (request()->segment(1) == 'help_center' ) ? 'active' : '' }}" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                <li class="nav-item dropdown me-lg-3">
+                    <a class="nav-link text-uppercase dropdown-toggle {{ (request()->segment(1)== 'blog' ) || (request()->segment(1) == 'help_center' ) ? 'active' : '' }}" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <ul class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="./blog">Blog</a></li>
                         <li><a class="dropdown-item" href="./help_center">Help Center</a></li>
@@ -55,7 +56,7 @@
                 <li class="nav-item me-3">
                     <a class="nav-link text-uppercase position-relative icon-nav" href="./cart">
                         <i class="fa-regular fa-cart-shopping"></i>
-                        <span class="badge rounded-pill bg-primary">2</span>
+                        <span class="badge rounded-pill bg-primary">{{count(\Gloudemans\Shoppingcart\Facades\Cart::content())}}</span>
                     </a>
                 </li>
                 <li class="nav-item me-3">
