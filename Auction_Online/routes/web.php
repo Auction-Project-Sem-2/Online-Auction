@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\SellerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,13 @@ Route::prefix('shop')->group(function () {
 Route::prefix('cart')->group(function () {
     Route::get('',[CartController::class,'index']);
 });
+
+Route::prefix('client')->group(function() {
+    Route::resource('seller', SellerController::class);
+    Route::resource('buyer', SellerController::class);
+
+});
+
 
 
 

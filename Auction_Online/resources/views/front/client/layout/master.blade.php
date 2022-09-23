@@ -140,68 +140,6 @@
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-chat-left-text"></i>
-                    <span class="badge bg-success badge-number">3</span>
-                </a><!-- End Messages Icon -->
-
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                    <li class="dropdown-header">
-                        You have 3 new messages
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="./admin/assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>Maria Hudson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>4 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="./admin/assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>Anna Nelson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>6 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="./admin/assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>David Muldon</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>8 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="dropdown-footer">
-                        <a href="#">Show all messages</a>
-                    </li>
-
-                </ul><!-- End Messages Dropdown Items -->
-
             </li><!-- End Messages Nav -->
 
             <li class="nav-item dropdown pe-3">
@@ -270,38 +208,39 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-        <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'home') ? '' : 'collapsed' }}" href="admin/home">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link {{ (request()->segment(2) == 'home') ? '' : 'collapsed' }}" href="admin/home">--}}
+{{--                <i class="bi bi-grid"></i>--}}
+{{--                <span>Dashboard</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+        <!-- End Dashboard Nav -->
+
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link {{ (request()->segment(2) == 'user') ? '' : 'collapsed' }}" href="admin/user">--}}
+{{--                <i class="bi bi-person"></i>--}}
+{{--                <span>User</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link {{ (request()->segment(2) == 'order') ? '' : 'collapsed' }}" href="admin/order">--}}
+{{--                <i class="bi bi-cart"></i>--}}
+{{--                <span>Order</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
 
         <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'user') ? '' : 'collapsed' }}" href="admin/user">
-                <i class="bi bi-person"></i>
-                <span>User</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'order') ? '' : 'collapsed' }}" href="admin/order">
-                <i class="bi bi-cart"></i>
-                <span>Order</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'product') ? '' : 'collapsed' }}" href="admin/product">
+            <a class="nav-link {{ (request()->segment(2) == 'seller') ? '' : 'collapsed' }}" href="client/seller">
                 <i class="bi bi-box"></i>
-                <span>Product</span>
+                <span>Sell Products</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'category') ? '' : 'collapsed' }}" href="admin/category">
-                <i class="bi bi-layers"></i>
-                <span>Category</span>
+            <a class="nav-link {{ (request()->segment(2) == 'buyer') ? '' : 'collapsed' }}" href="client/buyer">
+                <i class="bi bi-palette2"></i>
+                <span>Auction Products</span>
             </a>
         </li>
 
