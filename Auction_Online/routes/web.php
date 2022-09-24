@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\HomeController;
@@ -32,8 +35,11 @@ Route::prefix('cart')->group(function () {
 });
 
 Route::prefix('client')->group(function() {
-    Route::resource('seller', SellerController::class);
-    Route::resource('buyer', SellerController::class);
+    Route::resource('seller/product', SellerController::class);
+    Route::get('seller/product/{id}/auction', [SellerController::class, 'show_Auction']);
+    Route::resource('buyer/product', BuyerController::class);
+    Route::resource('seller/product/{product_id}/image', ProductImageController::class);
+    Route::resource('seller/product/{product_id}/detail', ProductDetailController::class);
 
 });
 

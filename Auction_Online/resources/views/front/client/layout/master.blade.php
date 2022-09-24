@@ -31,6 +31,7 @@
 
     <!-- Template Main CSS File -->
     <link href="./admin/assets/css/style.css" rel="stylesheet">
+    <link href="./front/css/client.css" rel="stylesheet">
 
 </head>
 
@@ -152,41 +153,41 @@
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
                         <h6>{{ \Illuminate\Support\Facades\Auth::user()->name }}</h6>
-                        <span>{{ \App\Utilities\Constant::$user_level[\Illuminate\Support\Facades\Auth::user()->level] }}</span>
+{{--                        <span>{{ \App\Utilities\Constant::$user_level[\Illuminate\Support\Facades\Auth::user()->level] }}</span>--}}
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="admin/user/{{ \Illuminate\Support\Facades\Auth::user()->id }}">
-                            <i class="bi bi-person"></i>
-                            <span>My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+{{--                    <li>--}}
+{{--                        <a class="dropdown-item d-flex align-items-center" href="admin/user/{{ \Illuminate\Support\Facades\Auth::user()->id }}">--}}
+{{--                            <i class="bi bi-person"></i>--}}
+{{--                            <span>My Profile</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <hr class="dropdown-divider">--}}
+{{--                    </li>--}}
 
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center">
-                            <i class="bi bi-gear"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+{{--                    <li>--}}
+{{--                        <a class="dropdown-item d-flex align-items-center">--}}
+{{--                            <i class="bi bi-gear"></i>--}}
+{{--                            <span>Account Settings</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <hr class="dropdown-divider">--}}
+{{--                    </li>--}}
 
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center">
-                            <i class="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
+{{--                    <li>--}}
+{{--                        <a class="dropdown-item d-flex align-items-center">--}}
+{{--                            <i class="bi bi-question-circle"></i>--}}
+{{--                            <span>Need Help?</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <hr class="dropdown-divider">--}}
+{{--                    </li>--}}
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="admin/logout">
@@ -231,14 +232,14 @@
 {{--        </li>--}}
 
         <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'seller') ? '' : 'collapsed' }}" href="client/seller">
+            <a class="nav-link {{ (request()->segment(2) == 'seller') ? '' : 'collapsed' }}" href="client/seller/product">
                 <i class="bi bi-box"></i>
                 <span>Sell Products</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link {{ (request()->segment(2) == 'buyer') ? '' : 'collapsed' }}" href="client/buyer">
+            <a class="nav-link {{ (request()->segment(2) == 'buyer') ? '' : 'collapsed' }}" href="client/buyer/product">
                 <i class="bi bi-palette2"></i>
                 <span>Auction Products</span>
             </a>
@@ -278,6 +279,7 @@
 <!-- Template Main JS File -->
 <script type="text/javascript" src="./admin/assets/js/main.js"></script>
 <script type="text/javascript" src="./admin/assets/js/my_script.js"></script>
+<script type="text/javascript" src="./admin/assets/js/countDown.js"></script>
 
 
 </body>

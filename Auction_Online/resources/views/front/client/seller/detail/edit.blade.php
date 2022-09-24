@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Sell Products')
 
 @section('body')
     <main id="main" class="main">
@@ -88,7 +88,7 @@
                                             </div>
 
                                             <div class="col-md-8 col-lg-9 text-center">
-                                                <a href="./client/seller/product" class="btn btn-red btn-primary">Cancel</a>
+                                                <button type="submit" class="btn btn-red btn-primary">Cancel</button>
                                                 <button type="submit" class="btn btn-blue btn-primary">Save Changes</button>
                                             </div>
                                         </div>

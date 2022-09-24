@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -44,8 +45,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         $data['qty'] = 0; //khi tạo mới sản phẩm số lượng = 0
-        $data['featured'] = true; //khi tạo mới sản phẩm số lượng = 0
+        $data['featured'] = true;
 
         $product = Product::create($data);
 

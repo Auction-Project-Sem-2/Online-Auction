@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Sell Products')
 
 @section('body')
     <main id="main" class="main">

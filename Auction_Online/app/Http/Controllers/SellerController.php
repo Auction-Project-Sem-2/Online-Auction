@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SellerController extends Controller
 {
@@ -11,52 +14,84 @@ class SellerController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('front/client/seller/index');
+        $search = $request->search ?? '';
+
+        $products = Product::where('name','like','%' . $search . '%')->where('user_id', Auth::user()->id);
+        $products = $products->paginate(10);
+
+
+        return view('front/client/seller/index', compact('products'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        $productCategories = ProductCategory::all();
+        return view('front/client/seller/create', compact('productCategories'));
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id ;
+        $data['qty'] = 0; //khi tạo mới sản phẩm số lượng = 0
+        $data['featured'] = true; //khi tạo mới sản phẩm số lượng = 0
+
+        $product = Product::create($data);
+
+        return redirect('client/seller/product/' . $product->id);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('front/client/seller/show', compact('product'));
+    }
+
+    public function show_Auction($id, Request $request)
+    {
+        $search = $request->search ?? '';
+
+        $product = Product::find($id);
+        $productAuctions = $product->historyAuctions;
+//
+//        $productAuctions = $productAuctions->where('name','like','%' . $search . '%');
+
+        return view('front/client/seller/auctionUsers', compact('product', 'productAuctions'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $productCategories = ProductCategory::all();
+
+        return view('front/client/seller/edit', compact('product', 'productCategories'));
     }
 
     /**
@@ -64,11 +99,14 @@ class SellerController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        Product::find($id)->update($data);
+
+        return redirect('client/seller/product/'. $id);
     }
 
     /**
