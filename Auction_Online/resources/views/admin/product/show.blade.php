@@ -112,13 +112,8 @@
 
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Start Time</div>
-                                        <div class="col-lg-9 col-md-8">{{ $product->start_time }}</div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-lg-3 col-md-4 label">End Time</div>
-                                        <div class="col-lg-9 col-md-8">{{ $product->end_time }}</div>
+                                        <div class="col-lg-9 col-md-8">{{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}</div>
                                     </div>
 
                                     <div class="row">

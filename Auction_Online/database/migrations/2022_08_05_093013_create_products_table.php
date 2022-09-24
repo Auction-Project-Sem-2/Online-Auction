@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
 
-            $table->dateTime('start_time');
             $table->dateTime('end_time');
 
             $table->text('description')->nullable();

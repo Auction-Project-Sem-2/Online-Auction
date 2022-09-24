@@ -91,7 +91,7 @@
 
                                 <div class="d-block card-footer">
                                     <div class="row col-lg-12 col-md-12">
-{{--                                        {{$products->links()}}--}}
+{{--                                        {{ $products->links()}}--}}
                                     </div>
                                 </div>
                             </div>

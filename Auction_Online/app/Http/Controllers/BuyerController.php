@@ -19,12 +19,9 @@ class BuyerController extends Controller
         $search = $request->search ?? '';
 
         $productAuctions = HistoryAuction::where('user_id', Auth::user()->id);
-//        $products = Product::find($productAuctions->product_id);
         $products = Product::where('name','like','%' . $search . '%');
 
-        $products = $products->paginate(10);
-//        $product = $productAuctions->product;
-//        dd($productAuctions);
+        $products = $products->get();
 
         return view('front.client.buyer.index', compact('products', 'productAuctions'));
     }

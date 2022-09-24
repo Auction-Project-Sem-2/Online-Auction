@@ -89,10 +89,7 @@
                                                     <td style="text-align: center">{{ $product->qty }}</td>
                                                     <td style="text-align: center">
                                                         <div class="badge bg-success mt-2">
-                                                            {{ $product->start_time }}
-                                                        </div>
-                                                        <div class="badge bg-danger">
-                                                            {{ $product->end_time }}
+                                                            {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
                                                         </div>
                                                     </td>
                                                     <td style="text-align: center">
