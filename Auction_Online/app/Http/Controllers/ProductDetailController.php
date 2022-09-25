@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
@@ -19,7 +18,7 @@ class ProductDetailController extends Controller
         $product = Product::find($product_id);
         $productDetails = $product->productDetails;
 
-        return view('admin.product.detail.index', compact('product', 'productDetails'));
+        return view('front.client.seller.detail.index', compact('product', 'productDetails'));
 
     }
 
@@ -32,9 +31,8 @@ class ProductDetailController extends Controller
     {
         $product = Product::find($product_id);
 
-        return view('admin.product.detail.create', compact('product'));
+        return view('front.client.seller.detail.create', compact('product'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +49,7 @@ class ProductDetailController extends Controller
         $totalQty = array_sum(array_column($productDetails->toArray(), 'qty'));
         product::find($product_id)->update(['qty' => $totalQty]);
 
-        return redirect('admin/product/' . $product_id . '/detail');
+        return redirect('client/seller/product/' . $product_id . '/detail');
     }
 
     /**
@@ -76,7 +74,7 @@ class ProductDetailController extends Controller
         $product = Product::find($product_id);
         $productDetail = ProductDetail::find($product_detail_id);
 
-        return view('admin.product.detail.edit', compact('product', 'productDetail'));
+        return view('front.client.seller.detail.edit', compact('product', 'productDetail'));
     }
 
     /**
@@ -96,14 +94,14 @@ class ProductDetailController extends Controller
         $totalQty = array_sum(array_column($productDetails->toArray(), 'qty'));
         product::find($product_id)->update(['qty' => $totalQty]);
 
-        return redirect('admin/product/' . $product_id . '/detail');
+        return redirect('client/seller/product/' . $product_id . '/detail');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($product_id, $product_detail_id)
     {
@@ -113,6 +111,6 @@ class ProductDetailController extends Controller
         $totalQty = array_sum(array_column($productDetails->toArray(), 'qty'));
         product::find($product_id)->update(['qty' => $totalQty]);
 
-        return redirect('admin/product/'. $product_id . '/detail');
+        return redirect('client/seller/product/'. $product_id . '/detail');
     }
 }

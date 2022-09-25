@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Sell Products')
 
 @section('body')
     <main id="main" class="main">
@@ -10,17 +10,14 @@
                     <h1>Products</h1>
                     <nav>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="./admin/home">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active">Products</li>
+                            <li class="breadcrumb-item active">You can add, edit, see the details of the products below.</li>
                         </ol>
                     </nav>
                 </div>
             </div>
 
             <div class="page-title-actions">
-                <a href="./admin/product/create" class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                <a href="./client/seller/product/create" class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary">
                       <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="bi bi-plus-lg"></i>
                       </span>
@@ -36,7 +33,7 @@
                         <div class="card-body">
                             <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                                 <div class="row col-lg-4 col-md-4 mt-lg-3 mt-md-3">
-                                    <form  action="./admin/product">
+                                    <form  action="./client/seller/product">
 
                                         <div class="input-group">
                                             <input type="search" name="search" id="search" placeholder="Search everything" class="form-control">
@@ -53,16 +50,16 @@
                                     <table class="table datatable dataTable-table table-striped" >
                                         <thead>
                                         <tr>
-                                            <th scope="col" data-sortable="" style="width: 3.62902%;text-align: center;">
+                                            <th scope="col" data-sortable="" style="width: 3%;text-align: center;">
                                                 #
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 47%;">
+                                            <th scope="col" data-sortable="" style="width: 40%;">
                                                 Name / Category
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 7.7949%;text-align: center;">Price</th>
-                                            <th scope="col" data-sortable="" style="width: 6.0558%;text-align: center;">Qty</th>
-                                            <th scope="col" data-sortable="" style="width: 15.203%;text-align: center;">Start / End Time</th>
-                                            <th scope="col" data-sortable="" style="width: 21.2995%;text-align: center;">
+                                            <th scope="col" data-sortable="" style="width: 13%;text-align: center;">Current Price</th>
+                                            <th scope="col" data-sortable="" style="width: 14%;text-align: center;">Number Of Auctioneers</th>
+                                            <th scope="col" data-sortable="" style="width: 15%;text-align: center;">End Time</th>
+                                            <th scope="col" data-sortable="" style="width: 15%;text-align: center;">
                                                 Action
                                             </th>
                                         </tr>
@@ -77,7 +74,7 @@
                                                             <div style="display: flex; align-items: center;">
                                                                 <img style="height: 60px; max-width: 60px" data-toggle="tooltip" title="" data-placement="bottom" src="front/img/products/{{ $product->productImages[0]->path  ?? '' }}" alt="" data-original-title="Image">
                                                                 <div class="widget-content-left">
-                                                                    <div class="widget-heading">{{ $product->name }}</div>
+                                                                    <div class="widget-heading"><a class="product-title" href="shop/product/ {{ $product->id }}">{{ $product->name }}</a></div>
                                                                     <div class="widget-subheading opacity-7">
                                                                         {{ $product->productCategory->name }}
                                                                     </div>
@@ -85,38 +82,30 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td style="text-align: center">${{ $product->price }}</td>
-                                                    <td style="text-align: center">{{ $product->qty }}</td>
+                                                    <td style="text-align: center">${{number_format($product->price,2)}}</td>
+                                                    <td style="text-align: center">
+                                                        <a class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" href="client/seller/product/{{ $product->id }}/auction">
+                                                            {{ count($product->historyAuctions) }}
+                                                            <i class="bi bi-people"></i>
+                                                        </a>
+                                                    </td>
                                                     <td style="text-align: center">
                                                         <div class="badge bg-success mt-2">
                                                             {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
                                                         </div>
                                                     </td>
                                                     <td style="text-align: center">
-                                                        <a href="./admin/product/{{ $product->id }}"
+                                                        <a href="./client/seller/product/{{ $product->id }}"
                                                            class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
                                                             Details
                                                         </a>
-                                                        <a href="./admin/product/{{ $product->id }}/edit" data-toggle="tooltip" title="Edit"
+                                                        <a href="./client/seller/product/{{ $product->id }}/edit" data-toggle="tooltip" title="Edit"
                                                            data-placement="bottom"
                                                            class="btn btn-outline-warning border-0 btn-sm">
                                                                             <span class="btn-icon-wrapper opacity-8">
                                                                                 <i class="bi bi-pencil-square"></i>
                                                                             </span>
                                                         </a>
-                                                        <form class="d-inline" action="./admin/product/{{ $product->id }}" method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
-                                                                    type="submit" data-toggle="tooltip" title="Delete"
-                                                                    data-placement="bottom"
-                                                                    onclick="return confirm('Do you really want to delete this item?')">
-                                                                                <span class="btn-icon-wrapper opacity-8">
-                                                                                    <i class="bi bi-trash3"></i>
-                                                                                </span>
-                                                            </button>
-                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

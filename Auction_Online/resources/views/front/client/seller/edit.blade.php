@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Sell Products')
 
 @section('body')
     <main id="main" class="main">
@@ -11,9 +11,7 @@
                     <h1>Product</h1>
                     <nav>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="./admin/home">Home</a></li>
-                            <li class="breadcrumb-item">Product</li>
-                            <li class="breadcrumb-item active">Edit</li>
+                            <li class="breadcrumb-item active">You can add, edit, see the details of the products below.</li>
                         </ol>
                     </nav>
                 </div>
@@ -47,7 +45,7 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form method="post" action="./admin/product/{{ $product->id }}" enctype="multipart/form-data">
+                                    <form method="post" action="./client/seller/product/{{ $product->id }}" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
 
@@ -82,7 +80,7 @@
                                                    class="col-md-4 col-lg-3 col-form-label">End Time</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="end_time" type="datetime-local" class="form-control" id="end_time"
-                                                       value="{{ $product->end_time }}">
+                                                       value="{{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}">
                                             </div>
                                         </div>
 
@@ -134,7 +132,7 @@
                                             </div>
 
                                             <div class="col-md-8 col-lg-9 text-center">
-                                                <a href="./admin/product" class="btn btn-red btn-primary">Cancel</a>
+                                                <a href="./client/seller/product" class="btn btn-red btn-primary">Cancel</a>
                                                 <button type="submit" class="btn btn-blue btn-primary">Save Changes</button>
                                             </div>
                                         </div>

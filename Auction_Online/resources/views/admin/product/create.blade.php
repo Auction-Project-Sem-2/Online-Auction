@@ -75,17 +75,6 @@
                                             </div>
                                         </div>
 
-
-                                        <div class="row mb-3">
-                                            <label for="start_time"
-                                                   class="col-md-4 col-lg-3 col-form-label">Start Time</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="start_time" type="datetime-local" class="form-control" id="start_time"
-                                                       value="" placeholder="Start Time">
-                                            </div>
-                                        </div>
-
-
                                         <div class="row mb-3">
                                             <label for="end_time"
                                                    class="col-md-4 col-lg-3 col-form-label">End Time</label>

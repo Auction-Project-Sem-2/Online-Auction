@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\SellerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +34,16 @@ Route::prefix('cart')->group(function () {
     Route::get('/add/{id}',[CartController::class,'add']);
     Route::get('/delete/{rowId}',[CartController::class,'delete']);
 });
+
+Route::prefix('client')->group(function() {
+    Route::resource('seller/product', SellerController::class);
+    Route::get('seller/product/{id}/auction', [SellerController::class, 'show_Auction']);
+    Route::resource('buyer/product', BuyerController::class);
+    Route::resource('seller/product/{product_id}/image', ProductImageController::class);
+    Route::resource('seller/product/{product_id}/detail', ProductDetailController::class);
+
+});
+
 
 
 Route::prefix('checkout')->group(function () {

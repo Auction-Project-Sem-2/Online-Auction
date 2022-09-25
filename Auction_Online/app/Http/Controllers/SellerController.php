@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class SellerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $search = $request->search ?? '';
 
-        $products = Product::where('name','like','%' . $search . '%');
+        $products = Product::where('name','like','%' . $search . '%')->where('user_id', Auth::user()->id);
         $products = $products->paginate(10);
 
 
-        return view('admin.product.index', compact('products'));
+        return view('front/client/seller/index', compact('products'));
     }
 
     /**
@@ -33,7 +33,8 @@ class ProductController extends Controller
     public function create()
     {
         $productCategories = ProductCategory::all();
-        return view('admin.product.create', compact('productCategories'));
+        return view('front/client/seller/create', compact('productCategories'));
+
     }
 
     /**
@@ -45,13 +46,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['user_id'] = Auth::user()->id;
+        $data['user_id'] = Auth::user()->id ;
         $data['qty'] = 0; //khi tạo mới sản phẩm số lượng = 0
-        $data['featured'] = true;
+        $data['featured'] = true; //khi tạo mới sản phẩm số lượng = 0
 
         $product = Product::create($data);
 
-        return redirect('admin/product/' . $product->id);
+        return redirect('client/seller/product/' . $product->id);
     }
 
     /**
@@ -60,10 +61,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id) {
+    public function show($id)
+    {
         $product = Product::find($id);
 
-        return view('admin.product.show', compact('product'));
+        return view('front/client/seller/show', compact('product'));
+    }
+
+    public function show_Auction($id, Request $request)
+    {
+        $search = $request->search ?? '';
+
+        $product = Product::find($id);
+        $productAuctions = $product->historyAuctions;
+//
+//        $productAuctions = $productAuctions->where('name','like','%' . $search . '%');
+
+        return view('front/client/seller/auctionUsers', compact('product', 'productAuctions'));
     }
 
     /**
@@ -72,11 +86,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         $product = Product::find($id);
         $productCategories = ProductCategory::all();
 
-        return view('admin.product.edit', compact('product', 'productCategories'));
+        return view('front/client/seller/edit', compact('product', 'productCategories'));
     }
 
     /**
@@ -89,10 +104,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-//        $this->productService->update($data, $id);
         Product::find($id)->update($data);
 
-        return redirect('admin/product/' . $id);
+        return redirect('client/seller/product/'. $id);
     }
 
     /**
@@ -103,8 +117,6 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy($id);
-
-        return redirect('admin/product');
+        //
     }
 }

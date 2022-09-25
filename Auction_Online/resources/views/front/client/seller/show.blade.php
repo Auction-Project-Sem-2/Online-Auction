@@ -1,6 +1,6 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'Product')
+@section('title', 'Sell Products')
 
 @section('body')
     <main id="main" class="main">
@@ -11,35 +11,19 @@
                     <h1>Product</h1>
                     <nav>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="./admin/home">Home</a></li>
-                            <li class="breadcrumb-item">Product</li>
-                            <li class="breadcrumb-item active">Detail</li>
+                            <li class="breadcrumb-item active">You can add, edit, see the details of the products below.</li>
                         </ol>
                     </nav>
                 </div>
             </div>
 
             <div class="page-title-actions">
-                <a href="./admin/product/{{ $product->id }}/edit" class="btn-yellow btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                <a href="./client/seller/product/{{ $product->id }}/edit" class="btn-yellow btn-shadow btn-hover-shine mr-3 btn btn-primary">
                       <span class=" btn-icon-wrapper pr-2 opacity-7">
                            <i class="bi bi-pencil-square"></i>
                       </span>
                     Edit
                 </a>
-                <form class="d-inline" action="./admin/product/{{ $product->id }}/delete" method="post">
-                    @csrf
-                    @method('DELETE')
-
-                    <button class="btn-red btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                            type="submit" data-toggle="tooltip" title="Delete"
-                            data-placement="bottom"
-                            onclick="return confirm('Do you really want to delete this item?')">
-                            <span class="btn-icon-wrapper pr-2 opacity-7">
-                                <i class="bi bi-trash3"></i>
-                            </span>
-                        Delete
-                    </button>
-                </form>
             </div>
         </div>
 
@@ -87,7 +71,7 @@
                                         <div class="col-lg-9 col-md-8">
                                             <div class="col-md-9 col-xl-8">
                                                 <p><a class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                                                      href="./admin/product/{{ $product->id }}/image">Manage images</a></p>
+                                                      href="./client/seller/product/{{ $product->id }}/image">Manage images</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +80,7 @@
                                         <div class="col-lg-3 col-md-4 label ">Product Details</div>
                                         <div class="col-lg-9 col-md-8">
                                             <p><a class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                                                  href="./admin/product/{{ $product->id }}/detail">Manage details</a></p>
+                                                  href="./client/seller/product/{{ $product->id }}/detail">Manage details</a></p>
                                         </div>
                                     </div>
 
@@ -109,7 +93,6 @@
                                         <div class="col-lg-3 col-md-4 label ">Name</div>
                                         <div class="col-lg-9 col-md-8">{{ $product->name }}</div>
                                     </div>
-
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">End Time</div>
