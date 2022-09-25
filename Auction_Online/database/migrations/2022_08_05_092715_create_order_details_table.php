@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('qty');
-            $table->double('price');
+            $table->double('total');
 
             $table->timestamps();
         });

@@ -70,30 +70,32 @@ Total cart
 ================
 */
 
-const cartTotal = document.querySelectorAll('.cart-total');
-const priceCart = document.querySelector('#cartPrice');
-let totalPrice = 0;
-cartTotal.forEach(function (cart) {
-    totalPrice += Number(cart.innerText.replace('$',''));
-})
-const formatterPrice = Intl.NumberFormat('en-US',{
-    style: 'currency',
-    currency: 'USD',
-})
-priceCart.innerText = formatterPrice.format(totalPrice);
+// const cartTotal = document.querySelectorAll('.cart-total');
+// const priceCart = document.querySelector('#cartPrice');
+// let totalPrice = 0;
+// cartTotal.forEach(function (cart) {
+//     totalPrice += Number(cart.innerText.replace('$',''));
+// })
+// const formatterPrice = Intl.NumberFormat('en-US',{
+//     style: 'currency',
+//     currency: 'USD',
+// })
+// priceCart.innerText = formatterPrice.format(totalPrice);
 
-// = = = = = = = = = = = = = = = = changeImg = = = = = = = = = = = = = = = =
-function changeImg(input) {
-    //Nếu như tồn tại thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        //Sự kiện file đã được load vào website
-        reader.onload = function (e) {
-            //Thay đổi đường dẫn ảnh
-            // $(input).siblings('.la').attr('src', e.target.result);
-            let la = input.previousElementSibling;
-            la.firstChild.setAtribute('src',e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
+/*
+================
+checkout radio
+================
+*/
+const labelVisa = document.getElementById('labelVisa');
+const labelCod = document.getElementById('labelCod');
+const radioVisa = document.getElementById('typeVisa');
+const radioCod = document.getElementById('typeCod');
+
+
+labelVisa.onclick = function () {
+    radioVisa.click();
+}
+labelCod.onclick = function () {
+    radioCod.click();
 }

@@ -368,3 +368,35 @@ body::-webkit-scrollbar-track {
     max-height: 523px;
     object-fit: cover;
 }
+
+
+
+.user-login {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.user-login img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-login span {
+    padding-left: 10px;
+    font-size: 15px;
+}
+.flec {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar .dropdown-menu.login-tag.show {
+    right: 0;
+}
+.navbar .dropdown-menu.login-tag .dropdown-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

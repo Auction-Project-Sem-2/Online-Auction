@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HistoryAuction;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -15,7 +18,7 @@ class CartController extends Controller
         Cart::add([
            'id' => $product->id,
            'name' => $product->name,
-           'qty' => $product->qty,
+           'qty' => 1,
            'price' => $product->price,
            'weight' => $product->weight ?? 0,
             'options' => [
@@ -32,8 +35,17 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::content();
+        $total = Cart::priceTotal();
+        if (Auth::check()) {
+            $productID = HistoryAuction::join('products','products.id','=','history_auctions.product_id')
+                ->join('users','users.id','=','history_auctions.user_id')
+                ->where('history_auctions.user_id',Auth::user()->id)
+                ->select('products.id')->distinct()->get();
 
-        return view('front.cart.cart',compact('carts'));
+            $product = Product::findOrFail(1)->historyAuctions;
+        }
+
+        return view('front.cart.cart',compact('carts','total','productID'));
     }
 
     /**
