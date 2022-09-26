@@ -75,7 +75,7 @@
                             <span>{{Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu login-tag mt-3" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
+                            <li><a class="dropdown-item" href="client/seller/product"><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
                             <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
                             <li><a class="dropdown-item" href="./account/logout"><span><i class="fa-solid fa-right-from-bracket"></i></span> Sign out </a></li>
                         </ul>
