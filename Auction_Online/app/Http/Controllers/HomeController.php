@@ -16,4 +16,9 @@ class HomeController extends Controller
         $blogs = Blog::limit(3)->get();
         return view('front.index',compact('categories','featuredProduct','products','blogs'));
     }
+
+    public function about_us() {
+        $blogs = Blog::paginate(3);
+        return view('front.about-us', compact( 'blogs'));
+    }
 }

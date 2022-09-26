@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,13 @@ Route::prefix('client')->group(function() {
 
 });
 
+Route::prefix('blog')->group(function () {
+    Route::get('/',[BlogController::class,'index']);
+    Route::get('/{id}/blog_detail',[BlogController::class,'show']);
+    Route::post('/{id}/blog_detail',[BlogController::class,'addCmt']);
+});
+
+Route::get('about_us', [HomeController::class,'about_us']);
 
 
 
