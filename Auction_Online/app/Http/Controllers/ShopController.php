@@ -6,6 +6,7 @@ use App\Models\HistoryAuction;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -53,5 +54,22 @@ class ShopController extends Controller
 
 
         return view('front.shop.show',compact('product','relatedProducts'));
+    }
+
+    function addAuction(Request $request,$id) {
+        $price = $request->priceBid;
+
+        if (Auth::check()) {
+            $data = [
+                'product_id'=> $id,
+                'user_id' => Auth::user()->id,
+                'email' => Auth::user()->email,
+                'name' => Auth::user()->name,
+                'price' => $price,
+            ];
+
+            HistoryAuction::create($data);
+        }
+        return back();
     }
 }

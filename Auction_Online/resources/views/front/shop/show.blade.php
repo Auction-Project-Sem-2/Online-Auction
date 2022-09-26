@@ -59,11 +59,12 @@
                         <p class="h4">${{number_format($product->price,2)}}</p>
                         <p class="text-small mb-4">{{$product->description}}</p>
                         <div class="d-flex align-items-center mb-4 detail-price-time">
-                            <form action="">
+                            <form action="" method="post">
+                                @csrf
                                 <div class="py-3 price-detail-box">
                                     <div class="input-group">
                                         <div class="input-group-text">$</div>
-                                        <input type="text" class="form-control" placeholder="Price">
+                                        <input type="text" name="priceBid" class="form-control" placeholder="Price">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-sm py-2 border-bottom-0 px-5 me-3" href="">

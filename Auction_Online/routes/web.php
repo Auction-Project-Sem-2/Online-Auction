@@ -27,6 +27,7 @@ Route::get('/', [HomeController::class,'index']);
 Route::prefix('shop')->group(function () {
     Route::get('',[ShopController::class,'index']);
     Route::get('product/{id}',[ShopController::class,'show']);
+    Route::post('product/{id}',[ShopController::class,'addAuction']);
 });
 
 Route::prefix('cart')->group(function () {
@@ -51,6 +52,21 @@ Route::prefix('blog')->group(function () {
 });
 
 Route::get('about_us', [HomeController::class,'about_us']);
+
+
+Route::prefix('checkout')->group(function () {
+    Route::get('',[\App\Http\Controllers\CheckoutController::class,'index']);
+    Route::post('',[\App\Http\Controllers\CheckoutController::class,'addOrder']);
+    Route::get('complete',[\App\Http\Controllers\CheckoutController::class,'complete']);
+});
+
+Route::prefix('account')->group(function () {
+    Route::get('login',[\App\Http\Controllers\AccountController::class,'login']);
+    Route::post('login',[\App\Http\Controllers\AccountController::class,'checkLogin']);
+    Route::get('logout',[\App\Http\Controllers\AccountController::class,'logout']);
+    Route::get('register',[\App\Http\Controllers\AccountController::class,'register']);
+    Route::post('register',[\App\Http\Controllers\AccountController::class,'postRegister']);
+});
 
 
 

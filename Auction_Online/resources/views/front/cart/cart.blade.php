@@ -18,6 +18,56 @@
   <section class="py-5">
     <div class="container py-5">
       <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Navigation-->
+                <header class="text-center mb-5">
+                    <h2>The product you are bidding on</h2>
+                </header>
+                <!-- Shopping cart-->
+                <div class="table-responsive mb-4">
+                    <table class="table">
+                        <thead class="bg-light">
+                        <tr>
+                            <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Product</strong></th>
+                            <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Current price</strong></th>
+                            <th class="p-3 border-0" scope="col"><strong class="text-uppercase">End Time</strong></th>
+                            <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Auctioneer</strong></th>
+                            <th class="p-3 border-0" scope="col"><strong class="text-uppercase"></strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach($productID as $id)
+                                <tr>
+                                    <th class="p-3 pl-0 border-0" scope="row">
+                                        <div class="d-flex align-items-center"><a class="reset-anchor d-block animsition-link" href="./shop/product/{{$id}}"><img src="./front/img/products/" alt="..." width="70"></a>
+                                            <div class="ms-3"><strong class="h6"><a class="reset-anchor animsition-link" href="./shop/product/{{$id}}">{{\App\Models\Product::where('id',$id)->get()->name}}</a></strong></div>
+                                        </div>
+                                    </th>
+                                    <td class="p-3 align-middle border-0">
+                                        <p class="mb-0 small">${{number_format(\App\Models\Product::findOrFail($id)->price,2)}}</p>
+                                    </td>
+                                    <td class="p-3 align-middle border-0">
+                                        <div class="CountDown-box">
+                                            <input class="timeData" type="hidden" value="{{\App\Models\Product::findOrFail($id)->end_time}}">
+                                            <div class="CountDown"></div>
+                                        </div>
+                                    </td>
+                                    <td class="p-3 align-middle border-0">
+                                        <span class="pro-user"><span><i class="fa-solid fa-user"></i></span> 5 </span>
+                                    </td>
+                                    <td class="p-3 align-middle border-0">
+                                        <a href="./shop/product/{{$id}}" class="nav-link font-weight-bold">Auction</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      <div class="row">
         <div class="col-lg-10 mx-auto">
           <!-- Navigation-->
           <header class="text-center mb-5">
@@ -82,12 +132,12 @@
                             <div class="col-md-6">
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item py-1"><a class="btn btn-outline-primary" href="./shop"> <i class="fas fa-shopping-bag me-2"></i>Continue auction</a></li>
-                                    <li class="list-inline-item py-1"><a class="btn btn-primary" href=""> <i class="far fa-credit-card me-2"></i>Process checkout</a></li>
+                                    <li class="list-inline-item py-1"><a class="btn btn-primary" href="./checkout"> <i class="far fa-credit-card me-2"></i>Process checkout</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-6 text-start text-md-end">
                                 <p class="text-muted mb-1">Cart total</p>
-                                <h6 class="h4 mb-0" id="cartPrice"></h6>
+                                <h6 class="h4 mb-0" id="cartPrice">${{number_format($total,2)}}</h6>
                             </div>
                         </div>
                     </div>

@@ -56,32 +56,35 @@
             </ul>
             <!-- Navbar menu left-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
-                <li class="nav-item me-3">
+                <li class="nav-item me-3 flec">
                     <a class="nav-link text-uppercase position-relative icon-nav" href="./cart">
                         <i class="fa-regular fa-cart-shopping"></i>
                         <span class="badge rounded-pill bg-primary">{{count(\Gloudemans\Shoppingcart\Facades\Cart::content())}}</span>
                     </a>
                 </li>
-                <li class="nav-item me-3">
-                    <a class="nav-link text-uppercase position-relative icon-nav" href="">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="badge rounded-pill bg-primary">0</span>
-                    </a>
-                </li>
-                <li class="nav-item me-3">
-                    <a class="nav-link text-uppercase icon-nav" href="">
-                        <i class="fa-regular fa-user"></i>
-                    </a>
-                </li>
-                <li class="nav-item me-3">
-                    <a class="nav-link text-uppercase icon-nav" href="" >
-                        <i class="fa-regular fa-gavel"></i>
-                    </a>
-                </li>
-                <li class="nav-item" id="glass-icon-nav">
-              <span class="nav-link text-uppercase icon-nav" >
-                <i class="fa-regular fa-magnifying-glass"></i>
+                <li class="nav-item me-3 flec" id="glass-icon-nav">
+                     <span class="nav-link text-uppercase icon-nav" >
+                    <i class="fa-regular fa-magnifying-glass"></i>
               </span>
+                </li>
+                <li class="nav-item dropdown me-3 user-login">
+
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./front/img/user/{{Auth::user()->avatar ?? 'default-avatar.jpg'}}" alt="user">
+                            <span>{{Auth::user()->name}}</span>
+                        </a>
+                        <ul class="dropdown-menu login-tag mt-3" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
+                            <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
+                            <li><a class="dropdown-item" href="./account/logout"><span><i class="fa-solid fa-right-from-bracket"></i></span> Sign out </a></li>
+                        </ul>
+                    @else
+                        <a class="nav-link text-uppercase icon-nav" href="./account/login">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    @endif
+
                 </li>
             </ul>
         </div>
