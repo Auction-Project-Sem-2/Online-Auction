@@ -47,7 +47,7 @@
                                             <th scope="col" data-sortable="" style="width: 41%;">
                                                 Name / Category
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 20%;text-align: center;">The Price You Set</th>
+                                            <th scope="col" data-sortable="" style="width: 20%;text-align: center;">Your Bid</th>
                                             <th scope="col" data-sortable="" style="width: 21%;text-align: center;">Current Price</th>
                                             <th scope="col" data-sortable="" style="width: 15%;text-align: center;">End Time</th>
 
