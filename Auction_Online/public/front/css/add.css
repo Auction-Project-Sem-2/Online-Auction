@@ -338,6 +338,7 @@ body::-webkit-scrollbar-track {
 }
 .product .img-fluid {
     height: 275px;
+    width: 100%;
     object-fit: cover;
 }
 .btn-search.btn-primary {
@@ -399,4 +400,8 @@ body::-webkit-scrollbar-track {
 .navbar .dropdown-menu.login-tag .dropdown-item {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.user-login-con {
+    display: flex;
+    align-items: center;
 }
