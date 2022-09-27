@@ -2490,6 +2490,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 5,
@@ -2497,6 +2498,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2505,6 +2507,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2513,6 +2516,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2521,6 +2525,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2529,6 +2534,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2537,6 +2543,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 78.55,
+                'status' => 2,
             ],
 
             [
@@ -2545,6 +2552,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 8,
@@ -2552,6 +2560,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 140.22,
+                'status' => 2,
             ],
 
             [
@@ -2560,6 +2569,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2568,6 +2578,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2576,6 +2587,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2584,6 +2596,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2592,6 +2605,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 78.55,
+                'status' => 2,
             ],
             [
                 'product_id' => 14,
@@ -2599,6 +2613,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 15,
@@ -2606,6 +2621,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 140.22,
+                'status' => 2,
             ],
 
             [
@@ -2614,6 +2630,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2622,6 +2639,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2630,6 +2648,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2638,6 +2657,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2646,6 +2666,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 78.55,
+                'status' => 2,
             ],
 
             [
@@ -2654,6 +2675,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 22,
@@ -2661,6 +2683,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 140.22,
+                'status' => 2,
             ],
 
             [
@@ -2669,6 +2692,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2677,6 +2701,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2685,6 +2710,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2693,6 +2719,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2701,6 +2728,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 78.55,
+                'status' => 2,
             ],
 
             [
@@ -2709,6 +2737,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 29,
@@ -2716,6 +2745,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 140.22,
+                'status' => 2,
             ],
 
             [
@@ -2724,6 +2754,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2732,6 +2763,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2740,6 +2772,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2748,6 +2781,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2756,6 +2790,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 78.55,
+                'status' => 2,
             ],
 
             [
@@ -2764,6 +2799,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 100.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 36,
@@ -2771,6 +2807,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 140.22,
+                'status' => 2,
             ],
 
             [
@@ -2779,6 +2816,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 50.22,
+                'status' => 2,
             ],
 
             [
@@ -2787,6 +2825,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 60.22,
+                'status' => 2,
             ],
 
             [
@@ -2795,6 +2834,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 7.22,
+                'status' => 2,
             ],
 
             [
@@ -2803,6 +2843,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 77.22,
+                'status' => 2,
             ],
 
             [
@@ -2811,6 +2852,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 120.55,
+                'status' => 2,
             ],
 
             [
@@ -2819,6 +2861,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'BrandonKelley@gmail.com',
                 'name' => 'Brandon Kelley',
                 'price' => 175.22,
+                'status' => 2,
             ],
             [
                 'product_id' => 16,
@@ -2826,6 +2869,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 180.22,
+                'status' => 2,
             ],
 
             [
@@ -2834,6 +2878,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 90.22,
+                'status' => 2,
             ],
 
             [
@@ -2842,6 +2887,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'ShaneLynch@gmail.com',
                 'name' => 'Shane Lynch',
                 'price' => 136.22,
+                'status' => 2,
             ],
 
             [
@@ -2850,6 +2896,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'price' => 155.33,
+                'status' => 2,
             ],
         ]);
     }
