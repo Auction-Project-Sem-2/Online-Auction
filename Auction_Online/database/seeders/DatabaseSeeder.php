@@ -83,27 +83,30 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Top 10 best selling Tendence watches in 2022',
                 'image' => 'tendence.jpg',
                 'category' => '',
-                'content' => 'As a famous Swiss watch brand, Tendence is increasingly popular in the world market because of its relentless...',
+                'content' => 'The foundation of our marketplace is built upon openness, honesty, integrity and trust.',
             ],
             [
                 'user_id' => 2,
                 'title' => 'What is Tretinoin Obagi? Is that good? Actual effect?',
                 'image' => 'tretinoin.jpg',
                 'category' => '',
-                'content' => 'Tretinoin Obagi là dòng sản phẩm đang rất hot trên thị trường ngành hàng mỹ phẩm trị mụn. Sản phẩm được coi là tượng...',
+                'content' => 'As a pioneer of meaningful commerce, we strive to sustain the future of our customers, our company and our planet. And central to this journey, we will continue to embrace sustainable practices that reinforce our commitment to operating with integrity.',
             ],
             [
                 'user_id' => 3,
                 'title' => 'Review Japanese Mama Ramune candy for babies',
                 'image' => 'kmama-ramune.jpg',
-                'category' => '', 'content' => 'Children often anorexic will lead to a lack of nutrients in the body. This limits the development of....',
+                'category' => '',
+                'content' => 'When a seller opens their virtual doors on our marketplace, we’re with them every step of the way. We partner with our seller community, providing them with the tools and training to start and grow their business on our platform.
+
+',
             ],
             [
                 'user_id' => 4,
                 'title' => 'What is Tretinoin Obagi? Is that good? Actual effect?',
-                'image' => 'tretinoin.jpg',
+                'image' => 'workforce.jpg',
                 'category' => '',
-                'content' => 'Tretinoin Obagi là dòng sản phẩm đang rất hot trên thị trường ngành hàng mỹ phẩm trị mụn. Sản phẩm được coi là tượng...',
+                'content' => 'Our goal is to bring more people to join eBay from different communities around the world, so we can inspire innovations and new product experiences that are better attuned to our customers’ needs.',
             ],
         ]);
 

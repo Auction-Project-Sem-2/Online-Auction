@@ -41,7 +41,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="admin/home" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
 {{--            <img src="./front/img/Logo.png" alt="">--}}
             <span class="d-none d-lg-block">Auction Online</span>
         </a>
@@ -159,35 +159,6 @@
                         <hr class="dropdown-divider">
                     </li>
 
-{{--                    <li>--}}
-{{--                        <a class="dropdown-item d-flex align-items-center" href="admin/user/{{ \Illuminate\Support\Facades\Auth::user()->id }}">--}}
-{{--                            <i class="bi bi-person"></i>--}}
-{{--                            <span>My Profile</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <hr class="dropdown-divider">--}}
-{{--                    </li>--}}
-
-{{--                    <li>--}}
-{{--                        <a class="dropdown-item d-flex align-items-center">--}}
-{{--                            <i class="bi bi-gear"></i>--}}
-{{--                            <span>Account Settings</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <hr class="dropdown-divider">--}}
-{{--                    </li>--}}
-
-{{--                    <li>--}}
-{{--                        <a class="dropdown-item d-flex align-items-center">--}}
-{{--                            <i class="bi bi-question-circle"></i>--}}
-{{--                            <span>Need Help?</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <hr class="dropdown-divider">--}}
-{{--                    </li>--}}
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="admin/logout">
@@ -208,28 +179,6 @@
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link {{ (request()->segment(2) == 'home') ? '' : 'collapsed' }}" href="admin/home">--}}
-{{--                <i class="bi bi-grid"></i>--}}
-{{--                <span>Dashboard</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-        <!-- End Dashboard Nav -->
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link {{ (request()->segment(2) == 'user') ? '' : 'collapsed' }}" href="admin/user">--}}
-{{--                <i class="bi bi-person"></i>--}}
-{{--                <span>User</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link {{ (request()->segment(2) == 'order') ? '' : 'collapsed' }}" href="admin/order">--}}
-{{--                <i class="bi bi-cart"></i>--}}
-{{--                <span>Order</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
 
         <li class="nav-item">
             <a class="nav-link {{ (request()->segment(2) == 'seller') ? '' : 'collapsed' }}" href="client/seller/product">

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./front/css/swiper-bundle.min.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="./front/css/style-default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="./front/css/style.css">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="./front/css/add.css">
     <!-- Favicon-->
@@ -28,6 +29,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    @yield('css')
 </head>
 <body style="{{ (request()->segment(1) == 'profile') ? 'background-color: #ececec' : '' }}">
 <!-- NAVBAR-->
@@ -42,7 +45,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == '') ? 'active' : '' }}" aria-current="page" href="./">Home</a></li>
                 <li class="nav-item me-lg-3"><a class="nav-link text-uppercase {{ (request()->segment(1) == 'shop') ? 'active' : '' }}" href="./shop">Shop</a></li>
-                <li class="nav-item"><a class="nav-link text-uppercase {{ (request()->segment(1)== 'about') ? 'active' : '' }}" href="./about">About</a></li>
+                <li class="nav-item"><a class="nav-link text-uppercase {{ (request()->segment(1)== 'about') ? 'active' : '' }}" href="./about_us">About</a></li>
                 <li class="nav-item dropdown me-lg-3">
                     <a class="nav-link text-uppercase dropdown-toggle {{ (request()->segment(1)== 'blog' ) || (request()->segment(1) == 'help_center' ) ? 'active' : '' }}" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <ul class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
@@ -72,8 +75,13 @@
                             <span>{{Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu login-tag mt-3" aria-labelledby="navbarDropdown">
+
                             <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
                             <li><a class="dropdown-item" href="./profile"><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
+
+                            <li><a class="dropdown-item" href="./client/seller/product"><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
+                            <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
+
                             <li><a class="dropdown-item" href="./account/logout"><span><i class="fa-solid fa-right-from-bracket"></i></span> Sign out </a></li>
                         </ul>
                     @else
