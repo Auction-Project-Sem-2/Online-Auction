@@ -29,7 +29,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style="{{ (request()->segment(1) == 'profile') ? 'background-color: #ececec' : '' }}">
 <!-- NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-light py-2 py-lg-4 bg-white shadow-sm">
     <div class="container">
@@ -56,7 +56,7 @@
                 <li class="nav-item me-3 flec">
                     <a class="nav-link text-uppercase position-relative icon-nav" href="./cart">
                         <i class="fa-regular fa-cart-shopping"></i>
-                        <span class="badge rounded-pill bg-primary">{{count(\Gloudemans\Shoppingcart\Facades\Cart::content())}}</span>
+                        <span class="badge rounded-pill bg-primary">{{\Illuminate\Support\Facades\Auth::check() ? count(\Gloudemans\Shoppingcart\Facades\Cart::content()) : '0'}}</span>
                     </a>
                 </li>
                 <li class="nav-item me-3 flec" id="glass-icon-nav">
@@ -67,13 +67,13 @@
                 <li class="nav-item dropdown me-3 user-login">
 
                     @if(\Illuminate\Support\Facades\Auth::check())
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle user-login-con" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./front/img/user/{{Auth::user()->avatar ?? 'default-avatar.jpg'}}" alt="user">
                             <span>{{Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu login-tag mt-3" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
-                            <li><a class="dropdown-item" href=""><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
+                            <li><a class="dropdown-item" href="./profile"><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
                             <li><a class="dropdown-item" href="./account/logout"><span><i class="fa-solid fa-right-from-bracket"></i></span> Sign out </a></li>
                         </ul>
                     @else

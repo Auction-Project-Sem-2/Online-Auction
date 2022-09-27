@@ -56,7 +56,7 @@
                     <!-- Item info-->
                     <div class="col-lg-6 detail-item">
                         <h1 title="{{$product->name}}">{{$product->name}}</h1>
-                        <p class="h4">${{number_format($product->price,2)}}</p>
+                        <p class="h4">${{number_format($product->historyAuctions[count($product->historyAuctions) - 1]->price ?? $product->price,2)}}</p>
                         <p class="text-small mb-4">{{$product->description}}</p>
                         <div class="d-flex align-items-center mb-4 detail-price-time">
                             <form action="" method="post">
@@ -141,38 +141,45 @@
         </section>
 
         <!--Product featured-->
-        <section class="py-5">
-            <div class="container">
-                <header class="mb-3 text-center">
-                    <h2 class="mb-0">You may also like</h2>
-                    <p class="text-muted">Related Product</p>
-                </header>
-                <div class="row py-3">
+        <section class="pb-5">
+            <div class="container pb-5">
+                <div class="row">
+                    <div class="col-xl-12 mx-auto">
+                        <header class="text-center mb-5">
+                            <h2>You may also like</h2>
+                            <p class="text-muted">Related products</p>
+                        </header>
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" id="similarItemsSlider">
+                            <div class="swiper-wrapper" id="swiper-wrapper-18a24e777a543a56" aria-live="polite" style="transition-duration: 0ms;">
+                                <!-- Product-->
 
-                    @foreach($relatedProducts as $product)
-                        <div class="col-lg-2dot4">
-                            <div class="product mb-4">
-                                <a href="./shop/product/{{$product->id}}">
-                                    <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
-                                </a>
-                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a><a class="product-btn" href="./cart/add/{{$product->id}}"><i class="fas fa-dolly-flatbed"></i></a></div>
-                            </div>
-                            <div class="pro-text">
-                                <h6 class="pro-title"><a class="reset-anchor" href="./shop/product/{{$product->id}}">{{$product->name}}</a></h6>
-                                <p class="pro-price">Highest price <span>${{number_format($product->price,2)}}</span></p>
-                                <div>
-                                    <div class="CountDown-box">
-                                        <input class="timeData" type="hidden" value="{{$product->end_time}}">
-                                        <div class="CountDown"></div>
-                                        <span class="pro-user">53 <span><i class="fa-solid fa-user"></i></span></span>
-                                    </div>
-                                </div>
+                                @foreach($relatedProducts as $product)
+                                    @if(getdate(strtotime($product->end_time))[0] > time())
+                                        <div class="swiper-slide pb-5 swiper-slide-active" data-swiper-slide-index="0" style="width: 248.5px; margin-right: 25px;" role="group">
+                                            <div class="product mb-4">
+                                                <a href="./shop/product/{{$product->id}}">
+                                                    <img class="img-fluid" src="./front/img/products/{{$product->productImages[0]->path}}" alt="product">
+                                                </a>
+                                                <div class="cta shadow d-inline-block"><a class="product-btn" href=""><i class="fas fa-heart"></i></a></div>
+                                            </div>
+                                            <div class="pro-text">
+                                                <h6 class="pro-title"><a class="reset-anchor" href="./shop/product/{{$product->id}}">{{$product->name}}</a></h6>
+                                                <p class="pro-price">Current price <span>${{number_format($product->historyAuctions[count($product->historyAuctions) - 1]->price ?? $product->price,2)}}</span></p>
+                                                <div>
+                                                    <div class="CountDown-box">
+                                                        <input class="timeData" type="hidden" value="{{$product->end_time}}">
+                                                        <div class="CountDown"></div>
+                                                        <span class="pro-user">{{count($product->historyAuctions)}} <span><i class="fa-solid fa-user"></i></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+
                             </div>
                         </div>
-                    @endforeach
-
-
-
+                    </div>
                 </div>
                 <div class="btn-pr-index">
                     <a href="./shop" class="btn btn-primary">View more</a>

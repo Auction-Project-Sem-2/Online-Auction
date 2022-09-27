@@ -33,10 +33,10 @@ class CheckoutController extends Controller
         }
 
         // Gửi mail
-//        $total = Cart::priceTotal();
-//        $subtotal = Cart::priceTotal();
-//
-//        $this->sendEmail($order, $total, $subtotal);
+        $total = Cart::priceTotal();
+        $subtotal = Cart::priceTotal();
+
+        $this->sendEmail($order, $total, $subtotal);
 
 
         // Xóa giỏ hàng

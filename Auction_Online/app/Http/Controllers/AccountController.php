@@ -22,8 +22,7 @@ class AccountController extends Controller
 
 
         if (Auth::attempt($credentials)) {
-            //return redirect('');
-            return redirect()->intended(''); // Mặc định là trang chủ
+            return redirect('./');
         }else {
             return back()->with('notification', 'Error: Email or password is wrong');
         }

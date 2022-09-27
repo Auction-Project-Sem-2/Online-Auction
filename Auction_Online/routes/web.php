@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,6 @@ Route::prefix('shop')->group(function () {
 
 Route::prefix('cart')->group(function () {
     Route::get('',[CartController::class,'index']);
-    Route::get('/add/{id}',[CartController::class,'add']);
     Route::get('/delete/{rowId}',[CartController::class,'delete']);
 });
 
@@ -50,6 +50,12 @@ Route::prefix('checkout')->group(function () {
     Route::get('',[\App\Http\Controllers\CheckoutController::class,'index']);
     Route::post('',[\App\Http\Controllers\CheckoutController::class,'addOrder']);
     Route::get('complete',[\App\Http\Controllers\CheckoutController::class,'complete']);
+});
+
+Route::prefix('profile')->group(function () {
+    Route::get('',[ProfileController::class,'index']);
+    Route::get('edit',[ProfileController::class,'showEdit']);
+    Route::put('edit',[ProfileController::class,'update']);
 });
 
 Route::prefix('account')->group(function () {
