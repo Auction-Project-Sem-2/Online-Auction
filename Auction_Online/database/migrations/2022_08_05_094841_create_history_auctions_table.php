@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('name');
             $table->double('price');
 
+            $table->integer('status')->nullable();
+
+
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_comments');
+        Schema::dropIfExists('history_auctions');
     }
 };
