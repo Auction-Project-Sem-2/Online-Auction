@@ -56,13 +56,13 @@
                                             <th scope="col" data-sortable="" style="width: 3.62902%;text-align: center;">
                                                 #
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 47%;">
+                                            <th scope="col" data-sortable="" style="width: 46%;">
                                                 Name / Category
                                             </th>
-                                            <th scope="col" data-sortable="" style="width: 7.7949%;text-align: center;">Price</th>
-                                            <th scope="col" data-sortable="" style="width: 6.0558%;text-align: center;">Qty</th>
-                                            <th scope="col" data-sortable="" style="width: 15.203%;text-align: center;">Start / End Time</th>
-                                            <th scope="col" data-sortable="" style="width: 21.2995%;text-align: center;">
+                                            <th scope="col" data-sortable="" style="width: 9.7949%;text-align: center;">Starting Price</th>
+                                            <th scope="col" data-sortable="" style="width: 8.0558%;text-align: center;">Number Of Auctioneers</th>
+                                            <th scope="col" data-sortable="" style="width: 15.203%;text-align: center;">End Time</th>
+                                            <th scope="col" data-sortable="" style="width: 19.2995%;text-align: center;">
                                                 Action
                                             </th>
                                         </tr>
@@ -85,12 +85,21 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td style="text-align: center">${{ $product->price }}</td>
-                                                    <td style="text-align: center">{{ $product->qty }}</td>
+                                                    <td style="text-align: center">${{number_format($product->price,2)}}</td>
                                                     <td style="text-align: center">
-                                                        <div class="badge bg-success mt-2">
-                                                            {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
-                                                        </div>
+                                                        <a class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" href="admin/product/{{ $product->id }}/auctioneers">
+                                                            {{ count($product->historyAuctions) }}
+                                                            <i class="bi bi-people"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: center">
+                                                        @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )
+                                                            <div class="badge bg-danger mt-2">The End</div>
+                                                        @else
+                                                            <div class="badge bg-success mt-2">
+                                                                {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
+                                                            </div>
+                                                        @endif
                                                     </td>
                                                     <td style="text-align: center">
                                                         <a href="./admin/product/{{ $product->id }}"

@@ -161,7 +161,7 @@
 
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="admin/logout">
+                        <a class="dropdown-item d-flex align-items-center" href="./account/login">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,6 +65,24 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         return view('admin.product.show', compact('product'));
+    }
+
+    public function show_auctioneers($id, Request $request)
+    {
+//        $search = $request->search ?? '';
+
+        $product = Product::find($id);
+        $productAuctions = $product->historyAuctions;
+        $status = $product->historyAuctions->where('status', 1);
+//        $productAuctions = $productAuctions->where('name','like','%' . $search . '%');
+
+        return view('admin/product/auctioneers', compact('product', 'productAuctions', 'status'));
+    }
+
+    public function show_user($user_id,)
+    {
+        $user = User::find($user_id);
+        return view('admin.user.show', compact('user'));
     }
 
     /**

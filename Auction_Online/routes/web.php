@@ -39,6 +39,8 @@ Route::prefix('cart')->group(function () {
 Route::prefix('client')->group(function() {
     Route::resource('seller/product', SellerController::class);
     Route::get('seller/product/{id}/auction', [SellerController::class, 'show_Auction']);
+    Route::post('seller/product/{id}/auction/{auction_id}', [SellerController::class, 'updateStatus']);
+    Route::get('user/profile/{user_id}', [SellerController::class, 'show_profile']);
     Route::resource('buyer/product', BuyerController::class);
     Route::resource('seller/product/{product_id}/image', ProductImageController::class);
     Route::resource('seller/product/{product_id}/detail', ProductDetailController::class);
@@ -52,6 +54,7 @@ Route::prefix('blog')->group(function () {
 });
 
 Route::get('about_us', [HomeController::class,'about_us']);
+Route::get('help_center', [HomeController::class,'help_center']);
 
 
 Route::prefix('checkout')->group(function () {
@@ -86,9 +89,13 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
     Route::get('home', [Admin\HomeController::class, 'index']);
 
     Route::resource('user', Admin\UserController::class);
+
     Route::resource('product', Admin\ProductController::class);
+    Route::get('product/{id}/auctioneers', [Admin\ProductController::class, 'show_auctioneers']);
+    Route::get('product/auctioneers/{user_id}', [Admin\ProductController::class, 'show_user']);
     Route::resource('product/{product_id}/image', Admin\ProductImageController::class);
     Route::resource('product/{product_id}/detail', Admin\ProductDetailController::class);
+
     Route::resource('category', Admin\ProductCategoryController::class);
 
     Route::prefix('order')->group(function() {
