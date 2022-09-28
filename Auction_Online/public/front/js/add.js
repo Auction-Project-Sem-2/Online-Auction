@@ -82,6 +82,32 @@ Total cart
 // })
 // priceCart.innerText = formatterPrice.format(totalPrice);
 
+
+
+
+// = = = = = = = = = = = = = = = = changeImg = = = = = = = = = = = = = = = =
+const thumbnail = document.querySelector('.thumbnail');
+const imagei = document.querySelector('#image');
+const iconEditImg = document.querySelector("#icon-edit-img");
+function changeImg(input) {
+    //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        //Sự kiện file đã được load vào website
+        reader.onload = function (e) {
+            //Thay đổi đường dẫn ảnh
+            // $(input).siblings('.thumbnail').attr('src', e.target.result);
+            thumbnail.setAttribute('src',e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+//Khi click #thumbnail thì cũng gọi sự kiện click #image
+
+iconEditImg.onclick = function () {
+    imagei.click();
+}
+
 /*
 ================
 checkout radio

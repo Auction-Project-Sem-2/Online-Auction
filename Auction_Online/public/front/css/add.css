@@ -405,3 +405,27 @@ body::-webkit-scrollbar-track {
     display: flex;
     align-items: center;
 }
+
+
+
+.change-img-box {
+    position: relative;
+}
+#icon-edit-img {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #9a9999;
+    border: none;
+    outline: none;
+}
+#icon-edit-img > .fa-pencil {
+    color: black;
+}
