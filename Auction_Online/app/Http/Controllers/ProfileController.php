@@ -29,23 +29,19 @@ class ProfileController extends Controller
     {
         if (Auth::check()) {
 
-            $data = $request->all();
-           unset($data['_token'],$data['_method']);
-//        $data = request()->except(['_token', '_method', 'image_old', 'image']);
-//        $data = $data->unset(['_token', '_method']);
+        $data = request()->except(['_token', '_method', 'image_old', 'image']);
 
+//             xử lí file ảnh
+        if ($request->hasFile('image')) {
+            //thêm file mới:
+            $data['avatar'] = Common::uploadFile($request->file('image'), './front/img/user/');
 
-            // xử lí file ảnh
-//        if ($request->hasFile('image')) {
-//            //thêm file mới:
-//            $data['avatar'] = Common::uploadFile($request->file('image'), './front/img/user/');
-//
-//            //xóa file có:
-//            $file_name_old = $request->get('image_old');
-//            if ($file_name_old != '') {
-//                unlink('front/img/user/' . $file_name_old);
-//            }
-//        }
+            //xóa file có:
+            $file_name_old = $request->get('image_old');
+            if ($file_name_old != '') {
+                unlink('front/img/user/' . $file_name_old);
+            }
+        }
 
             // cập nhập dữ liệu
              User::where('id', Auth::id())->update($data);

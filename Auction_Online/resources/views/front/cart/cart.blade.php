@@ -32,6 +32,7 @@
                                 <thead class="bg-light">
                                 <tr>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Product</strong></th>
+                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Your bid</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Current price</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">End Time</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Number of Auctions</strong></th>
@@ -48,6 +49,9 @@
                                                     <div class="ms-3"><strong class="h6"><a class="reset-anchor animsition-link" href="./shop/product/{{$productAuction[$i]->id}}">{{$productAuction[$i]->name}}</a></strong></div>
                                                 </div>
                                             </th>
+                                            <td class="p-3 align-middle border-0">
+                                                <p class="mb-0 small">${{number_format(\App\Models\HistoryAuction::where('product_id',$productAuction[$i]->id)->where('user_id',Auth::id())->max('price'),2)}}</p>
+                                            </td>
                                             <td class="p-3 align-middle border-0">
                                                 <p class="mb-0 small">${{number_format($prices[$i],2)}}</p>
                                             </td>
