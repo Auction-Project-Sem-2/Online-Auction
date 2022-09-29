@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class SellerController extends Controller
 {
@@ -93,7 +94,22 @@ class SellerController extends Controller
         $data = $request->all();
         HistoryAuction::find($auction_id)->update($data);
 
+
+        $this->sendEmail();
+
         return redirect('/client/seller/product/'. $id . '/auction');
+    }
+
+    private function sendEmail($product) {
+        $email_to = $product->email;
+
+        Mail::send('front.checkout.email', compact(),
+            function ($message) use ($email_to){
+                $message->from('AutionOnline@gmail.com', 'Auction');
+                $message->to($email_to,$email_to);
+                $message->subject('Order Notification');
+            }
+        );
     }
 
     /**
