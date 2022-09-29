@@ -93,7 +93,7 @@
                                                         </a>
                                                     </td>
                                                     <td style="text-align: center">
-                                                        @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )
+                                                        @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) || count($product->historyAuctions->where('status', 1)) == 1)
                                                             <div class="badge bg-danger mt-2">The End</div>
                                                         @else
                                                             <div class="badge bg-success mt-2">

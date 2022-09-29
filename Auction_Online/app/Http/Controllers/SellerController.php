@@ -24,7 +24,6 @@ class SellerController extends Controller
         $products = Product::where('name','like','%' . $search . '%')->where('user_id', Auth::user()->id);
         $products = $products->paginate(10);
 
-//        dd(getdate(strtotime(Product::find(13)->end_time)) < getdate(strtotime(Carbon::now())));
         return view('front/client/seller/index', compact('products'));
     }
 
