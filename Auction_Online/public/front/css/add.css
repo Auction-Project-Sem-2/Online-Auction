@@ -450,3 +450,70 @@ body::-webkit-scrollbar-track {
     width: 26px;
     height: 20px;
 }
+
+
+/*Notification*/
+#toat {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+.toat {
+    margin: 30px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px 5px #cccc;
+    padding: 15px 20px;
+    z-index: 10;
+    transition: ease all 0.3s;
+    animation: FadeIn 0.3s ease forwards 2s;
+}
+
+@keyframes FadeIn {
+    0%{
+        opacity: 0;
+        transform: translateX(calc(100% + 30px));
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.toat.success {
+    border-left: 5px solid #4650dd;
+}
+.icon.success {
+    color: #4650dd;
+}
+
+.text-Noti {
+    padding: 0 15px;
+    flex-grow: 1;
+}
+.text-Noti h3{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+.text-Noti p {
+    margin: 0;
+}
+
+.close-Noti {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#noti-alert {
+    display: none;
+}
+#noti-alert.active {
+    display: block;
+}

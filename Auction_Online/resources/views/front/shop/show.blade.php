@@ -16,6 +16,24 @@
                 </nav>
             </div>
         </div>
+
+        @if(session('Notify'))
+            <div id="toat">
+                <div class="toat success">
+                    <div class="icon success">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="text-Noti">
+                        <h5>Success</h5>
+                        <p>You have bid on this product !</p>
+                    </div>
+                    <div class="close-Noti">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        @endif
+
         <section class="py-5">
             <div class="container py-5">
                 <div class="row">
@@ -56,7 +74,7 @@
                     <!-- Item info-->
                     <div class="col-lg-6 detail-item">
                         <h1 title="{{$product->name}}">{{$product->name}}</h1>
-                        <p class="h4">${{number_format($product->historyAuctions[count($product->historyAuctions) - 1]->price ?? $product->price,2)}}</p>
+                        <p class="h4" id="price-detail-show">${{number_format($product->historyAuctions[count($product->historyAuctions) - 1]->price ?? $product->price,2)}}</p>
                         <p class="text-small mb-4">{{$product->description}}</p>
                         <div class="d-flex align-items-center mb-4 detail-price-time">
                             <form action="" method="post">
@@ -64,10 +82,11 @@
                                 <div class="py-3 price-detail-box">
                                     <div class="input-group">
                                         <div class="input-group-text">$</div>
-                                        <input type="text" name="priceBid" class="form-control" placeholder="Price">
+                                        <input type="text" name="priceBid" id="price-detail" class="form-control" placeholder="Price">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-sm py-2 border-bottom-0 px-5 me-3" href="">
+                                <p style="color: red;" id="noti-alert" class="">Must be higher than current price</p>
+                                <button type="submit" class="btn btn-primary btn-sm py-2 border-bottom-0 px-5 me-3" id="btn-bid">
                                     <i class="fa-solid fa-gavel"></i>Auction
                                 </button>
                                 <a class="p-0 reset-anchor d-inline-block mx-2" href=""><i class="fas fa-heart"></i></a>

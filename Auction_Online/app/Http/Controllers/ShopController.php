@@ -70,6 +70,6 @@ class ShopController extends Controller
 
             HistoryAuction::create($data);
         }
-        return back();
+        return redirect('shop/product/'.$id)->with('Notify','You have bid on this product !');
     }
 }

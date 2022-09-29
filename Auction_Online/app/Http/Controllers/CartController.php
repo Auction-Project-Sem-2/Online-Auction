@@ -50,20 +50,7 @@ class CartController extends Controller
                 $yourBids[] = $bid;
                 $status[] = HistoryAuction::where('product_id',$productAuction[$i]->id)->where('price',$bid)->first();
 
-                // Xử lý khi đấu giá hết thời gian add product vào cart
-                $endTime = getdate(strtotime($productAuction[$i]->end_time))[0];
-                $nowTime = time();
-                if($endTime <= $nowTime) {
-                    $this->add($productAuction[$i]->id);
-                }
-
-
-
             }
-
-
-
-
 
 
             return view('front.cart.cart',compact('carts','total','productAuction','prices','images','auctionNumber','yourBids','status'));
