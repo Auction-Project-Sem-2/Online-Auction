@@ -322,13 +322,13 @@
                                 </div>
                                 <div style="display: flex;justify-content: space-between">
                                     <div>
-                                        <div>Jonh smith</div>
-                                        <div>demo@gmail.com</div>
-                                        <div>08736475635</div>
+                                        <div>{{ $order->first_name . ', ' . $order->last_name }}</div>
+                                        <div>{{ $order->email }}</div>
+                                        <div>{{ $order->phone }}</div>
                                     </div>
                                     <div style="padding-left: 30px">
-                                        <div>Odder date: 05/09/2222 21:49</div>
-                                        <div>Address: ton that thuyet, Ha Noi</div>
+                                        <div><b>Order date:</b> {{ date('d/m/yy H:i', strtotime($order->created_at)) }}</div>
+                                        <div><b>Address:</b> {{ $order->street_address . ' - ' .  $order->town_city }}</div>
                                     </div>
                                 </div>
                             </td>
@@ -347,8 +347,7 @@
                         <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
                             <td valign="middle" width="80%" style="text-align:left; padding: 0 2.5em;">
                                 <div class="product-entry">
-                                    <img src="./front/img/products/{{$orderDetail->product->productImages[0]->path}}" alt="" style="width: 100px; max-width: 600px; height: auto; margin-bottom: 20px; display: block;">
-                                    <div class="text">
+                                    <div>
                                         <h3>{{$orderDetail->product->name}}</h3>
                                     </div>
                                 </div>
@@ -367,8 +366,8 @@
                         </td>
                         <td style="padding-top: 50px;padding-right: 2.5em;text-align: right">
                             <div>0.00$</div>
-{{--                            <div>{{$total}}$</div>--}}
-{{--                            <div style="color: black;font-size: 18px"><strong>{{$total}}$</strong></div>--}}
+                            <div>{{$total}}$</div>
+                            <div style="color: black;font-size: 18px"><strong>{{$total}}$</strong></div>
                         </td>
                     </tr>
                     <tr style="width: 100%;">
