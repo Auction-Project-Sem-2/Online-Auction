@@ -11,8 +11,8 @@ class HomeController extends Controller
 {
     function index() {
         $categories = ProductCategory::all();
-        $featuredProduct = Product::where('featured',true)->limit(12)->get();
-        $products  = Product::where('featured',true)->limit(20)->get();
+        $featuredProduct = Product::where('featured',true)->inRandomOrder()->limit(12)->get();
+        $products  = Product::where('featured',true)->inRandomOrder()->limit(20)->get();
         $blogs = Blog::limit(3)->get();
         return view('front.index',compact('categories','featuredProduct','products','blogs'));
     }

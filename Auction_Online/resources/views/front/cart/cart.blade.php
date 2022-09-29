@@ -36,7 +36,7 @@
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Current price</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">End Time</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Number of Auctions</strong></th>
-                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase"></strong></th>
+                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Status</strong></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -50,7 +50,7 @@
                                                 </div>
                                             </th>
                                             <td class="p-3 align-middle border-0">
-                                                <p class="mb-0 small">${{number_format(\App\Models\HistoryAuction::where('product_id',$productAuction[$i]->id)->where('user_id',Auth::id())->max('price'),2)}}</p>
+                                                <p class="mb-0 small">${{number_format($yourBids[$i],2)}}</p>
                                             </td>
                                             <td class="p-3 align-middle border-0">
                                                 <p class="mb-0 small">${{number_format($prices[$i],2)}}</p>
@@ -65,7 +65,11 @@
                                                 <span class="pro-user"><span><i class="fa-solid fa-user"></i></span> {{$auctionNumber[$i]}} </span>
                                             </td>
                                             <td class="p-3 align-middle border-0">
-                                                <a href="./shop/product/{{$productAuction[$i]->id}}" class="nav-link font-weight-bold">Auction</a>
+                                                @if($status[$i]->status == 2)
+                                                    <span class="font-weight-bold pending t-green">Pending</span>
+                                                @else
+                                                    <span class="font-weight-bold pending t-black">Sold</span>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endif

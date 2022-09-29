@@ -61,4 +61,16 @@ class CheckoutController extends Controller
             }
         );
     }
+
+    function test() {
+
+        $order = Order::where('id',1)->first();
+
+//        foreach($order->orderDetails as $orderDetail) {
+//            dd($orderDetail);
+//        }
+
+
+        return view('front.checkout.email',compact('order'));
+    }
 }
