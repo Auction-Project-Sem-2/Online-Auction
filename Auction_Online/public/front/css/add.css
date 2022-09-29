@@ -162,6 +162,9 @@ body::-webkit-scrollbar-track {
     padding: 0 25px;
     position: relative;
 }
+.CountDown-detail .item-countdown {
+    width: auto;
+}
 .CountDown-detail  div:after {
     font-size: 18px;
     position: absolute;
