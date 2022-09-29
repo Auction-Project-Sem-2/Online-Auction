@@ -69,7 +69,9 @@ class ShopController extends Controller
             ];
 
             HistoryAuction::create($data);
+            return redirect('shop/product/'.$id)->with('Notify','You have bid on this product !');
+        }else {
+            return redirect('shop/product/'.$id)->with('Notify2','Please login to bid!');
         }
-        return redirect('shop/product/'.$id)->with('Notify','You have bid on this product !');
     }
 }

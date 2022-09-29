@@ -1,3 +1,10 @@
+//====== Loading =========
+window.onload = function () {
+    const loading = document.getElementById('loading');
+    console.log(loading);
+    loading.style.animation = 'loading 2s ease forwards';
+}
+
 /*
 ================
 CountDown

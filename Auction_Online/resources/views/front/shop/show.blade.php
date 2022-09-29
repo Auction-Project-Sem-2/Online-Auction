@@ -86,6 +86,11 @@
                                     </div>
                                 </div>
                                 <p style="color: red;" id="noti-alert" class="">Must be higher than current price</p>
+                                @if(session('Notify2'))
+                                    <div class="alert alert-warning" role="alert">
+                                        {{ session('Notify2') }}
+                                    </div>
+                                @endif
                                 <button type="submit" class="btn btn-primary btn-sm py-2 border-bottom-0 px-5 me-3" id="btn-bid">
                                     <i class="fa-solid fa-gavel"></i>Auction
                                 </button>

@@ -32,6 +32,18 @@
 
 </head>
 <body style="{{ (request()->segment(1) == 'profile') ? 'background-color: #ececec' : '' }}">
+<section id="loading">
+    <div id="load">
+        <div style="--value: 1;"></div>
+        <div style="--value: 2;"></div>
+        <div style="--value: 3;"></div>
+        <div style="--value: 4;"></div>
+        <div style="--value: 5;"></div>
+        <div style="--value: 6;"></div>
+        <div style="--value: 7;"></div>
+        <div style="--value: 8;"></div>
+    </div>
+</section>
 <!-- NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-light py-2 py-lg-4 bg-white shadow-sm">
     <div class="container">
