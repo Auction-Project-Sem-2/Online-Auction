@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('name');
             $table->double('price');
 
-            $table->integer('status')->nullable();
+            $table->integer('status')->nullable()->default(2);
 
 
             $table->timestamps();

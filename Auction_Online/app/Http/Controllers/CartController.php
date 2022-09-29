@@ -30,39 +30,43 @@ class CartController extends Controller
                 ->select('products.*')
                 ->distinct()->get();
 
-            $vs = HistoryAuction::where('product_id',49)->where('user_id',Auth::id())->max('price');
 
             $prices = [];
             $images = [];
             $auctionNumber = [];
+            $yourBids = [];
+            $status = [];
             $carts = Cart::content();
+
             for($i = 0; $i < count($productAuction); $i++) {
 
                 $p = Product::find($productAuction[$i]->id);
 
-                $prices[] = $p->historyAuctions[count($p->historyAuctions) - 1]->price;
+//                $prices[] = $p->historyAuctions[count($p->historyAuctions) - 1]->price;
+                $prices[] = $p->historyAuctions->max('price');
                 $images[] = $p->productImages[0]->path;
                 $auctionNumber[] = count($p->historyAuctions);
-
+                $bid = HistoryAuction::where('product_id',$productAuction[$i]->id)->where('user_id',Auth::id())->max('price');
+                $yourBids[] = $bid;
+                $status[] = HistoryAuction::where('product_id',$productAuction[$i]->id)->where('price',$bid)->first();
 
                 // Xử lý khi đấu giá hết thời gian add product vào cart
-//                $endTime = getdate(strtotime($productAuction[$i]->end_time))[0];
-//                $nowTime = time();
-//                if ($endTime < $nowTime){
-//                    $this->add($productAuction[$i]->id);
-//                    foreach ($carts as $cart) {
-//                        if ($cart->id == $productAuction[$i]->id) {
-//                            $this->add($productAuction[$i]->id);
-//                        }
-//                    }
-//                }
+                $endTime = getdate(strtotime($productAuction[$i]->end_time))[0];
+                $nowTime = time();
+                if($endTime <= $nowTime) {
+                    $this->add($productAuction[$i]->id);
+                }
+
 
 
             }
 
 
 
-            return view('front.cart.cart',compact('carts','total','productAuction','prices','images','auctionNumber'));
+
+
+
+            return view('front.cart.cart',compact('carts','total','productAuction','prices','images','auctionNumber','yourBids','status'));
         }
 
         return view('front.cart.cart',compact('carts','total'));

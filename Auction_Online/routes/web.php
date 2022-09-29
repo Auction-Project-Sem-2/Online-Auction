@@ -74,7 +74,7 @@ Route::prefix('account')->group(function () {
     Route::post('register',[\App\Http\Controllers\AccountController::class,'postRegister']);
 });
 
-
+Route::get('email',[\App\Http\Controllers\CheckoutController::class,'test']);
 
 
 

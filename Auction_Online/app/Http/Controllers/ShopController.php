@@ -18,7 +18,7 @@ class ShopController extends Controller
 
 
 
-        $products = Product::where('name','like','%' . $search . '%');
+        $products = Product::where('name','like','%' . $search . '%')->inRandomOrder();
 
         switch($sortBy) {
             case 'high_to_low' :

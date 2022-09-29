@@ -35,10 +35,11 @@ function countDown(countDownDate,el) {
         minutes = minutes < 10 ? '0' + minutes : minutes;
         seconds = seconds < 10 ? '0' + seconds : seconds;
         // el.innerHTML =  + "d " +  + "h " +  + "m " +  + "s ";
-        el.innerHTML = "<span class='icon-Clock'><i class=\"fa-solid fa-clock\"></i></span><div>" + days + "</div> :\n" +
-            "                <div>"+ hours +"</div> :\n" +
-            "                <div> "+minutes + "</div> :\n" +
-            "                <div>" + seconds +"</div>"
+        el.innerHTML = "<span class='icon-Clock'><i class=\"fa-solid fa-clock\"></i></span>" +
+            "                <div class='item-countdown'>" + days + "</div> :\n" +
+            "                <div class='item-countdown'>"+ hours +"</div> :\n" +
+            "                <div class='item-countdown'> "+minutes + "</div> :\n" +
+            "                <div class='item-countdown'>" + seconds +"</div>"
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);

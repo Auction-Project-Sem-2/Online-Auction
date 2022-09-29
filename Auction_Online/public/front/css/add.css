@@ -429,3 +429,21 @@ body::-webkit-scrollbar-track {
 #icon-edit-img > .fa-pencil {
     color: black;
 }
+
+
+.pending {
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+}
+.t-black {
+    background-color: #2d2d2d;
+}
+.t-green {
+    background-color: #8089fd;
+}
+
+.item-countdown {
+    width: 26px;
+    height: 20px;
+}

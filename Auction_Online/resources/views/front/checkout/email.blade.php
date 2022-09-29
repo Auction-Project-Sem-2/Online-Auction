@@ -1,204 +1,440 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here"/>
-    <title>Order Notification | Auction Online</title>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>Checkout</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            background: #f1f1f1;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        .primary{
+            background: #17bebb;
+        }
+        .bg_white{
+            background: #ffffff;
+        }
+        .bg_light{
+            background: #f7fafa;
+        }
+        .bg_black{
+            background: #000000;
+        }
+        .bg_dark{
+            background: rgba(0,0,0,.8);
+        }
+        .email-section{
+            padding:2.5em;
+        }
+
+        /*BUTTON*/
+        .btn{
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        .btn.btn-primary{
+            border-radius: 5px;
+            background: #17bebb;
+            color: #ffffff;
+        }
+        .btn.btn-white{
+            border-radius: 5px;
+            background: #ffffff;
+            color: #000000;
+        }
+        .btn.btn-white-outline{
+            border-radius: 5px;
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .btn.btn-black-outline{
+            border-radius: 0px;
+            background: transparent;
+            border: 2px solid #000;
+            color: #000;
+            font-weight: 700;
+        }
+        .btn-custom{
+            color: rgba(0,0,0,.3);
+            text-decoration: underline;
+        }
+
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'Work Sans', sans-serif;
+            color: #000000;
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        body{
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(0,0,0,.4);
+        }
+
+        a{
+            color: #17bebb;
+        }
+
+        table{
+        }
+        /*LOGO*/
+
+        .logo h1{
+            margin: 0;
+        }
+        .logo h1 a{
+            color: #4650dd;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        /*HERO*/
+        .hero{
+            position: relative;
+            z-index: 0;
+        }
+
+        .hero .text{
+            color: rgba(0,0,0,.3);
+        }
+        .hero .text h2{
+            color: #000;
+            font-size: 34px;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        .hero .text h3{
+            font-size: 24px;
+            font-weight: 200;
+        }
+        .hero .text h2 span{
+            font-weight: 600;
+            color: #000;
+        }
+
+
+        /*PRODUCT*/
+        .product-entry{
+            display: block;
+            position: relative;
+            float: left;
+            padding-top: 20px;
+        }
+        .product-entry .text{
+            width: calc(100% - 125px);
+            padding-left: 20px;
+        }
+        .product-entry .text h3{
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .product-entry .text p{
+            margin-top: 0;
+        }
+        .product-entry img, .product-entry .text{
+            float: left;
+        }
+
+        ul.social{
+            padding: 0;
+        }
+        ul.social li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /*FOOTER*/
+
+        .footer{
+            border-top: 1px solid rgba(0,0,0,.05);
+            color: rgba(0,0,0,.5);
+        }
+        .footer .heading{
+            color: #000;
+            font-size: 20px;
+        }
+        .footer ul{
+            margin: 0;
+            padding: 0;
+        }
+        .footer ul li{
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .footer ul li a{
+            color: rgba(0,0,0,1);
+        }
+
+
+        @media screen and (max-width: 500px) {
+
+
+        }
+
+
+    </style>
+
+
 </head>
 
-<body
-    style="background-color: #e7eff8; font-family: trebuchet,sans-serif; margin-top: 0; box-sizing: border-box; line-height: 1.5;">
-<div class="container-fluid">
-    <div class="container" style="background-color: #e7eff8; width: 600px; margin: auto;">
-        <div class="col-12 mx-auto" style="width: 580px;  margin: 0 auto;">
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
+<center style="width: 100%; background-color: #f1f1f1;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+        <!-- BEGIN BODY -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <tr>
+                <td valign="top" class="bg_white" style="padding: 1em 2.5em 0 2.5em;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td class="logo" style="text-align: left;">
+                                <h1><a href="#">Auction Online</a></h1>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr><!-- end tr -->
+            <tr>
+                <td valign="middle" class="hero bg_white" style="padding: 2em 0 2em 0;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="padding: 0 2.5em; text-align: left;">
+                                <div class="text">
+                                    <h2>Order Notification</h2>
+                                    <h3>Thank you for your purchase</h3>
+                                </div>
+                                <div style="display: flex;justify-content: space-between">
+                                    <div>
+                                        <div>Jonh smith</div>
+                                        <div>demo@gmail.com</div>
+                                        <div>08736475635</div>
+                                    </div>
+                                    <div style="padding-left: 30px">
+                                        <div>Odder date: 05/09/2222 21:49</div>
+                                        <div>Address: ton that thuyet, Ha Noi</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr><!-- end tr -->
+            <tr>
+                <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+                        <th width="80%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Item</th>
+                        <th width="20%" style="text-align:right; padding: 0 2.5em; color: #000; padding-bottom: 20px">Price</th>
+                    </tr>
 
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="row" style="background-color: #e7eff8; height: 10px;">
+                    @foreach($order->orderDetails as $orderDetail)
+                        <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+                            <td valign="middle" width="80%" style="text-align:left; padding: 0 2.5em;">
+                                <div class="product-entry">
+                                    <img src="./front/img/products/{{$orderDetail->product->productImages[0]->path}}" alt="" style="width: 100px; max-width: 600px; height: auto; margin-bottom: 20px; display: block;">
+                                    <div class="text">
+                                        <h3>{{$orderDetail->product->name}}</h3>
+                                    </div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;">
+                                <span class="price" style="color: #000; font-size: 20px;">${{$orderDetail->product->price}}</span>
+                            </td>
+                        </tr>
+                    @endforeach
 
-                    </div>
-                </div>
-            </div>
-
-            <div class="row"
-                 style="height: 100px; padding: 10px 20px; line-height: 90px; background-color: white; box-sizing: border-box;">
-                <h1 class="pl-3"
-                    style="color: orange; line-height: 00px; float: left; padding-left: 20px; padding-top: 5px;">
-                    <img src="{{$message->embed(asset('front/img/Logo.png'))}}"
-                         height="40" alt="logo">
-                </h1>
-                <h1 class="pl-2"
-                    style="color: orange; line-height: 30px; float: left; padding-left: 20px; font-size: 40px; font-weight: 500;">
-                    Auction Online
-                </h1>
-            </div>
-
-            <div class="row" style="background-color: #00509d; height: 200px; padding: 35px; color: white;">
-                <div class="container-fluid">
-                    <h3 class="m-0 p-0 mt-4" style="margin-top: 0; font-size: 28px; font-weight: 500;">
-                        <strong style="font-size: 32px;">Order Notification</strong>
-                        <br>
-                        Thank you very much
-                    </h3>
-                    <div class="row mt-5" style="margin-top: 35px; display: flex;">
-                        <div class="col-6"
-                             style="margin-bottom: 25px; flex: 0 0 50%; width: 50%; box-sizing: border-box;">
-                            <b>{{ $order->first_name . ', ' . $order->last_name }}</b>
-                            <br>
-                            <span>
-                                <a style="color: white !important;" href="mailto:{{ $order->email }}" target="_blank">{{ $order->email }}</a>
-                            </span>
-                            <br>
-                            <span>{{ $order->phone }}</span>
-                        </div>
-                        <div class="col-6" style="flex: 0 0 50%; width: 50%; box-sizing: border-box;">
-                            <b>Order date:</b> {{ date('d/m/yy H:i', strtotime($order->created_at)) }}
-                            <br>
-                            <b>Address:</b> {{ $order->street_address . ' - ' .  $order->town_city }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-2 p-4" style="background-color: white; margin-top: 15px; padding: 20px;">
-                <table>
-                    <tr>
-                        <td>
-                            <img
-                                src="https://ci6.googleusercontent.com/proxy/8eUxMUXMkvgUKX8veBCRQM5N7-jXP0Wx8KjQLaGDch2DnV_5HYw9PMgJXsoqgSR_jonTY9jAftWPKNsN5W9cUUneQ9hz7IhxH4rIXNzHMm0ijbsNjHB9m7g6XfJJ=s0-d-e1-ft#https://www.bambooairways.com/reservation/common/hosted-images/tickets.jpg"
-                                alt="">
+                    <tr >
+                        <td style="padding-top: 50px; padding-left: 2.5em">
+                            <div style="color: black">Shipping fee:</div>
+                            <div style="color: black">Subtotal:</div>
+                            <div style="color: black;font-size: 20px"><strong>Total:</strong></div>
                         </td>
-
-                        @if($order->payment_type == "pay_later")
-                            <td class="pl-3" style=" padding-left:15px;">
-                                <span class="d-inline"
-                                      style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                    You will pay on delivery. We have just handed over your order to a shipping partner.
-                                </span>
-                            </td>
-                        @endif
-
-                        @if($order->payment_type == "online_payment")
-                            <td class="pl-3" style=" padding-left:15px;">
-                                <span class="d-inline"
-                                      style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                    Your order has been paid online. We have just handed over your order to a shipping partner.
-                                </span>
-                            </td>
-                            <td class="pl-3" style=" padding-left:10px;">
-                                <img src="https://vnpay.vn/wp-content/uploads/2020/07/Logo-VNPAYQR-update.png"
-                                     width="130px" style="margin-top: 10px;" alt="">
-                            </td>
-                        @endif
-
+                        <td style="padding-top: 50px;padding-right: 2.5em;text-align: right">
+                            <div>0.00$</div>
+{{--                            <div>{{$total}}$</div>--}}
+{{--                            <div style="color: black;font-size: 18px"><strong>{{$total}}$</strong></div>--}}
+                        </td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td valign="middle" style="text-align:left; padding: 1em 2.5em; width: 100%">
+                            <p><a href="#" class="btn btn-primary" style="background-color: #4650dd">Continue auction</a></p>
+                        </td>
                     </tr>
                 </table>
-            </div>
+            </tr><!-- end tr -->
+            <!-- 1 Column Text + Button : END -->
+        </table>
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <tr>
+                <td valign="middle" class="bg_light footer email-section">
+                    <table>
+                        <tr>
+                            <td valign="top" width="33.333%" style="padding-top: 20px;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="text-align: left; padding-right: 10px;">
+                                            <h3 class="heading">About</h3>
+                                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top" width="33.333%" style="padding-top: 20px;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 5px; padding-right: 5px;">
+                                            <h3 class="heading">Contact Info</h3>
+                                            <ul>
+                                                <li><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                                <li><span class="text">+2 392 3929 210</span></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top" width="33.333%" style="padding-top: 20px;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 10px;">
+                                            <h3 class="heading">Useful Links</h3>
+                                            <ul>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">Account</a></li>
+                                                <li><a href="#">Wishlist</a></li>
+                                                <li><a href="#">Order</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr><!-- end: tr -->
+            <tr>
+                <td class="bg_white" style="text-align: center;">
+                    <p>No longer want to receive these email? You can <a href="#" style="color: rgba(0,0,0,.8);">Unsubscribe here</a></p>
+                </td>
+            </tr>
+        </table>
 
-            <div class="row mt-2" style="margin-top: 15px;">
-                <div class="container-fluid">
-                    <div class="row pl-3 py-2" style="background-color: #f4f8fd; padding: 10px 0 10px 20px;">
-                        <b>Order details</b>
-                    </div>
-                    <div class="row pl-3 py-2" style="background-color: #fff; padding: 10px 20px 10px 20px;">
-                        <table class="table table-sm table-hover"
-                               style="text-align: left;  width: 100%; margin-bottom: 5px; border-collapse: collapse;">
-                            <thead>
-                            <tr>
-                                <th style="padding: 5px 0;">PRODUCT</th>
-                                <th style="padding: 5px 20px 5px 0; text-align: right;">TOTAL</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($order->orderDetails as $orderDetail)
-                                <tr>
-                                    <td style="border-top: 1px solid #dee2e6; padding: 5px 0;">
-                                        {{ $orderDetail->product->name . ' (x' . $orderDetail->qty . ')'}}
-                                    </td>
-                                    <td style="border-top: 1px solid #dee2e6; padding: 5px 20px 5px 0; text-align: right;">
-                                        {{ $orderDetail->total }} $
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-2" style="margin-top: 15px;">
-                <div class="container-fluid">
-                    <div class="row pl-3 py-2" style="background-color: #f4f8fd; padding: 10px 0 10px 20px;">
-                        <b>Details of payment</b>
-                    </div>
-                    <div class="row pl-3 py-2"
-                         style="background-color: #fff; font-size: 18px; padding: 2px 20px 10px 20px;">
-                        <div class="col-12 p-0">
-                            <hr style="border-top: 1px solid #0000001a;">
-                            <table class="mt-2 w-100"
-                                   style="font-size: 16px; width: 100%; text-align: left;  margin-bottom: 5px;">
-                                <tr>
-                                    <td class="">Shipping fee</td>
-                                    <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        0.0 $
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="">Subtotal</td>
-                                    <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        {{ $subtotal }} $
-                                    </td>
-                                </tr>
-                                <tr style="font-size: 18px;">
-                                    <td><b>TOTAL</b></td>
-                                    <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        <b>{{ $total }} $</b>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-2 mb-4" style="margin-top: 15px; margin-bottom: 25px;">
-                <div class="container-fluid">
-                    <div class="row pl-3 py-2" style="background-color: #f4f8fd; padding: 10px 0 10px 20px;">
-                        <b style="color: #00509d; font-size: 18px;">More information</b>
-                    </div>
-                    <div class="row pl-3 py-2" style="background-color: #fff; padding: 10px 20px;">
-                        <p>You can check the appearance of the product (brand, model, color, quantity,...) before
-                            payment and can refuse to receive the goods if not satisfied. Please do not activate an
-                            electrical-electronic device or try the product.</p>
-
-                        <p>If the product shows signs of damage / broken or does not match the information on the
-                            website, please contact the store within 48 hours from the time of receipt for
-                            assistance.</p>
-
-                        <p>Please keep the invoice, product box and warranty card (if any) for return or warranty when
-                            needed.</p>
-
-                        <p>You can refer to the Help Center page or contact the store by leaving a message at the
-                            Contact page or mailing here. Hotline 1900 9999 (8:00 - 9:00 both Saturday and Sunday).</p>
-
-                        <b>Auction Online thank you.</b>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="row" style="background-color: #e7eff8; height: 10px;">
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+</center>
 </body>
-
 </html>
