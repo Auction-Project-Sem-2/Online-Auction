@@ -94,20 +94,22 @@ class SellerController extends Controller
         $data = $request->all();
         HistoryAuction::find($auction_id)->update($data);
 
+        $email = HistoryAuction::find($auction_id);
 
-        $this->sendEmail();
+
+        $this->sendEmail($email);
 
         return redirect('/client/seller/product/'. $id . '/auction');
     }
 
-    private function sendEmail($product) {
-        $email_to = $product->email;
+    private function sendEmail($email) {
+        $email_to = $email->email;
 
-        Mail::send('front.checkout.email', compact(),
+        Mail::send('front.client.seller.email', compact('email'),
             function ($message) use ($email_to){
                 $message->from('AutionOnline@gmail.com', 'Auction');
                 $message->to($email_to,$email_to);
-                $message->subject('Order Notification');
+                $message->subject('Auction Notification');
             }
         );
     }
