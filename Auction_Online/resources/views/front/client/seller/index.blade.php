@@ -90,9 +90,13 @@
                                                         </a>
                                                     </td>
                                                     <td style="text-align: center">
-                                                        <div class="badge bg-success mt-2">
-                                                            {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
-                                                        </div>
+                                                        @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )
+                                                            <div class="badge bg-danger mt-2">The End</div>
+                                                        @else
+                                                            <div class="badge bg-success mt-2">
+                                                                {{ date('H:i:s d/m/Y', strtotime($product->end_time)) }}
+                                                            </div>
+                                                        @endif
                                                     </td>
                                                     <td style="text-align: center">
                                                         <a href="./client/seller/product/{{ $product->id }}"

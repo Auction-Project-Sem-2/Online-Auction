@@ -1,19 +1,21 @@
-@extends('front.client.layout.master')
+@extends('admin.layout.master')
 
-@section('title', 'Sell Products')
+@section('title', 'Product')
 
 @section('body')
     <main id="main" class="main">
-        <div style="justify-content: space-between; display: flex;">
-            <div class="page-title-heading">
-                <div class="pagetitle">
-                    <h1>Products</h1>
-                    <nav>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active">Below are the products that you have auctioned</li>
-                        </ol>
-                    </nav>
-                </div>
+        <div class="page-title-heading">
+            <div class="pagetitle">
+                <h1>Products</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="./admin/home">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Product</li>
+                        <li class="breadcrumb-item active">Auctioneers</li>
+                    </ol>
+                </nav>
             </div>
         </div>
 
@@ -49,7 +51,7 @@
                                             </th>
                                             <th scope="col" data-sortable="" style="width: 30%;text-align: center;">Price</th>
                                             <th scope="col" data-sortable="" style="width: 20%;text-align: center;">
-                                                Action
+                                                Status
                                             </th>
                                         </tr>
                                         </thead>
@@ -60,7 +62,7 @@
                                                         <th scope="row" style="text-align: center">{{  $productAuction->id }}</th>
                                                         <td>
                                                             <div class="widget-heading">
-                                                                <a href="client/user/profile/{{ $productAuction->user_id }}">
+                                                                <a href="admin/product/auctioneers/{{ $productAuction->user_id }}">
                                                                     {{ $productAuction->name }}
                                                                 </a>
                                                             </div>
@@ -77,11 +79,7 @@
                                                                     @endif
 
                                                                 @else
-                                                                    <form action="./client/seller/product/{{ $product->id  }}/auction/{{ $productAuction->id }}" method="post">
-                                                                        @csrf
-                                                                        <input type="number" hidden name="status" value="1">
-                                                                        <button class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">approve</button>
-                                                                    </form>
+                                                                    <div class="badge bg-warning mt-2">waiting for approval</div>
                                                                 @endif
 
                                                             @else

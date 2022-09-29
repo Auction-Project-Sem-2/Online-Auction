@@ -1272,6 +1272,15 @@ h6 {
     overflow: hidden;
 }
 
+.widget-heading a {
+    color: #000000;
+    font-weight: 700;
+}
+
+.widget-heading a:hover {
+    text-decoration: revert;
+}
+
 
 .widget-content-left .widget-subheading {
     font-weight: 500;

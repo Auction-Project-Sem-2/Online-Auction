@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HistoryAuction;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class SellerController extends Controller
@@ -21,7 +24,7 @@ class SellerController extends Controller
         $products = Product::where('name','like','%' . $search . '%')->where('user_id', Auth::user()->id);
         $products = $products->paginate(10);
 
-
+//        dd(getdate(strtotime(Product::find(13)->end_time)) < getdate(strtotime(Carbon::now())));
         return view('front/client/seller/index', compact('products'));
     }
 
@@ -65,6 +68,7 @@ class SellerController extends Controller
     {
         $product = Product::find($id);
 
+
         return view('front/client/seller/show', compact('product'));
     }
 
@@ -74,10 +78,23 @@ class SellerController extends Controller
 
         $product = Product::find($id);
         $productAuctions = $product->historyAuctions;
-//
+        $status = $product->historyAuctions->where('status', 1);
 //        $productAuctions = $productAuctions->where('name','like','%' . $search . '%');
 
-        return view('front/client/seller/auctionUsers', compact('product', 'productAuctions'));
+        return view('front/client/seller/auctionUsers', compact('product', 'productAuctions', 'status'));
+    }
+
+    public function show_profile($user_id) {
+        $user = User::find($user_id);
+        return view('front/client/seller/profile', compact('user'));
+    }
+
+
+    public function updateStatus($id, $auction_id, Request $request) {
+        $data = $request->all();
+        HistoryAuction::find($auction_id)->update($data);
+
+        return redirect('/client/seller/product/'. $id . '/auction');
     }
 
     /**

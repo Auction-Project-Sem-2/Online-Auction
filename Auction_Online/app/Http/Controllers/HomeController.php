@@ -21,4 +21,8 @@ class HomeController extends Controller
         $blogs = Blog::paginate(3);
         return view('front.about-us', compact( 'blogs'));
     }
+
+    public function help_center() {
+        return view('front.help_center');
+    }
 }

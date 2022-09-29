@@ -30,7 +30,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    @yield('css')
 </head>
 <body style="{{ (request()->segment(1) == 'profile') ? 'background-color: #ececec' : '' }}">
 <!-- NAVBAR-->
@@ -75,6 +74,7 @@
                             <span>{{Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu login-tag mt-3" aria-labelledby="navbarDropdown">
+
                             <li><a class="dropdown-item" href="./client/seller/product"><span><i class="fa-solid fa-gavel"></i></span> Auctioneer</a></li>
                             <li><a class="dropdown-item" href="./profile"><span><i class="fa-solid fa-user"></i></span> Profile </a></li>
 

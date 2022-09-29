@@ -1,48 +1,9 @@
-@extends('admin.layout.master')
+@extends('front.client.layout.master')
 
-@section('title', 'User')
+@section('title', 'Profile')
 
 @section('body')
     <main id="main" class="main">
-
-        <div style="justify-content: space-between; display: flex;">
-            <div class="page-title-heading">
-                <div class="pagetitle">
-                    <h1>User</h1>
-                    <nav>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="./admin/home">Home</a></li>
-                            <li class="breadcrumb-item">User</li>
-                            <li class="breadcrumb-item active">Detail</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="page-title-actions">
-                <a href="./admin/user/{{ $user->id }}/edit" class="btn-yellow btn-shadow btn-hover-shine mr-3 btn btn-primary">
-                      <span class=" btn-icon-wrapper pr-2 opacity-7">
-                           <i class="bi bi-pencil-square"></i>
-                      </span>
-                    Edit
-                </a>
-                <form class="d-inline" action="./admin/user/{{ $user->id }}" method="post">
-                    @csrf
-                    @method('DELETE')
-
-                    <button class="btn-red btn-shadow btn-hover-shine mr-3 btn btn-primary"
-                            type="submit" data-toggle="tooltip" title="Delete"
-                            data-placement="bottom"
-                            onclick="return confirm('Do you really want to delete this item?')">
-                            <span class="btn-icon-wrapper pr-2 opacity-7">
-                                <i class="bi bi-trash3"></i>
-                            </span>
-                        Delete
-                    </button>
-                </form>
-            </div>
-        </div>
-
        <!-- End Page Title -->
 
         <section class="section profile">
@@ -54,7 +15,7 @@
 
                             <img src="./front/img/user/{{ $user->avatar  ?? 'default-avatar.jpg'}}" alt="Profile" class="rounded-circle">
                             <h2>{{ $user->name }}</h2>
-                            <h3>{{ \App\Utilities\Constant::$user_level[$user->level] }}</h3>
+                            <h3>{{ $user->email }}</h3>
                             <div class="social-links mt-2">
                                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -75,7 +36,7 @@
 
                                 <li class="nav-item">
                                     <button class="nav-link active" data-bs-toggle="tab"
-                                            data-bs-target="#profile-overview">Overview
+                                            data-bs-target="#profile-overview">Profile
                                     </button>
                                 </li>
 
@@ -83,10 +44,10 @@
                             <div class="tab-content pt-2">
 
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                    <h5 class="card-title">Description</h5>
-                                    <p class="small fst-italic">{{ $user->description}}</p>
+{{--                                    <h5 class="card-title">Description</h5>--}}
+{{--                                    <p class="small fst-italic">{{ $user->description}}</p>--}}
 
-                                    <h5 class="card-title">Profile Details</h5>
+{{--                                    <h5 class="card-title">Profile Details</h5>--}}
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Full Name</div>
@@ -109,18 +70,14 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Level</div>
-                                        <div class="col-lg-9 col-md-8">{{ \App\Utilities\Constant::$user_level[$user->level] }}</div>
+                                        <div class="col-lg-3 col-md-4 label">Address</div>
+                                        <div class="col-lg-9 col-md-8">{{ $user->street_address }}</div>
                                     </div>
+
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Country</div>
                                         <div class="col-lg-9 col-md-8">{{ $user->country }}</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Address</div>
-                                        <div class="col-lg-9 col-md-8">{{ $user->street_address }}</div>
                                     </div>
 
                                     <div class="row">
@@ -132,6 +89,7 @@
                                         <div class="col-lg-3 col-md-4 label">Town City</div>
                                         <div class="col-lg-9 col-md-8">{{ $user->town_city }}</div>
                                     </div>
+
 
                                 </div>
                             </div>

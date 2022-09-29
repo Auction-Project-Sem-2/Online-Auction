@@ -13,8 +13,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Favicons -->
-    <link href="./front/img/Logo.png" rel="icon">
-    <link href="./front/img/Logo.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="https://demo.bootstrapious.com/shopio/img/favicon.9f24e811.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -161,7 +160,7 @@
 
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="admin/logout">
+                        <a class="dropdown-item d-flex align-items-center" href="./account/login">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
