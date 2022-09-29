@@ -69,7 +69,7 @@
                                                         </td>
                                                         <td style="text-align: center">${{number_format($productAuction->price,2)}}</td>
                                                         <td style="text-align: center">
-                                                            @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )
+{{--                                                            @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )--}}
 
                                                                 @if( count($status) == 1)
                                                                     @if( $productAuction->status == 1 )
@@ -82,9 +82,9 @@
                                                                     <div class="badge bg-warning mt-2">waiting for approval</div>
                                                                 @endif
 
-                                                            @else
-                                                                <div class="badge bg-warning mt-2">ongoing</div>
-                                                            @endif
+{{--                                                            @else--}}
+{{--                                                                <div class="badge bg-warning mt-2">ongoing</div>--}}
+{{--                                                            @endif--}}
 
 
 

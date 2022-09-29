@@ -6,7 +6,7 @@
     <!-- ##### Blog Wrapper Start ##### -->
     <div id="blog" class="blog-wrapper section-padding-100 clearfix">
         <!-- ##### Breadcumb Area Start ##### -->
-        <div class="breadcumb-area bg-img" style="background-image: url(front/img/blog/bg-img/b1.jpg);">
+        <div class="breadcumb-area bg-img" style="background-image: url(front/img/blog/blog.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
