@@ -33,7 +33,7 @@ Route::prefix('shop')->group(function () {
 
 Route::prefix('cart')->group(function () {
     Route::get('',[CartController::class,'index']);
-    Route::get('/delete/{rowId}',[CartController::class,'delete']);
+    Route::get('/{id}',[CartController::class,'destroy']);
 });
 
 Route::prefix('client')->group(function() {

@@ -17,13 +17,14 @@ class BuyerController extends Controller
     public function index(Request $request)
     {
         $search = $request->search ?? '';
+        $i = 1;
 
         $productAuctions = HistoryAuction::where('user_id', Auth::user()->id);
         $products = Product::where('name','like','%' . $search . '%');
 
         $products = $products->get();
 
-        return view('front.client.buyer.index', compact('products', 'productAuctions'));
+        return view('front.client.buyer.index', compact('products', 'productAuctions', 'i'));
     }
 
     /**

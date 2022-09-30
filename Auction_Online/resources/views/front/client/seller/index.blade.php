@@ -68,7 +68,7 @@
 
                                             @foreach($products as $product)
                                                 <tr>
-                                                    <th scope="row" style="text-align: center">{{ $product->id }}</th>
+                                                    <th scope="row" style="text-align: center">{{ $i++ }}</th>
                                                     <td>
                                                         <div>
                                                             <div style="display: flex; align-items: center;">

@@ -57,7 +57,7 @@
 
                                                 @foreach($productAuctions as $productAuction)
                                                     <tr>
-                                                        <th scope="row" style="text-align: center">{{  $productAuction->id }}</th>
+                                                        <th scope="row" style="text-align: center">{{  $i++ }}</th>
                                                         <td>
                                                             <div class="widget-heading">
                                                                 <a href="client/user/profile/{{ $productAuction->user_id }}">

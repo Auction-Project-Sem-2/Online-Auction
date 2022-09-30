@@ -122,9 +122,8 @@
                                 <thead class="bg-light">
                                 <tr>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Product</strong></th>
+                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Qty</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Price</strong></th>
-                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Quantity</strong></th>
-                                    <th class="p-3 border-0" scope="col"><strong class="text-uppercase">Total</strong></th>
                                     <th class="p-3 border-0" scope="col"><strong class="text-uppercase"></strong></th>
                                 </tr>
                                 </thead>
@@ -133,20 +132,20 @@
                                 @foreach($carts as $cart)
                                     <tr>
                                         <th class="p-3 pl-0 border-0" scope="row">
-                                            <div class="d-flex align-items-center"><a class="reset-anchor d-block animsition-link" href=""><img src="./front/img/products/{{$cart->options->images[0]->path}}" alt="..." width="70"></a>
+                                            <div class="d-flex align-items-center"><a class="reset-anchor d-block animsition-link" href=""><img src="./front/img/products/{{$cart->image}}" alt="..." width="70"></a>
                                                 <div class="ms-3"><strong class="h6"><a class="reset-anchor animsition-link" href="">{{$cart->name}}</a></strong></div>
                                             </div>
                                         </th>
-                                        <td class="p-3 align-middle border-0">
-                                            <p class="mb-0 small">${{$cart->price}}</p>
-                                        </td>
-                                        <td class="p-3 align-middle border-0">
+{{--                                        <td class="p-3 align-middle border-0">--}}
+{{--                                            <p class="mb-0 small">${{$cart->price}}</p>--}}
+{{--                                        </td>--}}
+                                        <td class="p-3 align-middle border-0 text-center">
                                             <p class="mb-0 small">{{$cart->qty}}</p>
                                         </td>
-                                        <td class="p-3 align-middle border-0">
+                                        <td class="p-3 align-middle border-0 text-center">
                                             <p class="mb-0 small cart-total">${{$cart->price}}</p>
                                         </td>
-                                        <td class="p-3 align-middle border-0"><a class="reset-anchor" href="./cart/delete/{{$cart->rowId}}"><i class="fas fa-trash-alt small text-muted"></i></a></td>
+                                        <td class="p-3 align-middle border-0 text-center"><a class="reset-anchor" href="./cart/{{$cart->id}}"><i class="fas fa-trash-alt small text-muted"></i></a></td>
                                     </tr>
                                 @endforeach
 
@@ -163,7 +162,7 @@
                                     </div>
                                     <div class="col-md-6 text-start text-md-end">
                                         <p class="text-muted mb-1">Cart total</p>
-                                        <h6 class="h4 mb-0" id="cartPrice">${{number_format($total,2)}}</h6>
+                                       <h6 class="h4 mb-0" id="cartPrice">${{$total}}</h6> {{-- da format--}}
                                     </div>
                                 </div>
                             </div>

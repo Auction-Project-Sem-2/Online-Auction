@@ -2,31 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\HistoryAuction;
 use App\Models\Product;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $carts = Cart::content();
-        $total = Cart::priceTotal();
+        $carts = Cart::all()->where('user_id', Auth::user()->id);
+        $total = 0;
+
+        foreach ($carts as $cart) {
+            $total += $cart->price;
+        }
+
         if (Auth::check()) {
-            $productAuction = HistoryAuction::join('products','products.id','=','history_auctions.product_id')
+            $productAuction = HistoryAuction::join('products', 'products.id', '=', 'history_auctions.product_id')
 //                ->join('users','users.id','=','history_auctions.user_id')
-                ->where('history_auctions.user_id',Auth::user()->id)
+                ->where('history_auctions.user_id', Auth::user()->id)
                 ->select('products.*')
                 ->distinct()->get();
 
@@ -36,9 +37,10 @@ class CartController extends Controller
             $auctionNumber = [];
             $yourBids = [];
             $status = [];
-            $carts = Cart::content();
+            $carts = Cart::all()->where('user_id', Auth::user()->id);
 
-            for($i = 0; $i < count($productAuction); $i++) {
+
+            for ($i = 0; $i < count($productAuction); $i++) {
 
                 $p = Product::find($productAuction[$i]->id);
 
@@ -46,46 +48,19 @@ class CartController extends Controller
                 $prices[] = $p->historyAuctions->max('price');
                 $images[] = $p->productImages[0]->path;
                 $auctionNumber[] = count($p->historyAuctions);
-                $bid = HistoryAuction::where('product_id',$productAuction[$i]->id)->where('user_id',Auth::id())->max('price');
+                $bid = HistoryAuction::where('product_id', $productAuction[$i]->id)->where('user_id', Auth::id())->max('price');
                 $yourBids[] = $bid;
-                $status[] = HistoryAuction::where('product_id',$productAuction[$i]->id)->where('price',$bid)->first();
-
-                // Xử lý khi đấu giá hết thời gian add product vào cart
-                $endTime = getdate(strtotime($productAuction[$i]->end_time))[0];
-                $nowTime = time();
-                if($endTime <= $nowTime) {
-                    $this->add($productAuction[$i]->id);
-                }
-
-
+                $status[] = HistoryAuction::where('product_id', $productAuction[$i]->id)->where('price', $bid)->first();
 
             }
 
 
-
-
-
-
-            return view('front.cart.cart',compact('carts','total','productAuction','prices','images','auctionNumber','yourBids','status'));
+            return view('front.cart.cart', compact('carts', 'total', 'productAuction', 'prices', 'images', 'auctionNumber', 'yourBids', 'status'));
         }
 
-        return view('front.cart.cart',compact('carts','total'));
+        return view('front.cart.cart', compact('carts', 'total'));
     }
 
-    function add($id) {
-        $product = Product::findOrFail($id);
-
-        Cart::add([
-            'id' => $product->id,
-            'name' => $product->name,
-            'qty' => 1,
-            'price' => $product->price ?? $product->historyAutions[count($product->historyAutions)-1]->price,
-            'weight' => $product->weight ?? 0,
-            'options' => [
-                'images' => $product->productImages,
-            ],
-        ]);
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -99,7 +74,7 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -110,7 +85,7 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -121,7 +96,7 @@ class CartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -132,8 +107,8 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -144,19 +119,14 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        Cart::destroy();
+        Cart::destroy($id);
 
         return back();
     }
 
-    public function delete($rowId) {
-        Cart::remove($rowId);
-
-        return back();
-    }
 }
