@@ -171,5 +171,6 @@
 <script src="./front/js/swiper-bundle.min.js"></script>
 <script src="./front/js/theme.b8c44118.js"></script>
 <script src="./front/js/add.js"></script>
+<script src="./front/js/notify.js"></script>
 
 </html>

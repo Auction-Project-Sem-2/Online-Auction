@@ -51,7 +51,6 @@ class CartController extends Controller
                 $bid = HistoryAuction::where('product_id', $productAuction[$i]->id)->where('user_id', Auth::id())->max('price');
                 $yourBids[] = $bid;
                 $status[] = HistoryAuction::where('product_id', $productAuction[$i]->id)->where('price', $bid)->first();
-
             }
 
 
