@@ -58,7 +58,7 @@
                                             @foreach($products as $product)
                                                 @foreach($product->historyAuctions->where('user_id', \Illuminate\Support\Facades\Auth::user()->id) as $productAuction)
                                                     <tr>
-                                                        <th scope="row" style="text-align: center">{{  $product->id }}</th>
+                                                        <th scope="row" style="text-align: center">{{  $i++ }}</th>
                                                         <td>
                                                             <div>
                                                                 <div style="display: flex; align-items: center;">
@@ -75,7 +75,7 @@
                                                         <td style="text-align: center">${{number_format($productAuction->price,2)}}</td>
                                                         <td style="text-align: center">${{number_format($product->historyAuctions->last()->price,2)}}</td>
                                                         <td style="text-align: center">
-                                                            @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) )
+                                                            @if(strtotime($product->end_time) < strtotime(\Illuminate\Support\Carbon::now()) || count($product->historyAuctions->where('status', 1)) == 1 )
                                                                 <div class="badge bg-danger mt-2">The End</div>
                                                             @else
                                                                 <div class="badge bg-success mt-2">

@@ -70,7 +70,7 @@
                 <li class="nav-item me-3 flec">
                     <a class="nav-link text-uppercase position-relative icon-nav" href="./cart">
                         <i class="fa-regular fa-cart-shopping"></i>
-                        <span class="badge rounded-pill bg-primary">{{\Illuminate\Support\Facades\Auth::check() ? count(\Gloudemans\Shoppingcart\Facades\Cart::content()) : '0'}}</span>
+                        <span class="badge rounded-pill bg-primary">{{\Illuminate\Support\Facades\Auth::check() ? count( App\Models\Cart::all()->where('user_id', Auth::user()->id )) : '0'}}</span>
                     </a>
                 </li>
                 <li class="nav-item me-3 flec" id="glass-icon-nav">
