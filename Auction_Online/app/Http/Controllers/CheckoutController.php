@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
     function index() {
-        $total = Cart::priceTotal();
+
+        $total = $this->totalPrice();
+
         return view('front.checkout.checkout',compact('total'));
     }
 
@@ -19,8 +22,9 @@ class CheckoutController extends Controller
         // Thêm đơn hàng
         $order = Order::create($request->all());
 
+
         // Thêm chi tiết đơn hàng
-        $carts = Cart::content();
+        $carts = Cart::where('user_id',Auth::id())->get();
 
         foreach ($carts as $cart) {
             $data = [
@@ -33,14 +37,14 @@ class CheckoutController extends Controller
         }
 
         // Gửi mail
-        $total = Cart::priceTotal();
-        $subtotal = Cart::priceTotal();
+        $total = $this->totalPrice();
+        $subtotal = $this->totalPrice();
 
         $this->sendEmail($order, $total, $subtotal);
 
 
         // Xóa giỏ hàng
-        Cart::destroy();
+        Cart::where('user_id',Auth::id())->delete();
 
         return redirect('checkout/complete')->with('notification','Success! You will pay on delivery. Please check your email');
     }
@@ -60,6 +64,17 @@ class CheckoutController extends Controller
                 $message->subject('Order Notification');
             }
         );
+    }
+
+    function totalPrice() {
+        $total = 0;
+        if (Auth::check()) {
+            $carts = Cart::where('user_id',Auth::id())->get();
+            foreach ($carts as $cart) {
+                $total += $cart->price;
+            }
+        }
+        return $total;
     }
 
 }

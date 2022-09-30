@@ -38,7 +38,7 @@
                           <div class="row">
                               <div class="form-group col-lg-6 mb-3">
                                   <label class="form-label small text-uppercase">First name</label>
-                                  <input class="form-control" type="text" name="first_name" placeholder="Enter your first name" >
+                                  <input class="form-control" type="text" name="first_name" placeholder="Enter your first name" value="{{\Illuminate\Support\Facades\Auth::user()->name ?? ''}}" >
                               </div>
                               <div class="form-group col-lg-6 mb-3">
                                   <label class="form-label small text-uppercase">Last name</label>
@@ -46,27 +46,27 @@
                               </div>
                               <div class="form-group col-12 mb-3">
                                   <label class="form-label small text-uppercase">Email address</label>
-                                  <input class="form-control" type="email" name="email" placeholder="Enter your email address">
+                                  <input class="form-control" type="email" name="email" placeholder="Enter your email address" value="{{\Illuminate\Support\Facades\Auth::user()->email ?? ''}}">
                               </div>
                               <div class="form-group col-12 mb-3">
                                   <label class="form-label small text-uppercase">Phone</label>
-                                  <input class="form-control" type="text" name="phone" placeholder="Enter your phone">
+                                  <input class="form-control" type="text" name="phone" placeholder="Enter your phone" value="{{\Illuminate\Support\Facades\Auth::user()->phone ?? ''}}">
                               </div>
                               <div class="form-group col-12 mb-3">
                                   <label class="form-label small text-uppercase">Address</label>
-                                  <input class="form-control" type="text" name="street_address" placeholder="Enter your main address">
+                                  <input class="form-control" type="text" name="street_address" placeholder="Enter your main address" value="{{\Illuminate\Support\Facades\Auth::user()->street_address ?? ''}}">
                               </div>
                               <div class="form-group col-12 mb-3">
                                   <label class="form-label small text-uppercase">City</label>
-                                  <input class="form-control" type="text" name="town_city" placeholder="Enter your city">
+                                  <input class="form-control" type="text" name="town_city" placeholder="Enter your city" value="{{\Illuminate\Support\Facades\Auth::user()->town_city ?? ''}}">
                               </div>
                               <div class="form-group col-lg-6 mb-3">
                                   <label class="form-label small text-uppercase">Country</label>
-                                  <input type="text" class="form-control" name="country" placeholder="Enter country">
+                                  <input type="text" class="form-control" name="country" placeholder="Enter country" value="{{\Illuminate\Support\Facades\Auth::user()->country ?? ''}}">
                               </div>
                               <div class="form-group col-lg-6 mb-3">
                                   <label class="form-label small text-uppercase">Zipcode</label>
-                                  <input class="form-control" type="text" name="postcode_zip" placeholder="Enter city postal colde">
+                                  <input class="form-control" type="text" name="postcode_zip" placeholder="Enter city postal colde" value="{{\Illuminate\Support\Facades\Auth::user()->postcode_zip ?? ''}}">
                               </div>
                           </div>
                       </div>
