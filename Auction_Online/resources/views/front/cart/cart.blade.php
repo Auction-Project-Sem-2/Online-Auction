@@ -133,7 +133,7 @@
                                     <tr>
                                         <th class="p-3 pl-0 border-0" scope="row">
                                             <div class="d-flex align-items-center"><a class="reset-anchor d-block animsition-link" href=""><img src="./front/img/products/{{$cart->image}}" alt="..." width="70"></a>
-                                                <div class="ms-3"><strong class="h6"><a class="reset-anchor animsition-link" href="">{{$cart->name}}</a></strong></div>
+                                                <div class="ms-3"><strong class="h6"><a class="reset-anchor animsition-link" href="shop/product/{{ $cart->product_id }}">{{$cart->name}}</a></strong></div>
                                             </div>
                                         </th>
 {{--                                        <td class="p-3 align-middle border-0">--}}
