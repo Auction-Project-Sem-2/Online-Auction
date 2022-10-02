@@ -31,7 +31,7 @@ class AccountController extends Controller
     function logout() {
         Auth::logout();
 
-        return back();
+        return redirect('');
     }
 
     function register() {

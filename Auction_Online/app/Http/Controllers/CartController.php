@@ -17,14 +17,17 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts = Cart::all()->where('user_id', Auth::user()->id);
         $total = 0;
-
-        foreach ($carts as $cart) {
-            $total += $cart->price;
+        $carts = [];
+        if (Auth::check()) {
+            $carts = Cart::where('user_id', Auth::user()->id)->get();
         }
 
         if (Auth::check()) {
+
+            foreach ($carts as $cart) {
+                $total += $cart->price;
+            }
             $productAuction = HistoryAuction::join('products', 'products.id', '=', 'history_auctions.product_id')
 //                ->join('users','users.id','=','history_auctions.user_id')
                 ->where('history_auctions.user_id', Auth::user()->id)
@@ -37,7 +40,7 @@ class CartController extends Controller
             $auctionNumber = [];
             $yourBids = [];
             $status = [];
-            $carts = Cart::all()->where('user_id', Auth::user()->id);
+            $carts = Cart::where('user_id', Auth::user()->id)->get();
 
 
             for ($i = 0; $i < count($productAuction); $i++) {
