@@ -17,7 +17,7 @@
             </div>
 
             <div class="page-title-actions">
-                <a href="./client/seller/product/{{ $product->id }}/detail/create" class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                <a href="./admin/product/{{ $product->id }}/detail/create" class="btn-blue btn-shadow btn-hover-shine mr-3 btn btn-primary">
                       <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="bi bi-plus-lg"></i>
                       </span>
@@ -69,14 +69,14 @@
                                                     <td style="text-align: center">{{ $productDetail->size }}</td>
                                                     <td style="text-align: center">{{ $productDetail->qty }}</td>
                                                     <td style="text-align: center"></a>
-                                                        <a href="./client/seller/product/{{ $product->id }}/detail/{{ $productDetail->id }}/edit" data-toggle="tooltip" title="Edit"
+                                                        <a href="./admin/product/{{ $product->id }}/detail/{{ $productDetail->id }}/edit" data-toggle="tooltip" title="Edit"
                                                            data-placement="bottom"
                                                            class="btn btn-outline-warning border-0 btn-sm">
                                                                             <span class="btn-icon-wrapper opacity-8">
                                                                                 <i class="bi bi-pencil-square"></i>
                                                                             </span>
                                                         </a>
-                                                        <form class="d-inline" action="./client/seller/product/{{ $product->id }}/detail/{{ $productDetail->id  }}" method="post">
+                                                        <form class="d-inline" action="./admin/product/{{ $product->id }}/detail/{{ $productDetail->id  }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
 
