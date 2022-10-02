@@ -79,7 +79,7 @@
 
                                                     </td>
                                                     <td style="text-align: center">{{ $order->street_address . ' - ' . $order->town_city }}</td>
-                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'price')) }}</td>
+                                                    <td style="text-align: center">${{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }}</td>
                                                     <td style="text-align: center">
                                                         <div class="badge badge-dark">
                                                             {{ \App\Utilities\Constant::$order_status[$order->status] }}

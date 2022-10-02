@@ -51,7 +51,7 @@
                                                     </td>
                                                     <td style="text-align: center">{{ $orderDetail->qty }}</td>
                                                     <td style="text-align: center">${{ $orderDetail->product->price }}</td>
-                                                    <td style="text-align: center">${{ $orderDetail->price }}</td>
+                                                    <td style="text-align: center">${{ $orderDetail->total }}</td>
                                                 </tr>
                                             @endforeach
 

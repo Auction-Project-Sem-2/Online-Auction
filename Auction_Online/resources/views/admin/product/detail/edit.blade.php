@@ -44,7 +44,7 @@
                                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form method="post" action="client/seller/product/{{ $product->id }}/detail/{{ $productDetail->id }}" enctype="multipart/form-data">
+                                    <form method="post" action="./admin/product/{{ $product->id }}/detail/{{ $productDetail->id }}" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
 
@@ -88,7 +88,7 @@
                                             </div>
 
                                             <div class="col-md-8 col-lg-9 text-center">
-                                                <a href="./client/seller/product" class="btn btn-red btn-primary">Cancel</a>
+                                                <a href="././admin/product" class="btn btn-red btn-primary">Cancel</a>
                                                 <button type="submit" class="btn btn-blue btn-primary">Save Changes</button>
                                             </div>
                                         </div>
